@@ -1,0 +1,30 @@
+footer {
+	position: absolute;
+    width: 100%;
+    bottom: 0
+}
+
+
+
+/* ------Responsive Bootstrap Part-------- */
+
+@media (max-width: 991px) {
+	footer {
+	    padding-top: 50px;
+	}
+
+}
+
+@media (max-width: 767px) {
+	footer {
+	    padding-top: 40px;
+	}
+
+}
+
+@media (max-width: 390px) {
+	footer {
+		padding-top: 8px;
+		padding-bottom: 5px;
+	}
+}

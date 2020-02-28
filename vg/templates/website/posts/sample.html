@@ -1,0 +1,514 @@
+<!----this is for rendering a base template in flask using jinja templating-->
+{% extends "temp-n-macro/_user-footer_.html" %}
+
+    {% block meta_og_tags_title %}
+    
+    <!-- SEO robots Meta -->
+    <meta name="description" content="Value picks & premium picks which deals in product or services in essentials & export markets should land on feet with little bruises. They are still going to be stronger than ever">
+    <meta name="keywords" content="value picks, valuepicks, multibagger, multibagger stocks india, multibagger indian stocks">
+    <meta name="author" content="Jasmeet Singh, Founder & Investor">
+
+
+
+
+    <title>What about Premium & Value picks with Modi's Rs 500 & 1000 note ban ?</title>
+
+
+
+
+    <!-- OG for Social Networks -->
+    <meta property="og:title" content="What about Premium & Value picks with Modi's Rs 500 & 1000 note ban ?" />
+    <meta property="og:description" content="Value picks & premium picks which deals in product or services in essentials & export markets should land on feet with little bruises. They are still going to be stronger than ever" />
+    <meta property="og:type" content="Website" />
+    <meta property="og:url" content="http://www.valueguyz.com/posts/2016/impact-ban-500-1000-on-value-pick-by-pm-modi" />
+    <meta property="og:image" content="http://www.valueguyz.com/static/images/posts/modi-ban-500.jpg" />
+
+
+
+
+    <!-- Twitter Card OG -->
+    <meta name=”twitter:card” content=” What about Premium & Value picks with Modis Rs 500 & 1000 note ban ?” />
+
+    <meta name=”twitter:title” content=”What about Premium & Value picks with Modis Rs 500 & 1000 note ban ?” />
+
+    <meta name=”twitter:description” content=”Value picks & premium picks which deals in product or services in essentials & export markets should land on feet with little bruises. They are still going to be stronger than ever” />
+    
+    <meta name=”twitter:url” content=”http://www.valueguyz.com/posts/2016/impact-ban-500-1000-on-value-pick-by-pm-modi” />
+
+    <meta name=”twitter:image” content=”http://www.valueguyz.com/static/images/posts/modi-ban-500.jpg” />
+    
+    {% endblock %}
+    
+    
+    {% block custom_css_files %}
+    
+    <!-- Custom styles for fixed top navbar  -->
+    <!--<link href="css/navbar_fixed_top.css" rel="stylesheet">-->
+    <link href="{{ url_for('static', filename='css/navbar-fixed-top.css') }}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <!--<link href="css/custom-index.css" rel="stylesheet">-->
+    <link href="{{ url_for('static', filename='css/custom-blog-post.css') }}" rel="stylesheet">
+    
+    <!-- Custom footer for this template -->
+    <!--<link href="css/footer.css" rel="stylesheet">-->
+    <link href="{{ url_for('static', filename='css/user-footer.css') }}" rel="stylesheet">
+    
+    {% endblock %}
+    
+    
+    
+    
+    {% block content %}
+    
+    <div class="container multi">
+
+      <div class="row">
+        
+        <div class="col-sm-8 blog-main">
+          <div class="blog-post">
+
+            <h1 class="blog-post-title">
+              <a href="#">You had a narrow escape in Budget with this number
+            </h1>
+            
+            <p class="blog-post-meta">
+              <a type="button" class="btn btn-info"> 5 Minute Read
+              </a>Jan 20, 2016 by 
+              <a href="{{ url_for('valueguyz_home') }}#about" target="_blank">Jasmeet
+              </a>
+            </p>
+
+            <img src="../../static/images/posts/modi-ban-500.jpg" alt="Ban on Note effects" title="Intelligent Investing & Note ban">
+
+
+
+
+            <!--macro for social buttons with filling values from this post-->
+            
+            {% from "temp-n-macro/_social-buttons.html" import render_social %}
+            
+            {{ render_social('http://www.valueguyz.com/posts/2016/multibagger-indian-stocks-3ways-beating-bear-market', '3 Ways to Beat the Shit out of Bear in Market Crashes for ValueGuyz') }}
+
+
+
+            <div id="intro">
+              
+              <p>From last week I was hearing a propaganda plastered all over the internet with budget around the corner.
+              </p>
+              <p>Media is indeed very powerful to make or break perceptions around us, we should give it to them <i class="fa fa-beer" aria-hidden="true" style="color:#34af23"></i>. They are always keep on talking about fiscal deficits or GDP numbers or treasury yields.
+              </p>
+              
+              <blockquote>
+                <h4><i>Chahe kisi ko samajh aaye ya na aaye</i> <i class="fa fa-smile-o" style="color:blue"></i>
+                </h4>
+              </blockquote>
+              
+              <p>Budget came so did lot of interpratations. I had some insights which should be shared.</p>
+              
+              
+
+              <!--<p>On 8<sup>th</sup> Nov I was returning after visiting Golden Temple in Amritsar. It was late evening & my family was admiring the quality of Shatabdi's interiors n hospitality. To me money equalled comfort at that time <i class="fa fa-smile-o" style="color:blue"></i>-->
+              <!--</p>-->
+              
+              <!--<p>But suddenly there was a wave of some rumour spreaded in whole train like a wildfire, amazingly my whatsapp <i class="fa fa-whatsapp" aria-hidden="true" style="color:#34af23"></i>  messages started piling up with the same rumour.-->
+              <!--</p>-->
+              
+              <!--<blockquote>-->
+              <!--  <h4>To my surprise what initially sounded like a funny & idiotic rumour turned out to be true <i class="fa fa-meh-o" style="color: orange"></i>  as soon as I internet searched the same on late Tuesday. Prime Minister Narendra Modi banned <i class="fa fa-inr"></i> 500 and <i class="fa fa-inr"></i> 1,000 notes effective midnight, sweeping away 86% of total currency in circulation.-->
+              <!--  </h4>-->
+              <!--</blockquote>-->
+              
+              <!--<p>Paytm, India's largest digital wallet startup, hailed the move in the morning newspapers as it splashed Modi's photograph in a full-page advertisement.-->
+              <!--</p>-->
+              
+              <!--<p>What's is the impact on businesses ? I must say WIN some LOSE some... right ??</p>-->
+              
+              <!--<blockquote>-->
+              <!--  <h4>I have contemplated on this Macro economic change long & hard for past week as I too stood in line outside Bank n also saw empty shops in rush hours. It becomes important to address this keeping our vision of 'Fight against <i>Sattebaaji</i>' <i class="fa fa-thumbs-up" aria-hidden="true" style="color: orange"></i>-->
+              <!--  </h4>-->
+              <!--</blockquote>-->
+              
+              <!--<p>Here are my findings.</p>-->
+              
+            </div>
+            
+            
+            
+            <div class="title-h2">
+              <h2>Value picks & Modi's <i class="fa fa-inr"></i> 500 & 1000 note ban</h2>
+            </div>
+            
+            <p>News are reporting that shopping malls and markets across the country have reported up to 50% fall in their business in the first weekend after the demonetisation of <i class="fa fa-inr"></i> 500 & 1000 note.
+            </p>
+            <p>Local market places such as Karol Bagh in Delhi and Crawford Market in Mumbai where transactions are mostly in cash were the hardest hit with footfalls in these markets falling by as much as 70%.
+            </p>
+            <p>I must say <i>Yeh to hona hi tha</i> as most of these shopkeepers think themselves as <b>Outside The System Smart-Asses</b>.
+            </p>
+            
+            <p>But then it hits me that if train apply breaks then it eventually gives jerk to last bogey too. I am speaking metaphorically here meaning even though our value picks & premium picks are listed businesses with everything as white transactions & money but some of them do deliver product & services to these shopkeepers & malls.
+            </p>
+            
+            
+            <blockquote>
+                <h4>So we are gonna get hit sooner or later, but let's break it down & draw some rationality out of it. After all valuguyz are Intelligent investors <i class="fa fa-smile-o" style="color:blue"></i>
+                </h4>
+            </blockquote>
+            
+            <br>
+
+            <h3>Impact on Value & premium Picks</h3>
+            <p>
+              <ul>
+                <li>Let's be honest everything just got hit be it essentials, utilities or luxuries.
+                </li>
+                <li>Since it is a state of Financial Emergency for our country my common sense says that everyone will <b>re-organize there spending habits</b>.</li>
+                <li>Essentials like food, clothing, utilities, education, communication, transportation etc will be least hit & should stabilize within 2 months.
+                </li>
+                <li><i>Luxuries ki market to gayi 1-2 saal tak aaram se.</i> Illegit money went down the drain so did the luxuries. See <b>drop of 50-90%</b> in this segment businesses turnovers.
+                </li>
+                <li>Real estate <i>bhi gya</i> for next 1 year at least.</li>
+                <li>Value picks & premium picks which deals in product or services in essentials & export markets should land on feet with little bruises. They are still going to be stronger than ever.
+                </li>
+              </ul>
+            </p>
+            
+            <br>
+            
+            <h3>Impact on Mr. Market</h3>
+            <p>
+              <ul>
+                <li>Even though liquidity is squeezed out of cash transactions but Mr. Market which is all <b>White (legit)</b> Money being emotional chick gotta react to it.
+                </li>
+                <li>Business wise turnovers are <b>negatively (-ve)</b> hit so they should direct some sell off.
+                </li>
+                <li>Since cash investing avenues like Real estate & Gold are literally frozen. Common sense says people will sooner or later try their luck at Mr. Market since it is all legit white money transactions.
+                </li>
+                <li><b>Boom in IPO market</b> will be seen soon as new <i>Sattebaaj</i> will start buying them as herd mentality rises.
+                </li>
+              </ul>
+            </p>
+            
+            <br>
+            
+            <h3>Impact on Banking</h3>
+            <p>
+              <ul>
+                <li><i>Bank mota mota 2 kaam karta hai pehla deposit lena and doosra loan dena.</i>
+                </li>
+                <li>Banks have to maintain deposits/loan ratio so that they earn Interest on it with least risk, this is called <b>ALM</b> (Asset Liability Management) by banks.
+                </li>
+                <li><i>Jab deposits tezi se badenge</i> then Banks will be forced to ease the loan giving norms.
+                </li>
+                <li>More deposits will easily help our RBI Governor Mr. Urjit Patel to decrease interest rates which in turn will increase liquidity in society & also in Mr. Market
+                </li>
+                <li>This macro development will spike in more risky lending by Banks which might start creating future financial bubbles going forward <i class="fa fa-meh-o" style="color: red"></i> 
+                </li>
+              </ul>
+            </p>
+
+
+            <br>
+            <h3>Making Sense</h3>
+            <p>
+              <ul>
+                <li>Sucking Cash out of system even for short period will definitely have <b>2 effects</b> as follows.
+                </li>
+                <li>1. Spending habits will prioritize from giving essentials highest priority to giving lowest to luxuries in coming months. This effect is clearly visible if you visit your nearby markets.
+                </li>
+                <li>2. This effect is yet invisible but Increased lending & lower interest rates will spike liquidity of white money in businesses which will in turn find its way into bond markets & stock markets.
+                </li>
+                <li>1<sup>st</sup> effect will take Mr. Market down <i class="fa fa-arrow-down" aria-hidden="true" style="color:red"></i> & 2<sup>nd</sup> effect will take Mr. Market to levels <i class="fa fa-arrow-up" aria-hidden="true" style="color:blue"></i>  you can't even dream of.
+                </li>
+              </ul>
+            </p>
+            
+            
+            
+            
+            <br>
+            <h3>What about ValueGuyz ?</h3>
+            
+            <p>What is a difference between a <i>Sattebaaj</i> & a Valueguyz ?? It is intelligent investing.</p>
+            
+            <blockquote>
+              <h4> <i>"An investment operation is one which, upon thorough analysis, promises safety of principal and an adequate return. Operations not meeting these requirements are speculative."</i> - BENJAMIN GRAHAM
+              </h4>
+            </blockquote>
+            
+            <p>My thorough analysis of this demonetisation situation has 2 outcome. One reduces businesses turnovers but second outcome increases liquidity in system.
+            </p>
+            <p>But my problem with this Macro-economic situation is that I have no idea what is scale of these outcomes, how much Mr. Market will react or How high it will go.
+            </p>
+            
+            <blockquote>
+              <h4>Not understanding the quantum of this macro-economic development and yet thinking of Selling off or buying more in the existing Value picks or Premium picks is a clear case of Speculation or <i>Sattebaaji</i>.
+              </h4>
+            </blockquote>
+
+            <p>My strategy for valueguy remains same as discussed in <a href="http://www.valueguyz.com/advanced-value-pick" target="_blank"> Advance Course</a> <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+            </p>
+            
+            <p>Keep accumulating premium picks, value picks or your researched picks & keep exiting them as taught in the courses & don't worry much. Everything this Government is doing is ultimately going to be advantageous for us.</p>
+            
+            <blockquote>
+              <p><b>PLUS : Everything we do here at valuguyz.com is TAX FREE <i class="fa fa-smile-o" style="color:blue"></i></b>
+              </p>
+            </blockquote>
+            
+            <p><b>Self-reliance is 1<sup>st</sup> human liberty</b>. Trust yourself as a VALUEGUY & wonderful things will start coming to you.</p>
+            
+            
+             
+              
+          <!--    <p>This week we bought <b>TVS Jupiter</b> Scooty for daily chores of our home. It is so cute yet an amazing machine, technology has definitely come a long way in serving mankind.-->
+          <!--    </p>-->
+          <!--    <p>It made everyone happy, my lil sis is happy because she is fed up with car & think this Scooty is a godsend,  me on the other hand was awestruck with money TVS Motors putting in R&D department. These guys are really creating long term value for customer as well shareholders.-->
+          <!--    </p>-->
+              
+          <!--    <blockquote>-->
+          <!--      <p>Happy with my company <i class="fa fa-smile-o" style="color:blue"></i>... yes my company. ValueGuyz I hold TVS in a significant amount at <i class="fa fa-inr" aria-hidden="true"></i> 33 since 2012 & now it quotes about <i class="fa fa-inr" aria-hidden="true"></i> 400 <i class="fa fa-arrow-up" aria-hidden="true" style="color:blue"></i>.-->
+          <!--      </p>-->
+          <!--    </blockquote>-->
+              
+          <!--    <p>Business like TVS Motors give hope to valueguyz like us.</p>-->
+              
+          <!--    <p>We should be invested in such robust & achiever businesses n that's what I try to do with Premium Value picks.-->
+          <!--    </p>-->
+              
+          <!--    <blockquote>-->
+          <!--      <h4>Great investing requires a lot of delayed gratification <i class="fa fa-hourglass-start" style="color:red"></i></h4>-->
+          <!--    </blockquote>-->
+              
+          <!--    <p>Before I start our delayed gratification fest please watch the video <i class="fa fa-youtube-play" style="color:red"></i> above first.</p>-->
+            
+          <!--</div>-->
+
+
+
+
+
+
+
+
+
+
+            <!--<div class="post-img">-->
+            <!--  <img src="../../static/images/posts/jio-troll.jpg" alt="Jio" title="Twitter at its best">-->
+            <!--</div>          -->
+            
+          <!--  <p>-->
+          <!--    I think the most important thing that was announced by Mr Ambani was lifetime supply of endless free voice calls either Local or STD Calls. With Jio offering “FREE” voice calls (though data usage for making the calls will be charged), the voice revenues of the industry may get impacted. Do you know that nearly 70% of the Telecom’s revenue are from voice calls.-->
+          <!--  </p>-->
+            
+          <!--  <p>This is a checkmate for the greatest businesses India has seen like Airtel or Idea. Yes you heard it right.... Its Checkmate.</p>-->
+            
+          <!--  <p><b>WHY ??</b></p>-->
+            
+          <!--  <p>You might think because of <i>Jio</i> these company will be <i>Maro</i> but <i>Nai dost nai yha ek caveat hai</i>.</p>-->
+            
+          <!--  <blockquote>-->
+          <!--    <h2>These guys are neck deep in debt <i class="fa fa-credit-card" style="color:#34A853"></i> & I am gonna show you the power of debt n death of so called great Business.-->
+          <!--    </h2>-->
+          <!--  </blockquote>-->
+            
+           
+
+          <!--  <div class="title-h2">-->
+          <!--    <h2>Intelligent Investing & Debt</h2>-->
+          <!--  </div>-->
+            
+          <!--  <p>-->
+          <!--    <i>Dhandha ho ya na ho but loan nai hona chahiye.</i> Having a loan most of the times deteriorate the chances of creating legacy for great businesses.-->
+          <!--  </p>-->
+            
+          <!--  <p><b>HOW ?</b></p>-->
+          <!--  <p>Let's look at the biggest Property dealer India has ever seen, <b>DLF</b> ( & Yes I call them property dealer <i class="fa fa-smile-o" style="color:#E91E63"></i>)</p>-->
+            
+            
+          <!--  <div class="post-img">-->
+          <!--    <img src="../../static/images/posts/dlf-loan.png" alt="DLF-B/S" title="Debt Kills">-->
+          <!--  </div>          -->
+            
+          <!--  <blockquote>-->
+          <!--    <h4>-->
+          <!--      From 2006 ----------------- > 2016-->
+          <!--    </h4>-->
+              
+          <!--    <br>-->
+          <!--    <h4>Debt :</h4>-->
+              
+          <!--    <h4>-->
+          <!--      From <i class="fa fa-inr" style="color:blue"></i> 4,000 Cr ------------ > <i class="fa fa-inr" style="color:blue"></i> 27,000 Cr-->
+          <!--    </h4>-->
+              
+          <!--  </blockquote>-->
+            
+           
+            
+          <!--  <div class="post-img">-->
+          <!--    <img src="../../static/images/posts/dlf-pnl.png" alt="DLF-Pnl" title="Debt Kills">-->
+          <!--  </div>  -->
+            
+            
+          <!--  <blockquote>-->
+          <!--    <h4>-->
+          <!--      From 2006 ---------------- > 2016-->
+          <!--    </h4>-->
+              
+          <!--    <br>-->
+          <!--    <h4>Profits :</h4>-->
+              
+          <!--    <h4>-->
+          <!--      From <i class="fa fa-inr" style="color:blue"></i> 400 Cr ------------------- > <i class="fa fa-inr" style="color:blue"></i> 550 Cr-->
+          <!--    </h4>-->
+              
+          <!--  </blockquote>-->
+            
+            
+          <!--  <p>-->
+          <!--    While-->
+          <!--  </p>-->
+            
+          <!--  <blockquote>-->
+          <!--    <h4>Sales :</h4>-->
+              
+          <!--    <h4>-->
+          <!--      From <i class="fa fa-inr" style="color:blue"></i> 1,800 Cr ------------------- > <i class="fa fa-inr" style="color:blue"></i> 9,200 Cr-->
+          <!--    </h4>-->
+              
+          <!--  </blockquote>-->
+            
+            
+          <!--  <p>-->
+          <!--    In last 10 years sales almost 5 times <i>ho gayi leking profit wahi ka wahi khada hai.</i>. Meanwhile <i> Interest ki payments 170 Cr se grow kar ke 2600 Cr ho gayi hai.</i>-->
+          <!--  </p>-->
+            
+          <!--  <p>Before you judge this property dealer let's look at its Stock pricing over years.</p>-->
+            
+          <!--  <div class="post-img">-->
+          <!--    <img src="../../static/images/posts/dlf-monthly.png" alt="DLF-EoD chart" title="Debt Kills">-->
+          <!--  </div>  -->
+            
+            
+          <!--  <blockquote>-->
+          <!--    <h2>Ask yourself honestly is this property dealer working for shareholders or Bank ?-->
+          <!--    </h2>-->
+          <!--  </blockquote>-->
+            
+             
+          <!--  <p>-->
+          <!--    And this is the largest Property company of India, <i>baakiya ka kya ho rha hoga.. </i> you can give a wild guess <i class="fa fa-smile-o" style="color:#E91E63"></i>-->
+          <!--  </p>-->
+            
+            
+          <!--  <blockquote>-->
+          <!--    <h2>Debt kils....period. -->
+          <!--    </h2>-->
+          <!--    <h2>-->
+          <!--      <i>Personal ho ya business long term main Bank hi jeetega.</i>-->
+          <!--    </h2>-->
+          <!--  </blockquote>-->
+            
+            
+          <!--  <p>-->
+          <!--    Intelligent investing should be smart enough to answer debt in the business because it can destroy wealth easily as seen with <b>DLF</b>. DLF has monopolistic business with everything a Value pick should have except running business on steroids ie, with Debt.-->
+          <!--  </p>-->
+            
+          <!--  <p>-->
+          <!--    & look what is happening, no matter how hard it works it will take maybe another 10 yrs to come back at 2007 level, if its honest & lucky.-->
+          <!--  </p>-->
+            
+            
+          <!--  <blockquote>-->
+          <!--    <h2>Shareholder of DLF might have to wait total 20 years from 2007 go get back original money. <i>Ise kehte hai property dealing</i> <i class="fa fa-smile-o" style="color:blue"></i>-->
+          <!--    </h2>-->
+          <!--  </blockquote>-->
+            
+            
+          <!--  <div class="title-h2">-->
+          <!--    <h2>Debt n Airtel & Idea : Sab bhai bhai</h2>-->
+          <!--  </div>-->
+            
+          <!--  <p>-->
+          <!--    These telecom gaints are exactly replicating situations DLF had back in 2008 when property business peaked & starting falling on its face. With <i>Jio</i> giving freebies while these guys barely making end meets with interest payments yet alone meagre profitability.-->
+          <!--  </p>-->
+            
+          <!--  <p>-->
+          <!--    Raising debt continuously & running business is a norm in telecom industry where these business failed at shareholders end absolutely.-->
+          <!--  </p>-->
+            
+          <!--  <p>-->
+          <!--    Before I draw any conclusion let's look at wealth creation done by these giants over last 10 yrs.-->
+          <!--  </p>-->
+            
+            
+            
+          <!--   <div class="post-img">-->
+          <!--    <img src="../../static/images/posts/airtel-monthly.png" alt="Airtel-EoD chart" title="Debt Kills">-->
+          <!--  </div>  -->
+            
+            
+          <!--  <div class="post-img">-->
+          <!--    <img src="../../static/images/posts/idea-monthly.png" alt="Idea-EoD chart" title="Debt Kills">-->
+          <!--  </div>  -->
+            
+            
+          <!--  <blockquote>-->
+          <!--    <h2>Shareholder of Airtel n Idea must be banging there heads on wall over last 10 yrs.-->
+          <!--    </h2>-->
+          <!--    <h2>-->
+          <!--      Piece of advice for them.... its gonna get ugly with debt rising & profit turning to losses.-->
+          <!--    </h2>-->
+          <!--  </blockquote>-->
+            
+            
+          <!--  <p>-->
+          <!--    I leave this matter of debt upto you now to draw conclusions. For me it is <i>agar yeh bade log kuch nai kar paa rahe to choti companies kya kar lengi</i> if they are under the debt.-->
+          <!--  </p>-->
+            
+            
+          <!--  <p>I founded -->
+          <!--    <a href="{{ url_for('valueguyz_home') }}" target="_blank">ValueGuyz-->
+          <!--    </a>-->
+          <!--     for the purpose of leading the Aam aadmi away from this <i>Loot Lo</i> Mentality of Stock brokers who wants everyone to indulge into <i>Sattebaaji</i> just so that they can mint brokerage while aam aadmi left pondering who made him fool & blaming Stock Markets at the end..-->
+          <!--  </p>-->
+            
+          <!--  <p>-->
+          <!--    Stay intelligent & be wary of debt or loan. Invest like a valueguy. WE WILL PREVAIL....-->
+          <!--  </p>-->
+            
+          
+          
+            
+            <!--what r value picks n tax free-->
+            {% include "temp-n-macro/_what-r-valuepicks.html" %}
+            
+            
+            <!--for signing : do remember to insert a date & styling if needed-->
+            {% from "temp-n-macro/_signature.html" import render_signature %}
+            {{ render_signature('4 Jun 2016') }}
+
+            
+            <!--for legends below value picks-->
+            {% include "temp-n-macro/_legends.html" %}
+
+            <!--for disclaimer below post-->
+            {% include "temp-n-macro/_disclaimer.html" %}
+
+            
+
+            <!--macro for social buttons with filling values from this post-->
+            {% from "temp-n-macro/_social-buttons.html" import render_social %}
+            
+            {{ render_social('http://www.valueguyz.com/posts/2016/multibagger-value-picks-jan16-bhageria-dye-chem', '4X Multibagger Stocks as Value Pick &middot; Bhageria Dye Chem &middot; Jan16') }}
+
+           
+          </div><!-- /.blog-post -->
+
+        </div><!-- /.blog-main -->
+    
+    
+    
+    
+    {% endblock %}

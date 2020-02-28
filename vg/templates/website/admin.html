@@ -1,0 +1,62 @@
+<!----this is for rendering a base template in flask using jinja templating-->
+{% extends "temp-n-macro/_user-footer_.html" %}
+
+    
+{% block content %}
+
+<div class="container">
+    
+    <hr>
+    <hr>
+    
+    <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+            <h3>Website (Blog) Admin</h3>
+            
+        
+            
+            <p>
+                Welcome,  {{ session.fullname }} - <a href="{{ url_for('logout') }}">Logout</a>
+            </p>
+        
+            <div class="post-list">
+                <!--posts.items is used after inserting pagination in view.py why???-->
+                {% for post in posts.items %}
+                
+                <h4><a href="{{ url_for('article', slug=post.slug, year=post.publish_date_utc.year) }}">{{ post.title }}</a>
+                {% if not post.live %}
+                ( Draft )
+                {% endif %}
+                </h4>
+                <div class="text-muted">Posted by <a href="#">{{ post.user.fullname }}</a>
+                on {{ post.publish_date_utc.strftime('%d %b %Y') }}
+                in <a href="#">{{ post.category.name }}</a>
+                </div>
+                
+                {% endfor %}
+                
+            </div>
+            
+            <nav>
+                <!--these codes have to do with db operations in paginate-->
+                <ul class="pager">
+                    
+                  {% if posts.has_prev %}
+                  <li><a href="{{ url_for('admin', page=posts.prev_num) }}">Previous</a></li>
+                  {% else %}
+                  <li>Previous</li>
+                  {% endif %}
+                  
+                  {% if posts.has_next %}
+                  <li><a href="{{ url_for('admin', page=posts.next_num) }}">Next</a></li>
+                  {% else %}
+                  <li>Next</li>
+                  {% endif %}
+                  
+                </ul>
+             </nav>
+            
+        </div>
+    </div>
+</div>           
+{% endblock %}

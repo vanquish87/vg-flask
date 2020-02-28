@@ -1,0 +1,138 @@
+<!----this is for rendering a base template in flask using jinja templating-->
+{% extends "temp-n-macro/_header_navbar_.html" %}
+        
+<!----Declaration for block of html code to be rendered later -->    
+
+{% block meta_og_tags_title %}{% endblock %}
+
+{% block custom_css_files %}{% endblock %}
+
+{% block content %}{% endblock %}
+
+
+{% block footer %}
+
+  
+<nav class="navbar navbar-fixed-bottom navbar-default">
+  
+  <div class="container chaku">
+    
+    <div id="navbar" class="navbar-collapse">
+      
+      
+      <ul class="nav navbar-nav nav-footer">
+        
+        {% if session.get('mobile_ind') %}
+        <!--<li><a href="{{ url_for('my_dashboard_home') }}" title="Dashboard"><i class="fa fa-tachometer" aria-hidden="true"></i></a></li>-->
+        <!--<li><a href="{{ url_for('mrbull_market') }}" title="Dashboard"><i class="fa fa-binoculars" aria-hidden="true"></i></a></li>-->
+        <!--<li><a href="{{ url_for('mrbull_dash') }}" title="Mr. Bull"><i class="fa fa-gg" aria-hidden="true"></i></a></li>-->
+        <li><a href="{{ url_for('my_dashboard_home') }}" title="Dashboard"><i class="fa fa-tachometer" aria-hidden="true"></i></a></li>
+        {% endif %}
+        
+        <li><a href="{{ url_for('value_picks_multibagger_stocks_india') }}" title="Picks"><i class="fa fa-tasks" aria-hidden="true"></i></a></li>
+        <li><a href="{{ url_for('vgex_performance') }}" title="VGEX" ><i class="fa fa-line-chart" aria-hidden="true"></i></a></li>
+        <li><a href="{{ url_for('my_dashboard_course') }}" title="Courses"><i class="fa fa-university" aria-hidden="true"></i></a></li>
+
+        
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          </a>
+          <ul class="dropdown-menu">
+            {% if session.get('is_premium') == 1 %}
+            <li><a href="{{ url_for('renew_premium') }}">Renew Plan</a></li>
+            <li><a href="{{ url_for('my_dashboard_profile') }}">Add Review</a></li>
+            <li><a href="{{ url_for('invite') }}">Invite</a></li>
+            {% elif session.get('is_premium') == 0 %}
+            <li><a href="{{ url_for('premium_sell') }}">Upgrade Now</a></li>
+            <li><a href="{{ url_for('my_dashboard_profile') }}">Add Review</a></li>
+            {% else %}
+            <li><a href="{{ url_for('premium_sell') }}">Premium</a></li>
+            <li><a href="{{ url_for('review_member') }}">Reviews</a></li>
+            {% endif %}
+            <li role="separator" class="divider"></li>     
+            <li><a href="{{ url_for('valueguyz_home') }}#ask-query">Ask a Query</a></li>
+            <li><a href="{{ url_for('valueguyz_home') }}#jasmeet">Jasmeet</a></li>
+            <li><a href="{{ url_for('valueguyz_home') }}#contact">Contact</a></li>
+          </ul>
+        </li>
+        
+        <!--<li class="dropdown">-->
+        <!--  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">-->
+        <!--    <i class="fa fa-question-circle" aria-hidden="true"></i>-->
+        <!--  </a>-->
+        <!--  <ul class="dropdown-menu">-->
+        <!--    <li><a href="{{ url_for('valueguyz_home') }}#jasmeet">Jasmeet</a></li>-->
+        <!--    <li><a href="{{ url_for('valueguyz_home') }}#ask-query">Ask a Query</a></li>-->
+        <!--  </ul>-->
+        <!--</li>-->
+        
+        
+         
+      </ul>
+      
+      
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
+  
+<!--<footer>-->
+      
+  <!--  <div class="container">-->
+  <!--      <div class="row">-->
+  <!--          <div class="col-md-6 col-md-offset-3 heart">-->
+  <!--           <p>Made with <i class="fa fa-heart" style="color:red"></i> for Investors</p>-->
+  <!--          </div>-->
+  <!--      </div>-->
+  <!--  </div>-->
+  {% include "temp-n-macro/_flashed-message.html" %}
+    
+  <!-- </footer>-->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
+<!--automatic dropdown of Header navbar menu items if any-->
+<script type="text/javascript" src="{{ url_for('static', filename='js/hover-menu-dropdown.js') }}"></script>
+
+
+<!--to show flash messages in modal when user is logged in-->
+<script type="text/javascript" src="{{ url_for('static', filename='js/modal-automatic-in.js') }}"></script>
+
+<!--To show password if any in the form fields-->
+<script type="text/javascript" src="{{ url_for('static', filename='js/show-pass.js') }}"></script>
+
+<!--Tabbed user dashboard-->
+<script type="text/javascript" src="{{ url_for('static', filename='js/user-dashboard-tabs.js') }}"></script>
+
+<!--Number of words left in textarea in review or messages-->
+<script type="text/javascript" src="{{ url_for('static', filename='js/words-left.js') }}"></script>
+
+<!-- chart html5 -->
+
+<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/chart_tfn.js') }}"></script>
+
+
+{% if session.get('mobile_ind') %}
+<!--Trumbowyg A lightweight WYSIWYG editor javascript to start in index page for ask-a-query-->
+<script src="{{ url_for('static', filename='Trumbowyg-master/dist/trumbowyg.min.js') }}"></script>
+<script type="text/javascript">
+    /** Default editor configuration **/
+    $('#body').trumbowyg();
+</script>
+
+{% endif %}
+   
+</body>
+  
+</html>
+
+    {% endblock %}

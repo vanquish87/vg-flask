@@ -1,0 +1,128 @@
+<!----this is for rendering a base template in flask using jinja templating-->
+{% extends "temp-n-macro/_user-footer_.html" %}
+
+    {% block meta_og_tags_title %}
+    
+    <!-- SEO robots Meta -->
+
+    <title>Value Pick &middot; Just Dial &middot; Part 1 &middot; Sep17</title>
+
+    
+    {% endblock %}
+    
+    {% block custom_css_files %}
+    
+    <!-- Custom styles for fixed top navbar  -->
+    <!--<link href="css/navbar_fixed_top.css" rel="stylesheet">-->
+    <link href="{{ url_for('static', filename='css/navbar-fixed-top.css') }}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <!--<link href="css/custom-index.css" rel="stylesheet">-->
+    <link href="{{ url_for('static', filename='css/custom-blog-post.css') }}" rel="stylesheet">
+    
+    <!-- Custom footer for this template -->
+    <!--<link href="css/footer.css" rel="stylesheet">-->
+    <link href="{{ url_for('static', filename='css/user-footer.css') }}" rel="stylesheet">
+    
+    {% endblock %}
+    
+    
+
+
+    
+    
+    {% block content %}
+    
+    <div class="container multi">
+
+      <div class="row">
+        
+        <div class="col-sm-8 col-sm-offset-2 blog-main">
+          <div class="blog-post">
+            
+            <h1 class="blog-post-title">
+              <a href="#">Value Pick &middot; Just Dial &middot; Part 1 &middot; Sep17
+              </a>
+            </h1>
+            
+            <p class="blog-post-meta">
+              <a type="button" class="btn btn-info"> 5 minute read
+              </a>
+              July 15, 2016 by 
+              <a href="{{ url_for('valueguyz_home') }}#about" target="_blank">Jasmeet
+              </a>
+            </p>
+            
+            
+            
+            <!-- 16:9 aspect ratio for Youtube Video-->
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" width="750" height="422" src="https://www.youtube.com/embed/PnzBY9bs4II?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen>
+              </iframe>
+            </div>
+            
+            <br>
+            <br>
+            
+            <!-- 16:9 aspect ratio for Youtube Video-->
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" width="750" height="422" src="https://www.youtube.com/embed/pm-rHEQkwXI?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen>
+              </iframe>
+            </div>
+
+            
+            <!--macro for social buttons with filling values from this post-->
+            
+            {% from "temp-n-macro/_social-buttons.html" import render_social %}
+            
+            {{ render_social('http://www.valueguyz.com/posts/2016/multibagger-value-picks-mar16-eros-international-media', '5X Multibagger Stocks as Value Pick &middot; Eros International Media &middot; Mar16') }}
+            
+
+
+            <div id="intro">
+            
+                <p>Dost,</p>
+                
+                <p>My insights into Just Dial as value pick (part 1) after talk with management.</p>
+                
+                <p>Watch the videos <i class="fa fa-youtube-play" aria-hidden="true" style="color:red"></i> above.</p>
+                
+            </div>
+            
+        
+              
+              
+              
+    
+            
+            <!--what r value picks n tax free-->
+            {% include "temp-n-macro/_what-r-valuepicks.html" %}
+            
+            
+            <!--for signing : do remember to insert a date & styling if needed-->
+            {% from "temp-n-macro/_signature.html" import render_signature %}
+            {{ render_signature('8 Mar 2016') }}
+
+            
+            <!--for legends below value picks-->
+            {% include "temp-n-macro/_legends.html" %}
+
+            <!--for disclaimer below post-->
+            {% include "temp-n-macro/_disclaimer.html" %}
+
+            
+
+            <!--macro for social buttons with filling values from this post-->
+            {% from "temp-n-macro/_social-buttons.html" import render_social %}
+            
+            {{ render_social('http://www.valueguyz.com/posts/2016/multibagger-value-picks-mar16-eros-international-media', '5X Multibagger Stocks as Value Pick &middot; Eros International Media &middot; Mar16') }}
+
+           
+          </div><!-- /.blog-post -->
+
+        </div><!-- /.blog-main -->
+    
+    
+    
+    
+    {% endblock %}

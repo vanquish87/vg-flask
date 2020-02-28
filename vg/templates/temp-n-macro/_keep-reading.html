@@ -1,0 +1,7 @@
+<div id="keep-reading">
+    <!--link on top of button so that all of button become responsive rather than just the text-->
+    <a href="{{ url_for('article_full', slug=post.slug, year=post.publish_date_utc.year) }}">
+      <button type="submit" class="btn btn-default">Keep Reading ...
+      </button>
+    </a>
+</div>

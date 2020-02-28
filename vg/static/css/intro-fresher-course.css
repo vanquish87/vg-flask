@@ -1,0 +1,208 @@
+/** Globals */
+
+body {
+    font-family: 'Roboto',"Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #555;
+    font-weight: 300;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+    margin-top: 0;
+    font-family: 'Roboto', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    color: #333;
+}
+
+.btn-custom {
+  color: #fff;
+  background-color: #66C7FF;
+}
+
+.btn-custom:hover,
+.btn-custom:focus {
+    opacity : 0.9;
+    color: #fff;
+}
+
+.btn-premium {
+  	background-color: #FBBC05;
+}
+
+/*------------*/
+
+
+.course {
+    margin-top: 80px;
+}
+
+
+.course-main {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+#heading-video .course-title{
+    text-transform: capitalize;
+    font-size: 32px;
+    margin-bottom: 23px;
+}
+
+#heading-video h2 {
+    text-align: center;
+    font-size: 21px;
+}
+
+/*join button styling*/
+
+.join-button{
+    text-align: center;
+    margin: 28px;
+}
+
+.btn-success{
+    font-size: 35px;
+}
+
+.join-button a{
+    text-decoration: none;
+    color: white;
+}
+
+/*------*/
+
+
+#heading-video img {
+    max-width: 100%;
+    margin-bottom: 30px;
+}
+
+#description {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+#description h2{
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+blockquote {
+    border-left: 5px solid #66C7FF;
+    margin: 20px 0 30px;
+}
+
+#course-great {
+    margin-top: 45px;
+    margin-bottom: 30px;
+}
+
+#course-great h3 {
+    text-align: center;
+    padding: 20px 0px;
+    text-transform: capitalize;
+}
+
+
+/*table styling*/
+
+#what-learn {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#what-learn .summary-heading {
+  text-align: center;
+  padding: 14px;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+#what-learn td{
+    padding: 8px 42px;
+    font-size: 16px;
+}
+
+.table-hover>tbody>tr:hover {
+    background-color: #66C7FF;
+}
+
+/*-----*/
+
+#course-done {
+    margin: 50px 0px;
+}
+
+
+/*panel stylings*/
+
+
+#what {
+    margin: 50px 0px;
+}
+
+#what .panel-title{
+    font-size: 20px;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+#what .panel-body{
+    font-size: 16px;
+}
+
+/*--------*/
+
+/*footer styling only for this so that it can scroll yet footer remain fixed*/
+
+footer {
+	position: fixed;
+}
+	
+/**/
+
+
+/* ------Responsive Bootstrap Part-------- */
+@media (max-width: 991px) {
+  .course-main {
+    width: 100%;
+    margin-left: 0px;
+  }
+
+}
+
+@media (max-width: 605px) {
+  #heading-video .course-title{
+      font-size: 24px;
+  }
+  
+  #heading-video h2 {
+      font-size: 17px;
+  }
+  
+  #description h3 {
+      font-size: 20px;
+  }
+  
+}
+
+
+@media (max-width: 419px) {
+  #heading-video .course-title{
+      font-size: 21px;
+  }
+  
+  .course-main {
+    font-size: 16px;
+    
+  }
+  
+  .btn-success{
+    font-size: 23px;
+    }
+}

@@ -1,0 +1,76 @@
+<!----this is for rendering a base template in flask using jinja templating-->
+{% extends "temp-n-macro/_user-footer_.html" %}
+
+
+{% block meta_og_tags_title %}
+
+<link rel="icon" href="{{ url_for('static', filename='images/pages/vg-favicon.png') }}">
+
+<title>Change Password - ValueGuyz</title>
+
+{% endblock %}
+
+
+{% block custom_css_files %}
+
+<!-- Custom styles for fixed top navbar  -->
+<!--<link href="css/navbar_fixed_top.css" rel="stylesheet">-->
+<link href="{{ url_for('static', filename='css/navbar-fixed-top.css') }}" rel="stylesheet">
+
+<!-- Custom user-login.css for this template -->
+<link href="{{ url_for('static', filename='css/user-register.css') }}" rel="stylesheet">
+
+<!-- Custom footer for this template -->
+<!--<link href="css/footer.css" rel="stylesheet">-->
+<link href="{{ url_for('static', filename='css/user-footer.css') }}" rel="stylesheet">
+
+{% endblock %}
+
+
+
+{% block content %}
+
+<section id="login">
+<div class="container">
+	<div class="row">
+	    <div class="col-md-6 col-md-offset-3">
+    	    <div class="form-wrap">
+            <h1>Create a new password</h1>
+            
+                <!--if there is error in any field it will be displayed here-->
+                {% if error %}
+                    <div class="error text-danger">{{ error }}</div>
+                {% endif %}
+                
+                <form method="POST" action="{{ url_for('forget_email', token=token) }}" role="form">
+                    
+                    {% from "temp-n-macro/_formhelpers.html" import render_field %}
+                    
+                    <!----CSRF Tag for hack prevention-->
+                    {{ form.hidden_tag() }}
+                    
+                    <!--Tags coming from form.py file(model) in user-->
+                    <fieldset disabled>
+                    {{ render_field(form.fullname, class="form-control", value=(user.fullname) | safe) }}
+                    {{ render_field(form.email, class="form-control", value=(user.email) | safe) }}
+                    </fieldset>
+                    
+                    {{ render_field(form.password, class="form-control", placeholder="Create New Password") }}
+                    {{ render_field(form.confirm_password, class="form-control", placeholder="It should Match") }}
+  	
+    				<input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Create">
+        			
+        		</form>
+                
+               <hr>
+               
+    	    </div>
+		</div> <!--col-md-6 col-md-offset-3 -->
+	</div> <!-- /.row -->
+</div> <!-- /.container -->
+</section>
+
+{% endblock %}
+        
+        
+        

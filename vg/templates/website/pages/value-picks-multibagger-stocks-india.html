@@ -1,0 +1,108 @@
+<!----this is for rendering a base template in flask using jinja templating-->
+{% extends "temp-n-macro/_user-footer_.html" %}
+
+{% block meta_og_tags_title %}
+
+<!-- SEO robots Meta -->
+<meta name="description" content="My Value Pick Collection from NSE & BSE,Guaranteed that you will only take just 15 minutes to find your 1st Multibagger stock & Invest against the Loot Lo mentality of Stock-Brokers">
+<meta name="keywords" content="value pick, value picks, valuepicks, multibagger, multibagger stocks india, ">
+<meta name="author" content="Jasmeet Singh, Founder & Investor">
+
+<title>9X Value Picks by Jasmeet &middot; ValueGuyz</title>
+
+<!-- OG for Social Networks -->
+<meta property="og:title" content="9X Value Picks by Jasmeet &middot; ValueGuyz" />
+<meta property="og:description" content="My Value Pick Collection from NSE & BSE,Guaranteed that you will only take just 15 minutes to find your 1st Multibagger stock & Invest against the Loot Lo mentality of Stock-Brokers" />
+<meta property="og:type" content="Website" />
+<meta property="og:url" content="http://www.valueguyz.com/pages/value-picks-multibagger-stocks-india" />
+<meta property="og:image" content="http://www.valueguyz.com/static/images/pages/vg-home-og-share.jpg" />
+
+ <!-- Twitter Card OG -->
+<meta name=”twitter:card” content=”ValueGuyz &middot; VGEX in Value Picks, Multibagger Stocks” />
+
+<meta name=”twitter:title” content=”9X Value Picks by Jasmeet &middot; ValueGuyz” />
+
+<meta name=”twitter:description” content=”My Value Pick Collection from NSE & BSE,Guaranteed that you will only take just 15 minutes to find your 1st Multibagger stock & Invest against the Loot Lo mentality of Stock-Brokers” />
+<meta name=”twitter:url” content=”http://www.valueguyz.com/pages/value-picks-multibagger-stocks-india” />
+<meta name=”twitter:image” content=”http://www.valueguyz.com/static/images/pages/vg-home-og-share.jpg” />
+
+{% endblock %}
+
+{% block custom_css_files %}
+
+<!-- Custom styles for fixed top navbar  -->
+<!--<link href="css/navbar_fixed_top.css" rel="stylesheet">-->
+<link href="{{ url_for('static', filename='css/navbar-fixed-top.css') }}" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="{{ url_for('static', filename='css/custom-blog.css') }}" rel="stylesheet">
+
+<!-- Custom footer for this template -->
+<!--<link href="css/footer.css" rel="stylesheet">-->
+<link href="{{ url_for('static', filename='css/user-footer.css') }}" rel="stylesheet">
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container dash">
+
+    <div class="blog-header">
+        {% if session.get('is_author') == 1 %}
+        <h1 class="blog-title">Admin</h1>
+        {% else %}
+        <h1 class="blog-title">Value Picks</h1>
+        <p class="lead blog-description">Your monthly doses of multibaggers & market intelligence by jasmeet</p>
+        {% endif %}
+    </div>
+
+    <div class="row">
+    
+        <div class="col-md-8 col-md-offset-2 blog-main">
+        
+        <!--posts.items is used after inserting pagination in views.py why???-->
+        {% for post in posts.items %}
+        
+            {% if post.category.name != "premium picks" %}
+                {% include "temp-n-macro/_blog-post-main.html" %}
+                
+            {% elif post.category.name == "premium picks" and session.get('is_premium') == 1 %} 
+            
+                {% if post.publish_date_utc > user.premium_registered_on and post.publish_date_utc < user.premium_expiry_on or session.get('is_author') == 1 %}
+                    {% include "temp-n-macro/_blog-post-main.html" %}
+                    
+                {% else %}
+                    {% include "temp-n-macro/_blog-post-prem-lock.html" %}
+                {% endif %}
+                
+            {% elif post.category.name == "premium picks" %}  
+                {% include "temp-n-macro/_blog-post-prem-lock.html" %}
+                
+            {% endif %}
+            
+        {% endfor %}
+        
+        
+        <nav>
+            <!--these codes have to do with db operations in paginate-->
+            <ul class="pager">
+            
+                {% if posts.has_prev %}
+                <li><a href="{{ url_for('admin', page=posts.prev_num) }}">Previous</a></li>
+                {% else %}
+                <li><a href="#">Previous</a></li>
+                {% endif %}
+                
+                {% if posts.has_next %}
+                <li><a href="{{ url_for('admin', page=posts.next_num) }}">Next</a></li>
+                {% else %}
+                <li><a href="#">Next</a></li>
+                {% endif %}
+            
+            </ul>
+        </nav>  
+    
+    </div><!-- /.blog-main -->
+        
+{% endblock %}

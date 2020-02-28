@@ -1,0 +1,54 @@
+
+#upar .btn {
+    font-size: 10px;
+}
+
+
+.btn-content {
+    padding: 10px 10px;
+    margin: 20px 0;
+    border: 2px solid transparent;
+    border-radius: 25px;
+    font-size: 14px;
+}
+
+
+#classroom h4{
+    text-align: center;
+}
+
+#classroom .col-md-8 {
+    margin-top: 70px;
+}
+
+footer {
+	position: absolute;
+    width: 100%;
+    bottom: 0;
+ 	overflow: visible;
+	/*z-index value for flash msg modal to appear properly when footer is fixed*/
+	z-index: 1060;
+}
+
+
+.btn-outline-rounded {
+    padding: 10px 20px;
+    margin: 20px 0;
+    border: 2px solid transparent;
+    border-radius: 25px;
+    font-size: 14px;
+}
+
+/*responsive part styling*/
+
+@media (max-width: 767px) {
+    #classroom .col-md-8 {
+        margin-top: 130px;
+    }
+}
+
+@media( max-width : 585px ){
+    .btn-outline-rounded {
+        padding:12px 15px;
+    }
+}

@@ -1,0 +1,153 @@
+<!----this is for rendering a base template in flask using jinja templating-->
+{% extends "temp-n-macro/_user-footer_.html" %}
+
+{% block meta_og_tags_title %}
+
+<title>Market Watch - Mr Bull</title>
+
+{% endblock %}
+
+
+{% block custom_css_files %}
+
+<!-- Custom styles for fixed top navbar  -->
+<!--<link href="css/navbar_fixed_top.css" rel="stylesheet">-->
+<link href="{{ url_for('static', filename='css/navbar-fixed-top.css') }}" rel="stylesheet">
+
+
+<!-- Custom footer for this template -->
+<!--<link href="css/footer.css" rel="stylesheet">-->
+<link href="{{ url_for('static', filename='css/user-footer.css') }}" rel="stylesheet">
+
+<link href="{{ url_for('static', filename='css/mrbull-marketwatch.css') }}" rel="stylesheet">
+
+{% endblock %}
+
+{% block content %}
+<div class="container" id="watch">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            
+            
+            <form class="navbar-form" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search ex: infosys, itc, hdfc">
+                <button type="submit" class="btn btn-default"><i class="fa fa-search" aria-hidden="true" style="color:#999"></i></button>
+              </div>
+            </form>
+            
+            
+            
+            <div class="col-md-12 live-market">
+                <div class="script">
+                    <a href="#viewdetails" data-toggle="collapse" data-target="#viewdetails"  aria-expanded="false">
+                    <h4>INFOSYS</h4>
+                    </a>
+                </div>
+                <div class="gain">
+                    <a href="#viewdetails" data-toggle="collapse" data-target="#viewdetails"  aria-expanded="false">
+                    <p>+10.5% <span class="inline1"><i class="fa fa-angle-up" aria-hidden="true"></i></span></p>
+                    </a>
+                </div>
+                <div class="LTP">
+                    <a href="#viewdetails" data-toggle="collapse" data-target="#viewdetails"  aria-expanded="false">
+                    <h4>1325.15</h4>
+                    </a>
+                </div>
+                <div class ="collapse buy-button" id="viewdetails">
+                    <a class="btn btn-buy btn-xs" data-toggle="tooltip" data-placement="bottom" title="Sell INFOSYS right away." href="{{ url_for('mrbull_transact') }}">B</a>
+                    <a class="btn btn-default btn-xs" data-toggle="tooltip" data-placement="bottom" title="EOD Chart of INFOSYS" href="http://chartink.com/stocks/INFY.html" target="_blank"><i class="fa fa-area-chart" aria-hidden="true" style="color:#66C7FF"></i></a>
+                    <a class="btn btn-default btn-xs btn-remove" data-toggle="tooltip" data-placement="bottom" title="Remove this script" href="#"><i class="fa fa-times" aria-hidden="true" style="color:#999"></i></a>
+                </div>
+            </div>
+            <hr>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <div class="col-md-12 live-market">
+                <div class="script">
+                    <a href="#viewdetails1" data-toggle="collapse" data-target="#viewdetails1"  aria-expanded="false">
+                    <h4>ITC</h4>
+                    </a>
+                </div>
+                <div class="gain">
+                    <a href="#viewdetails1" data-toggle="collapse" data-target="#viewdetails1"  aria-expanded="false">
+                    <p>+3.5% <span class="inline1"><i class="fa fa-angle-up" aria-hidden="true"></i></span></p>
+                    </a>
+                </div>
+                <div class="LTP">
+                    <a href="#viewdetails1" data-toggle="collapse" data-target="#viewdetails1"  aria-expanded="false">
+                    <h4>456.2</h4>
+                    </a>
+                </div>
+                <div class ="collapse buy-button" id="viewdetails1">
+                    <a class="btn btn-buy btn-xs" data-toggle="tooltip" data-placement="bottom" title="Sell INFOSYS right away." href="{{ url_for('mrbull_transact') }}">B</a>
+                    <a class="btn btn-default btn-xs" data-toggle="tooltip" data-placement="bottom" title="EOD Chart of INFOSYS" href="http://chartink.com/stocks/INFY.html" target="_blank"><i class="fa fa-area-chart" aria-hidden="true" style="color:#66C7FF"></i></a>
+                    <a class="btn btn-default btn-xs btn-remove" data-toggle="tooltip" data-placement="bottom" title="Remove this script" href="#"><i class="fa fa-times" aria-hidden="true" style="color:#999"></i></a>
+                </div>
+            </div>
+            <hr>
+            
+            <div class="col-md-12 live-market">
+                <div class="script">
+                    <a href="#viewdetails2" data-toggle="collapse" data-target="#viewdetails2"  aria-expanded="false">
+                    <h4>HDFCBANK</h4>
+                    </a>
+                </div>
+                <div class="gain">
+                    <a href="#viewdetails2" data-toggle="collapse" data-target="#viewdetails2"  aria-expanded="false">
+                    <p>-5.5% <span class="inline1"><i class="fa fa-angle-down" aria-hidden="true" style="color:red"></i></span></p>
+                    </a>
+                </div>
+                <div class="LTP">
+                    <a href="#viewdetails2" data-toggle="collapse" data-target="#viewdetails2"  aria-expanded="false">
+                    <h4>2239.2</h4>
+                    </a>
+                </div>
+                <div class ="collapse buy-button" id="viewdetails2">
+                    <a class="btn btn-buy btn-xs" data-toggle="tooltip" data-placement="bottom" title="Sell INFOSYS right away." href="{{ url_for('mrbull_transact') }}">B</a>
+                    <a class="btn btn-default btn-xs" data-toggle="tooltip" data-placement="bottom" title="EOD Chart of INFOSYS" href="http://chartink.com/stocks/INFY.html" target="_blank"><i class="fa fa-area-chart" aria-hidden="true" style="color:#66C7FF"></i></a>
+                    <a class="btn btn-default btn-xs btn-remove" data-toggle="tooltip" data-placement="bottom" title="Remove this script" href="#"><i class="fa fa-times" aria-hidden="true" style="color:#999"></i></a>
+                </div>
+            </div>
+            <hr>
+            
+            <div class="col-md-12 live-market">
+                <div class="script">
+                    <a href="#viewdetails3" data-toggle="collapse" data-target="#viewdetails3"  aria-expanded="false">
+                    <h4>DRREDDY</h4>
+                    </a>
+                </div>
+                <div class="gain">
+                    <a href="#viewdetails2" data-toggle="collapse" data-target="#viewdetails3"  aria-expanded="false">
+                    <p>+0.5% <span class="inline1"><i class="fa fa-angle-up" aria-hidden="true"></i></span></p>
+                    </a>
+                </div>
+                <div class="LTP">
+                    <a href="#viewdetails3" data-toggle="collapse" data-target="#viewdetails3"  aria-expanded="false">
+                    <h4>2603.55</h4>
+                    </a>
+                </div>
+                <div class ="collapse buy-button" id="viewdetails3">
+                    <a class="btn btn-buy btn-xs" data-toggle="tooltip" data-placement="bottom" title="Sell INFOSYS right away." href="{{ url_for('mrbull_transact') }}">B</a>
+                    <a class="btn btn-default btn-xs" data-toggle="tooltip" data-placement="bottom" title="EOD Chart of INFOSYS" href="http://chartink.com/stocks/INFY.html" target="_blank"><i class="fa fa-area-chart" aria-hidden="true" style="color:#66C7FF"></i></a>
+                    <a class="btn btn-default btn-xs btn-remove" data-toggle="tooltip" data-placement="bottom" title="Remove this script" href="#"><i class="fa fa-times" aria-hidden="true" style="color:#999"></i></a>
+                </div>
+            </div>
+            <hr>
+            
+            
+            
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

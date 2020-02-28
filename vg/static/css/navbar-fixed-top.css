@@ -1,0 +1,182 @@
+/* Navbar styling */
+
+.navbar-fixed-top {
+  background-color: white;
+  opacity: 0.9;
+  border: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 75px;
+}
+
+/*sebi number*/
+.navbar-fixed-top .sebi {
+  text-align: center;
+}
+
+.navbar-fixed-top .sebi p{
+  margin: 0 0 -5px;
+}
+.navbar-fixed-top .sebi a {
+  text-decoration: none;
+}
+/*---------*/
+
+.navbar-right {
+  background-color: white;
+  opacity: 0.9;
+}
+
+.alert {
+  padding-left: 0px;
+  padding-right: 0px;
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: -51px;
+}
+
+/*meetup alerts*/
+.alert-warning {
+  margin-top: 52px;
+}
+
+/*------------------*/
+
+
+.navbar-default .navbar-nav>li>a user-entry {
+  padding: 13px 15px;
+}
+
+.dropdown .btn {
+  padding: 6px 12px;
+  text-transform: capitalize;
+}
+
+.dropdown .btn-custom {
+    color: #fff;
+	background-color: #66C7FF;
+}
+.dropdown .btn-custom:hover,
+.dropdown .btn-custom:focus {
+    opacity : 0.9;
+}
+
+.user-entry .btn-custom {
+    color: #fff;
+	  background-color: #66C7FF;
+}
+.user-entry .btn-custom:hover,
+.user-entry .btn-custom:focus {
+    opacity : 0.9;
+}
+
+
+.user-entry .bun-premium {
+  	background-color: #FBBC05;
+}
+
+.dropdown a {
+    text-decoration: none;
+    color: white;
+}
+
+.user-entry {
+  padding: 13px 2px;
+}
+
+
+
+/*------------------*/
+
+.navbar-brand {
+  font-size: 1.9em;
+  font-family: 'Lato',"Helvetica Neue", Helvetica, Arial,sans-serif;
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+
+.navbar-brand img {
+  margin-top: -13px;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+  background-color: white;
+  border-bottom: 3px solid #66C7FF;
+  color: black;
+  padding-bottom: 17px;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: black;
+  font-weight: 500;
+  font-size: 12px;
+  padding-top: 20px;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+  border-bottom: 3px solid #66C7FF;
+  padding-bottom: 17px;
+}
+
+
+/*ask a question fixed buttion*/
+
+
+#ask-a-q .q img{
+    width: 110px;
+    right: 104px;
+    bottom: 149px;
+    position: fixed;
+    z-index: 1000;
+}
+
+#ask-a-q .q-button {
+    z-index: 1000;
+    right: 90px;
+    bottom: 100px;
+    position: fixed;
+}
+
+/*------------------*/
+
+
+/*resposive part for smaller*/
+
+@media (max-width: 425px) {
+  .navbar-fixed-top {
+    height: 65px;
+}
+
+  .user-entry {
+    padding: 0px 2px;
+    margin-top: 12px; 
+  }
+
+  .navbar-brand img {
+  width: 66%;
+  margin-top: -8px;
+}
+  
+  .dropdown .btn {
+    font-size: 10px;
+  }
+  
+  #ask-a-q .q img {
+    right: 52px;
+    bottom: 108px;
+    width: 90px;
+  }
+  
+  #ask-a-q .q-button {
+    right: 40px;
+    bottom: 70px;
+  }
+  
+  #ask-a-q .btn-warning {
+    font-size: 10px;
+  }
+  
+  
+}
+
+/*------------------*/

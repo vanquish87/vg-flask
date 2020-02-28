@@ -1,0 +1,44 @@
+<!----this is for rendering a base template in flask using jinja templating-->
+{% extends "temp-n-macro/_user-footer_.html" %}
+
+    
+        {% block content %}
+        
+        <div class="container">
+            
+            <hr>
+            <hr>
+            
+            <div class="row">
+                <div class="col-md-offset-3 col-md-6">
+                    <h3>Website (Blog) Creation</h3>
+                    
+                    <form method="POST" action="{{ url_for('setup') }}" role="form">
+                        
+                        {% from "temp-n-macro/_formhelpers.html" import render_field %}
+                        
+                        <!----CSRF Tag for hack prevention-->
+                        {{ form.hidden_tag() }}
+                        
+                        <!--Tags coming from form.py file(model) in website folder-->
+                        <h4>Blog Info</h4>
+                        {{ render_field(form.blog_name, class="form-control", placeholder="Blog name to store in Database") }}
+                        
+                        <!--Tags coming from form.py(model file in user-->
+                        <h4>User as Admin details</h4>
+                        {{ render_field(form.fullname, class="form-control", placeholder="Your Fullname") }}
+                        {{ render_field(form.mobile_ind, class="form-control", placeholder="Use Indian Mobile only", maxlength="10") }}
+                        {{ render_field(form.otp_verify, class="form-control", placeholder="Enter 6 digit OTP ", maxlength="6") }}
+                        {{ render_field(form.password, class="form-control", placeholder="Use Alpha-numeric password") }}
+
+                        
+                        <button type="submit" class="btn btn-info">Create Blog</button>
+                        
+                    </form>
+                    
+                    
+                    
+                 </div>
+            </div>
+        </div>           
+        {% endblock %}

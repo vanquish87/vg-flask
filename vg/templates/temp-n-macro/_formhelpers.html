@@ -1,0 +1,18 @@
+{% macro render_field(field) %}
+
+    <div class="form-group">
+         {{ field.label }}
+         <!--This **key word arguments is loaded as differnt thing ie, placeholder, classes in html-->
+         {{ field(**kwargs)|safe }}
+         <!--this is for flashing error messages if there is any-->
+         {% if field.errors %}
+             <ul class="text-danger">
+                 {% for error in field.errors %}
+                 <li>
+                     {{ error }}
+                 </li>
+                 {% endfor %}
+             </ul>
+         {% endif %}
+    </div>
+{% endmacro %}

@@ -1,0 +1,81 @@
+<!----this is for rendering a base template in flask using jinja templating-->
+{% extends "temp-n-macro/_user-footer_.html" %}
+
+{% block meta_og_tags_title %}
+
+<title>Market Watch - Mr Bull</title>
+
+{% endblock %}
+
+
+{% block custom_css_files %}
+
+<!-- Custom styles for fixed top navbar  -->
+<!--<link href="css/navbar_fixed_top.css" rel="stylesheet">-->
+<link href="{{ url_for('static', filename='css/navbar-fixed-top.css') }}" rel="stylesheet">
+
+
+<!-- Custom footer for this template -->
+<!--<link href="css/footer.css" rel="stylesheet">-->
+<link href="{{ url_for('static', filename='css/user-footer.css') }}" rel="stylesheet">
+
+<link href="{{ url_for('static', filename='css/mrbull-buy-sell.css') }}" rel="stylesheet">
+
+{% endblock %}
+
+{% block content %}
+<div class="container" id="transact">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="panel panel-buy">
+              <div class="panel-heading">
+                <h3 class="panel-title">BUY TATASPONGE <sup>NSE</sup></h3>
+              </div>
+              <div class="panel-body">
+                <div class="form-group">
+                     <label for="qty">QTY</label>
+                     <input class="form-control" id="qty" name="qty" placeholder="5327" type="number" value="">
+                </div>
+                <div class="form-group">
+                     <label for="price">PRICE</label>
+                     <input class="form-control" id="price" name="price" data-toggle="tooltip" data-placement="bottom" title="CMP" type="number" value="76" disabled="disabled">
+                </div>
+              </div>
+              <div class="panel-footer">
+                  <a class="btn btn-default" href="{{ url_for('mrbull_market') }}">Cancel</a>
+                  <a class="btn btn-buy" href="#">BUY</a>
+              </div>
+            </div>
+            
+            
+            
+            <br>
+            <div class="panel panel-sell">
+              <div class="panel-heading">
+                <h3 class="panel-title">BUY TATASPONGE <sup>NSE</sup></h3>
+              </div>
+              <div class="panel-body">
+                <div class="form-group">
+                     <label for="qty">QTY</label>
+                     <input class="form-control" id="qty" name="qty" placeholder="5327" type="number" value="">
+                </div>
+                <div class="form-group">
+                     <label for="price">PRICE</label>
+                     <input class="form-control" id="price" name="price" data-toggle="tooltip" data-placement="bottom" title="CMP" type="number" value="76" disabled="disabled">
+                </div>
+              </div>
+              <div class="panel-footer">
+                  <a class="btn btn-default" href="{{ url_for('mrbull_market') }}">Cancel</a>
+                  <a class="btn btn-sell" href="#">BUY</a>
+              </div>
+            </div>
+            
+            
+            
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

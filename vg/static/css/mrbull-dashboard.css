@@ -1,0 +1,124 @@
+/** Globals */
+
+body {
+  font-family: 'Roboto',"Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #555;
+  font-weight: 300;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  margin-top: 0;
+  font-family: 'Roboto',"Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  color: #333;
+}
+/*dashboard styling*/
+
+#dash {
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+/*rank pane*/
+#rank {
+    margin-top: 40px;
+    padding: 15px 10px;
+    text-align: center;
+}
+
+#rank h4 {
+    margin-bottom: 20px;
+}
+
+
+#rank p {
+    margin-top: 20px;
+}
+
+#rank .change {
+    margin: 20px 0px;
+}
+
+#rank a {
+    text-decoration: none;
+    color: #555;
+}
+
+/*fund section*/
+#rank .equity-debt {
+    margin-top: 120px; 
+}
+
+#rank .ranky {
+    margin-top: 220px !important;
+}
+.equity-debt p {
+    margin-top: -15px !important;
+}
+
+/*holding section*/
+#rank .holding {
+    text-align: left;
+    margin: 15px 0px;
+
+}
+#rank .inline1 {
+    float: right;
+}
+
+#rank .holding h4 {
+    margin-bottom: 0px;
+}
+
+#rank .holding h4 .inline2 {
+    font-size: 10px;
+}
+
+#rank .holding p {
+    font-size: 10px;
+    margin: 5px 0px;
+}
+#rank .holding .sell-button {
+    text-align: center;
+}
+#rank .holding .sell-button .btn-xs{
+    padding: 1px 10px;
+    margin: 0px 5px;
+}
+#rank .holding .sell-button .btn-red {
+    color: #fff;
+    background-color: #ff1a1a;
+}
+#rank .holding .sell-button .btn-red:hover,
+#rank .holding .sell-button .btn-red:focus {
+    opacity : 0.8;
+}
+
+#rank hr {
+    clear: both;
+}
+
+@media (max-width: 991px) {
+    #rank .equity-debt {
+        margin-top: 40px; 
+    }
+    #rank .ranky {
+        margin-top: 140px !important;
+    }
+}
+@media (max-width: 425px) {
+    .equity-debt p {
+        font-size: 10px;
+    }
+}
+@media (min-width: 302px) {
+    #rank .col-md-6 {
+        width: 50%;
+        float: left;
+    }
+}

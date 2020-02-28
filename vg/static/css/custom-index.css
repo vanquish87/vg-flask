@@ -1,0 +1,642 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+	padding-top: 27px;
+	font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
+	color: #555;
+	font-weight: 300;
+}
+
+/*sebi issue only on index page solution*/
+/*sebi container not getting considered inside navbar on index page n strangely on premium pick post*/
+.alert-danger {
+    margin-top: 53px;
+}
+/*-----*/
+
+
+
+/* Main Jumbotron */
+
+.jumbotron {
+	background-image: url("../images/pages/vg-home-jas.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	-o-background-size: cover;
+	-moz-background-size: cover;
+	-webkit-background-size: cover;
+	background-position-x : center;
+	background-position-y : center;
+ 	padding-top: 350px;	
+ 	/*margin-top: 33px;*/
+ 	margin-bottom: 0px;
+}
+
+.container-jumbo {
+	text-align: center;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+.jumbotron h1 {
+	font-size: 74px;
+	margin-top: 0px;
+	font-weight: 200;
+}
+
+.jumbotron .btn {
+    font-size: 24px;
+}
+
+/* Perfomance chart */
+
+
+#perfo-chart {
+	padding-top: 200px;
+	padding-bottom: 350px;
+}
+.chartist {
+    padding-top: 50px;
+    padding-bottom: 30px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.chartist h1 {
+	margin-bottom: 30px;
+	text-transform: capitalize;
+	font-size: 40px;
+	font-weight: 400;
+}
+
+#chartContainer {
+	margin: 1px auto;
+}
+
+.col-md-4 {
+	text-align: left;
+	margin-top: 60px;
+}
+
+.col-md-4 h1{
+	font-size: 30px;
+}
+
+.col-md-4 h2 {
+	font-size: 20px;
+	font-weight: 400;
+}
+
+/*mailid taker */
+
+#subscribe {
+	margin-top: 51px;
+}
+
+/*because row in inside jumbotron*/
+#subscribe .row {
+	margin-right: 0px;
+    margin-left: 0px;
+}
+
+.container-mailid {
+	background-color: #66C7FF;
+	/*height: 560px;*/
+	text-align: center;
+	color: white;
+	padding-top: 100px;
+	font-family: 'Roboto', sans-serif;
+	padding-bottom: 100px;
+}
+
+.container-mailid h1 {
+	text-transform: capitalize;
+	font-size: 60px;
+	margin-top: 50px;
+	margin-bottom: 30px;
+	font-weight: 300;
+}
+
+
+.container-mailid .btn {
+	font-size: 20px;
+    margin-top: 12px;
+}
+
+#subscribe .btn-custom {
+    color: #fff;
+  	background-color: #FBBC05;
+  
+}
+#subscribe .btn-custom:hover,
+#subscribe .btn-custom:focus {
+    opacity : 0.9;
+}
+
+.container-mailid h2 {
+	font-size: 22px;
+	padding: 10px 75px;
+	font-weight: 300;
+}
+
+/*vg courses section*/
+#vg-courses {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    background-color: #66C7FF;
+    text-align: center;
+}
+
+#vg-courses .row {
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 120px;
+}
+
+#vg-courses a {
+	color: white;
+}
+
+#vg-courses a:hover {
+	color: white;
+	text-decoration: none;
+	opacity: 0.7;
+}
+
+#vg-courses h1{
+	font-size: 43px;
+    font-weight: 300;
+    text-transform: capitalize;
+}
+
+
+
+
+
+/*review section*/
+#review {
+    padding: 150px 0px;
+    color: #555;
+    
+    background-image: url("../images/pages/review-bg.png");
+}
+
+#review h1 {
+    text-align: center;
+}
+
+#review .star-ratings {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+#review .user-info {
+    text-transform: capitalize;
+    margin-bottom: 0px;
+}
+
+#review .review-body {
+    margin-top: 20px;
+}
+
+#review .more-button {
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+
+/*About Section starts*/
+
+#about img {
+	border-radius: 127px;
+}
+
+#about {
+	padding-top: 200px;
+	padding-bottom: 200px;
+	font-family: 'Roboto', sans-serif;
+	color: white;
+	background-color: #66C7FF;
+}
+
+#about .col-md-10 {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#about .col-sm-8 {
+	margin-top: 62px;
+}
+
+#about h1{
+	font-size: 43px;
+    font-weight: 300;
+}
+
+#about h2{
+	font-size: 26px;
+	font-weight: 200;
+}
+
+#about h2 a {
+	color: white;
+}
+
+#about p{
+    font-size: 17px;
+    margin-top: 27px;
+    font-weight: 300;
+}
+
+#about p a {
+	color: white;
+}
+
+#about p>a:hover {
+	text-decoration: none;
+	color: #E91E63;
+}
+
+#about .about-button {
+	text-align: center;
+	margin-top: 4%;
+}
+
+#about .btn-custom {
+    color: #fff;
+  	background-color: #FBBC05;
+  
+}
+#about .btn-custom:hover,
+#about .btn-custom:focus {
+    opacity : 0.9;
+}
+
+/*Contact Section*/
+
+#contact {
+	font-family: 'Roboto', sans-serif;
+	padding-top: 150px;
+	padding-bottom: 100px;
+}
+
+#contact h1  {
+	text-align: center;
+	font-size: 43px;
+    font-weight: 300;
+    text-transform: capitalize;
+}
+
+#contact .home-contact {
+	margin: 100px 6%;
+}
+
+#contact .address {
+	margin-top: 120px;
+}
+
+#contact p {
+	text-align: left;
+    font-size: 22px;
+    line-height: 10px;
+    color: #555;
+}
+
+#contact .form-wrap p {
+	text-align: center;
+    text-transform: capitalize;
+}
+
+#contact .form-control {
+    height: auto;
+    font-size: 14px;
+}
+
+#contact .login-here{
+	text-align: center;
+}
+
+#contact .btn-custom {
+    color: #fff;
+	background-color: #66C7FF;
+}
+#contact .btn-custom:hover,
+#contact .btn-custom:focus {
+    opacity : 0.9;
+}
+
+
+/*------*/
+
+
+
+/* ------Responsive Bootstrap Part-------- */
+@media (max-width: 1199px) {
+	.jumbotron {
+	    background-size: 100%;
+	    /*margin-top: 32px;*/
+	    padding-top: 275px;
+	}
+
+	.jumbotron h1{
+		font-size: 56px;
+	}
+
+	.jumbotron p {
+    	font-size: 19px;
+    }
+    .jumbotron .btn {
+    	font-size: 19px;
+    }
+    .container-mailid h1 {
+		font-size: 50px;
+	}
+	.form-control {
+		font-size: 30px;
+	}
+	.container-mailid h2 {
+    	font-size: 20px;
+    }
+    #stories h1	{
+	font-size: 45px;
+	}
+	.carousel-inner h2 {
+		font-size: 22px;
+	}
+	#contact p {
+    font-size: 20px;
+	}
+}
+
+@media (max-width: 991px) {
+	.jumbotron {
+	    background-size: 100%;
+	    /*margin-top: 32px;*/
+	    padding-top: 215px;
+	}
+
+	.jumbotron h1{
+		font-size: 42px;
+	}
+
+	.jumbotron p {
+    	font-size: 16px;
+    }
+    .jumbotron .btn {
+    	font-size: 17px;
+    }
+    .chartist{
+    	padding-top: 30px;
+    }
+    .chartist h1 {
+    	font-size: 34px;
+	}
+	.col-md-4 {
+		text-align: center;
+		margin-top: 40px;
+	}
+	.col-md-4 h2 {
+		font-size: 17px;
+	}
+	
+	#subscribe .blog-main {
+		text-align: center;
+	}
+	
+    .container-mailid h1 {
+		font-size: 37px;
+	}
+	.form-control {
+		font-size: 28px;
+		height: 55px;
+	}
+	
+	.container-mailid h2 {
+	    font-size: 18px;
+	    letter-spacing: 1px;
+	    line-height: 120%;
+	}
+	#vg-courses .advanced {
+		padding-top: 80px;
+	}
+	
+	
+    #stories h1	{
+	font-size: 38px;
+	}
+	.carousel-inner h2 {
+		font-size: 20px;
+	}
+
+	#about .col-sm-8 {
+		padding-left: 10%
+	}
+	
+	#contact .address {
+	margin-top: 0px;
+	}
+	#contact .feedback {
+	margin-top: 80px;
+	}
+
+}
+
+
+@media (max-width: 767px) {
+	.jumbotron {
+	    background-size: 166%;
+        /*margin-top: 33px;*/
+	    height: 480px;
+	    background-position-x: -404px;
+	    padding-top: 284px;
+	    padding-right: 126px;
+	}
+
+	.container-jumbo {
+		background-color: rgba(0,0,0,0.2);			
+	}
+
+	.jumbotron h1{
+		font-size: 23px;
+	}
+
+	.jumbotron p {
+    	font-size: 11px;
+    	margin-bottom: 6px;
+    }
+    .jumbotron .btn {
+    	font-size: 11px;
+	    padding: 5px 6px;
+    }
+    .chartist{
+    	padding-top: 22px;
+    }
+    .chartist h1 {
+    	font-size: 18px;
+	}
+	.col-md-4 {
+		margin-top: 30px;
+	}
+	.col-md-4 h2 {
+		font-size: 13px;
+	}
+	
+	#subscribe .lifestyle{
+		margin-bottom: 50px;
+	}
+	
+	.container-mailid {
+		/*height: 470px;*/
+		padding-bottom: 85px;
+		padding-top: 70px;
+	}
+   .container-mailid h1 {
+		font-size: 45px;
+		margin-top: 30px;
+	}
+	form {
+		margin-top: 40px;
+		margin-bottom: 20px;
+	}
+	.form-control {
+		font-size: 17px;
+		height: 40px;
+	}
+
+	.container-mailid h2 {
+	    font-size: 18px;
+	    letter-spacing: 1px;
+	    line-height: 120%;
+	    padding: 10px 20px;
+	}
+	#stories {
+		padding-top: 30px;
+	}
+    #stories h1	{
+	font-size: 24px;
+	}
+	#carousel-generic {
+	width: 80%;
+    margin-top: 50px;
+	}
+	.carousel-inner h2 {
+		font-size: 16px;
+	}
+
+	#about .col-sm-4 {
+		text-align: center;
+	}
+
+	#about .col-sm-8 {
+		padding-left: 15px;
+		text-align: center;
+	}
+
+}
+
+
+@media (max-width: 602px) {
+	
+	.container-mailid h1 {
+	    font-size: 50px;
+	}
+	.container-mailid .btn {
+    	font-size: 16px;
+	}
+	.jumbotron {
+	    height: 482px;
+	    background-position-x: -443px;
+	    padding-top: 329px;
+	}
+
+	.jumbotron h1 {
+	    font-size: 30px;
+	}
+	#about h1 {
+		font-size: 36px;
+	}
+
+	#about h2 {
+		font-size: 22px;
+	}
+
+	
+	#contact p {
+		font-size: 17px;
+	}
+	.home-contact {
+    margin: 80px 10%;
+	}
+
+}
+
+@media (max-width: 415px) {
+	.container-mailid h1 {
+    	font-size: 40px;
+	}
+	
+	.container-mailid h2 {
+    	font-size: 15px;
+	}
+	
+	.jumbotron {
+	    height: 328px;
+	    background-position-x: -313px;
+	    padding-top: 206px;
+	    background-size: 179%;
+	}
+
+	.jumbotron h1 {
+	    font-size: 25px;
+	}
+
+	.home-contact {
+    	margin: 80px 5%;
+	}
+	
+	#vg-courses h1{
+		font-size: 32px;
+	}
+
+	#contact h1 {
+		font-size: 32px;
+	}
+
+	#contact p {
+    font-size: 16px;
+	}
+	
+	#contact .home-contact {
+    	margin: 50px 4%;
+	}
+	#contact .form-control {
+    font-size: 10px;
+	}
+}
+
+@media (max-width: 385px) {
+	
+	.container-mailid .btn {
+    	font-size: 15px;
+    	margin-top: 0px;
+	}
+	
+	.jumbotron {
+	    height: 302px;
+	    background-position-x: -272px;
+	    padding-top: 172px;
+	}
+	#contact p {
+    font-size: 14px;
+	}
+}
+
+@media (max-width: 329px) {
+	.jumbotron {
+	    height: 258px;
+	    background-position-x: -230px;
+	    padding-top: 128px;
+
+	}
+}

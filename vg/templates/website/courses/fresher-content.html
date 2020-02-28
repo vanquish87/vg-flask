@@ -1,0 +1,68 @@
+<!----this is for rendering a base template in flask using jinja templating-->
+{% extends "temp-n-macro/_user-footer_.html" %}
+
+
+{% block meta_og_tags_title %}
+
+<link rel="icon" href="{{ url_for('static', filename='images/pages/vg-favicon.png') }}">
+
+<title>Value Pick : Secret Jugaad To Identify Multibaggers</title>
+
+{% endblock %}
+    
+    
+{% block custom_css_files %}
+
+<!-- Custom styles for fixed top navbar  -->
+<!--<link href="css/navbar_fixed_top.css" rel="stylesheet">-->
+<link href="{{ url_for('static', filename='css/navbar-fixed-top.css') }}" rel="stylesheet">
+
+<!-- Custom footer for this template -->
+<!--<link href="css/footer.css" rel="stylesheet">-->
+<link href="{{ url_for('static', filename='css/user-footer.css') }}" rel="stylesheet">
+
+<!--keep it below for footer fixed position styling for this tempalate-->
+<link href="{{ url_for('static', filename='css/course-content.css') }}" rel="stylesheet">
+
+{% endblock %}
+    
+    
+{% block content %}
+
+<div class="container course">
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 course-main">
+            
+            <div id="what-learn">
+              <table class="table table-striped table-bordered table-hover table-responsive table-tips">
+                  
+                <tr>
+                  <th class="summary-heading" colspan="2">course content</th>
+                </tr>
+                
+                {% for lecture in lectures %}
+                
+                <tr>
+                  <td>
+                      <a href="{{ url_for('classroom', slug=lecture.slug) }}">
+                          <li>Lecture No. {{ lecture.lecture_no }} : {{ lecture.title }}
+                          <br>
+                          <div class="play">
+                              <i class="fa fa-play-circle-o" style="color:#66C7FF"></i> {{ lecture.duration }}
+                          </div>
+                          </li>
+                      </a>
+                  </td>
+                </tr>
+                {% endfor %}
+
+              </table>
+            </div>
+            
+
+        </div>
+    </div>
+</div>
+            
+            
+{% endblock %}

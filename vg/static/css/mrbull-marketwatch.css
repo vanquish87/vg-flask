@@ -1,0 +1,110 @@
+/** Globals */
+
+body {
+  font-family: 'Roboto',"Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #555;
+  font-weight: 300;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  margin-top: 0;
+  font-family: 'Roboto',"Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  color: #333;
+}
+
+/*watch styling*/
+
+#watch {
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+#watch .navbar-form {
+    text-align: center;
+    padding: 0px;
+    padding-bottom: 25px;
+}
+#watch .navbar-form .form-group {
+    width: 100%;
+}
+#watch .navbar-form .form-control {
+    width: 85%;
+}
+
+/*live market section*/
+#watch .live-market {
+    text-align: left;
+    margin: 15px 0px;
+    padding: 0px 0px 0px;
+
+}
+
+#watch .live-market .script {
+    float: left;
+    width: 50%;
+}
+#watch .live-market .gain,
+#watch .live-market .LTP{
+    float: left;
+    width: 25%;
+}
+#watch .live-market .gain .inline1 {
+    float: right;
+    margin-top: -1px;
+    padding-right: 10px;
+}
+#watch .live-market .gain .inline1 .fa {
+    color:blue;
+    font-size:16px;
+}
+#watch .live-market .gain p {
+    font-size: 11px;
+    margin-top: 4px;
+}
+#watch .live-market .LTP h4 {
+    float: right;
+}
+
+#watch a {
+    text-decoration: none;
+    color: #555;
+}
+
+#watch .live-market .buy-button {
+    text-align: center;
+}
+#watch .live-market .buy-button .btn-xs{
+    padding: 1px 10px;
+    margin: 0px 5px;
+}
+#watch .live-market .buy-button .btn-buy {
+    color: #fff;
+    background-color: #0000e6;
+}
+#watch .live-market .buy-button .btn-buy:hover,
+#watch .live-market .buy-button .btn-buy:focus {
+    opacity : 0.8;
+}
+
+#watch .btn-remove {
+    float: right;
+}
+
+#watch hr {
+    clear: both;
+}
+
+
+@media (min-width: 302px) {
+    .navbar-form .form-control {
+        display: inline-block;
+        width: auto;
+        vertical-align: middle;
+    }
+}

@@ -1,0 +1,562 @@
+/** Globals */
+
+body {
+  font-family: 'Roboto',"Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #555;
+  font-weight: 300;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  margin-top: 0;
+  font-family: 'Roboto', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  color: #333;
+}
+
+/*
+ * Main column and sidebar layout
+ */
+
+.blog-main {
+  font-size: 20px;
+  line-height: 1.8;
+}
+
+.blog-main h2 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.blog-main h3 {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* Sitewide Styling */
+
+.center {
+  text-align: center;
+}
+
+.multi {
+  margin-top: 110px;
+}
+
+/*alert for unlocks of premium picks */
+.unlocked {
+  margin-bottom: 20px;
+}
+
+/* * Blog posts */
+
+.blog-post {
+  margin-bottom: 40px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+}
+.blog-post-title {
+  margin-bottom: 5px;
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.blog-post-title a {
+  color: #333;
+}
+
+.blog-post-title a:hover {
+  color: #66C7FF;
+  text-decoration: none;
+}
+
+.blog-post-meta {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: #888;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.blog-post-meta .btn-info {
+  padding: 3px 5px;
+  margin-right: 5px;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.blog-post img {
+  max-width: 100%;
+  margin-bottom: 30px;
+}
+
+.share-buttons h2{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 30px;
+}
+
+.share-buttons a{
+  color: #66C7FF;
+}
+
+.share-buttons a:hover {
+  opacity:0.7;
+  text-decoration: none;
+}
+
+
+.title-h2 {
+  text-align: center;
+  padding: 20px 0px;
+}
+
+
+/*intro section */
+
+#intro {
+    margin-top: 70px;
+    margin-bottom: 20px;
+}
+
+
+/*----------*/
+
+/*animated-valupicks block*/
+
+#animated-valuepick tbody>tr>td:hover {
+  background-color: white; 
+}
+
+#animated-valuepick a{
+  color: white;
+  text-decoration: none;
+}
+
+#animated-valuepick .btn-success {
+  padding: 20px 50px;
+  font-size: 20px;
+}
+
+/*custom image in between post*/
+.post-img {
+  text-align : center;
+  margin-top : 50px;
+  margin-bottom : 40px;
+}
+
+
+/*keep reading button at endpost*/
+#keep-reading {
+  text-align: center;
+  padding-top: 20px;
+}
+
+#keep-reading a{
+  color: white;
+  text-decoration: none;
+}
+
+#keep-reading .btn-default {
+  padding: 20px 50px;
+  font-size: 20px;
+}
+
+
+
+/**/
+
+.table-tips {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.multi .summary-heading {
+  text-align: center;
+  padding: 14px;
+  font-size: 20px;
+}
+
+/*locked table content styling*/
+
+.multi .table-row-locked {
+    text-align: center;
+    padding: 57px;
+}
+
+#locked-content tbody>tr>td:hover {
+  background-color: white; 
+}
+
+#locked-content a{
+  color: white;
+  text-decoration: none;
+}
+
+#locked-content .btn-danger {
+  padding: 20px 50px;
+  font-size: 20px;
+}
+
+.btn-custom {
+  color: #fff;
+  background-color: #66C7FF;
+}
+
+.btn-custom:hover,
+.btn-custom:focus {
+    opacity : 0.9;
+    color: #fff;
+}
+
+
+/**/
+
+
+
+.table-hover>tbody>tr:hover {
+    background-color: #66C7FF;
+}
+
+#website {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  font-size: 25px;
+}
+
+#website :hover {
+  background-color: #66C7FF;
+}
+
+blockquote {
+  border-left: 5px solid #66C7FF;
+  margin: 20px 0 30px;
+}
+
+blockquote h4 {
+  font-size: 20px;
+  line-height: 2;
+}
+
+
+
+
+#value tbody>tr:hover {
+  background-color: #FBBC05; 
+}
+
+#annual-report {
+  text-align: center;
+}
+
+
+#y-taxfree {
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+#y-taxfree h3 {
+  text-align: center;
+}
+
+#y-taxfree :hover {
+  background-color: #66C7FF;
+}
+
+/*meetup link*/
+.user-entry a:hover{
+  text-decoration: none;
+}
+
+
+/*Signature Under Post*/
+
+#signature {
+  padding-top: 90px;
+}
+
+#signature p{
+  text-transform: capitalize;
+  font-size: 18px;
+
+}
+
+#signature a {
+ color: #555; 
+}
+
+#signature a:hover {
+  text-decoration: none;
+  opacity: 0.7;
+}
+
+#signature img {
+	border-radius: 127px;
+	max-width: 58%;
+}
+
+/*about-me is inside signature*/
+
+.query-box {
+  border: 1px solid #e5e5e5;
+  height: 180px;
+}
+
+
+#about-me {
+  padding-bottom: 80px;
+}
+#about-me p {
+  font-size: 17px;
+}
+
+#about-me .about-button {
+  text-align: center;
+}
+
+
+#legends {
+  margin-top: 100px;
+  margin-bottom: 30px;
+}
+
+#legends p {
+  font-size: 15px;
+}
+
+#disclaimer {
+  margin-top: 50px;
+  margin-bottom :70px;
+  font-size: 14px;
+}
+
+
+
+/*not using this sidebar in post anymore but rakha hai just in case koi future reference ke liye*/
+/* Sidebar modules for boxing content */
+
+.blog-sidebar {
+  margin-left: 30px;
+  width: 30%
+}
+
+
+#register-box {
+  padding: 15px 20px;
+  font-size: 15px;
+  margin-top: 123px;
+}
+
+#register-box h4 {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 22px;
+  color: #666;
+  text-align: center;
+}
+
+#register-box p {
+  line-height: 1.5em;
+  text-rendering: optimizeLegibility;
+}
+
+#register-box .register-button{
+  text-align: center;
+}
+
+#register-box .btn-success {
+  text-transform: uppercase;
+  margin-top: 21px;
+  margin-bottom: 10px;
+  padding: 14px 40px;
+  font-size: 18px;
+}
+
+.sidebar-module {
+  padding: 15px;
+  margin: 0 -15px 15px;
+}
+
+.sidebar-module-inset {
+  padding: 15px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  border: 5px dashed #66C7FF;
+}
+
+.sidebar-module-inset p:last-child,
+.sidebar-module-inset ul:last-child,
+.sidebar-module-inset ol:last-child {
+  margin-bottom: 0;
+}
+
+/*performance chart*/
+
+#perfo-chart {
+  text-align: center;
+  margin: 40px 0 30px;
+}
+
+#perfo-chart h2 {
+  font-weight: 300;
+}
+
+#perfo-chart a{
+  color: #888;
+}
+
+#perfo-chart a:hover {
+  text-decoration: none;
+  color: #66C7FF;
+}
+
+#perfo-chart hr {
+  margin: 1px 33%;
+}
+
+
+
+
+#tips {
+  text-align: center;
+  margin-top: 15%
+}
+
+#tips h2 {
+  font-size: 20px;
+}
+
+.fa-stack {
+  margin-top: 8%;
+}
+
+
+.ek a{
+  color: #4285F4;
+}
+
+.ek a:hover {
+  text-decoration: none;
+  opacity: 0.7;
+}
+
+.do a {
+  color: #EA4335;
+}
+
+.do a:hover {
+  text-decoration: none;
+  opacity: 0.7;
+}
+
+.teen a {
+  color: #FBBC05;
+}
+
+.teen a:hover {
+  text-decoration: none;
+  opacity: 0.7;
+}
+
+.chaar a {
+  color: #34A853; 
+}
+
+.chaar a:hover {
+  text-decoration: none;
+  opacity: 0.7;
+}
+
+
+
+
+/* ------Responsive Bootstrap Part-------- */
+@media (max-width: 991px) {
+  .blog-sidebar {
+    margin-left: 25%;
+    width: 50%
+  }
+
+  #register-box {
+    margin-top: 0px;
+  }
+
+  .blog-main {
+    width: 100%;
+  }
+  
+  #signature {
+    text-align: center;
+  }
+  
+  #signature img {
+    margin-top: 35px;
+  }
+
+}
+
+@media (max-width: 605px) {
+  .blog-title{
+    font-size: 55px;
+  }
+
+  .blog-sidebar {
+    margin-left: 9%;
+    width: 80%;
+  }
+  
+}
+
+@media (max-width: 419px) {
+  .blog-title{
+    font-size: 43px;
+  }
+  
+  .blog-main {
+    font-size: 18px;
+  }
+  
+  .blog-post-title {
+    font-size: 23px;
+  }
+  .blog-post-meta {
+  font-size: 11px;
+  }
+  
+  #website .panel-body {
+    font-size: 18px;
+  }
+  
+  .multi .table-row-locked {
+    padding: 35px;
+  }
+  
+  #animated-valuepick .btn-success {
+    padding: 18px 30px;
+    font-size: 15px;
+  }
+  
+  #animated-valuepick .btn-success {
+    padding: 18px 30px;
+    font-size: 15px;
+  }
+  
+  #keep-reading .btn-default {
+    padding: 18px 30px;
+    font-size: 15px;
+  }
+  
+  #locked-content .btn-danger {
+    padding: 18px 30px;
+    font-size: 20px;
+  }
+  
+}

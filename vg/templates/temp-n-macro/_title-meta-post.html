@@ -1,0 +1,19 @@
+<!--this is starting of post in container-->
+<div class="container multi">
+
+  <div class="row">
+    
+    <div class="col-md-8 col-md-offset-2 blog-main">
+      <div class="blog-post">
+        
+        <h1 class="blog-post-title">
+          <a href="#">{{ (post.title) | safe }}
+          </a>
+        </h1>
+
+        <p class="blog-post-meta">
+          <a type="button" class="btn btn-info"> {{ post.read_time }} Minute Read
+          </a>{{ post.publish_date_utc.strftime('%b %d, %Y') }} by 
+          <a href="{{ url_for('valueguyz_home') }}#about" target="_blank">{{ post.user.fullname }}
+          </a>
+        </p>

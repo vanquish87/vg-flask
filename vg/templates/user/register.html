@@ -1,0 +1,139 @@
+<!----this is for rendering a base template in flask using jinja templating-->
+{% extends "temp-n-macro/_user-footer_.html" %}
+
+
+{% block meta_og_tags_title %}
+
+<link rel="icon" href="{{ url_for('static', filename='images/pages/vg-favicon.png') }}">
+
+<title>Registration page - ValueGuyz</title>
+
+{% endblock %}
+
+
+{% block custom_css_files %}
+
+<!-- Custom styles for fixed top navbar  -->
+<!--<link href="css/navbar_fixed_top.css" rel="stylesheet">-->
+<link href="{{ url_for('static', filename='css/navbar-fixed-top.css') }}" rel="stylesheet">
+
+<!-- Custom user-login.css for this template -->
+<link href="{{ url_for('static', filename='css/user-register.css') }}" rel="stylesheet">
+
+<!-- Custom footer for this template -->
+<!--<link href="css/footer.css" rel="stylesheet">-->
+<link href="{{ url_for('static', filename='css/user-footer.css') }}" rel="stylesheet">
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<section id="login">
+<div class="container">
+	<div class="row">
+	    <div class="col-md-6 col-md-offset-3">
+    	    <div class="form-wrap">
+    	    {% if action == "update-mobile" %}
+    	    <br>
+    	    <br>
+    	    <p style="text-transform:capitalize">{{ user.fullname }} ji,</p>
+    	    <p>I am updating valueguyz to serve you better. In order to improve regular on-time communication via SMS please update your mobile no.</p>
+    	    <p>In case of any problem contact at <a href"#">jasmeet@valueuguy.com</a>.</p>
+    	    <br>
+    	    <p>Jasmeet Singh</p>
+    	    <p>Founder & Investor</p>
+    	    <br>
+    	    <h1>update mobile</h1>
+    	    
+    	    {% elif action == "enter_otp" %}
+            <h1>Verify Mobile</h1>
+            
+    	    {% else %}
+            <h1>new registration</h1>
+    	    {% endif %}
+            
+                <!--if there is error in any field it will be displayed here-->
+                {% if error %}
+                    <div class="error text-danger">{{ error }}</div>
+                {% endif %}
+                
+                {% if action == "temp" %}
+                <form method="POST" action="{{ url_for('register') }}" role="form">
+                    {% from "temp-n-macro/_formhelpers.html" import render_field %}
+                    <!----CSRF Tag for hack prevention-->
+                    {{ form.hidden_tag() }}
+                     <!--Tags coming from form.py file(model) in user-->
+                    {{ render_field(form.fullname, class="form-control", placeholder="Dost what's your Name?") }}
+                    {{ render_field(form.mobile_ind, class="form-control", placeholder="Use Indian Mobile only", maxlength="10") }}
+                    <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Continue">
+                </form>
+                
+                {% elif action == "register-full" %}
+                <form method="POST" action="{{ url_for('register_full') }}" role="form">
+                    {% from "temp-n-macro/_formhelpers.html" import render_field %}
+                    <!----CSRF Tag for hack prevention-->
+                    {{ form.hidden_tag() }}
+                     <!--Tags coming from form.py file(model) in user-->
+                     <fieldset disabled>
+                    {{ render_field(form.fullname, class="form-control", value=session.get('fullname')) }}
+                    {{ render_field(form.mobile_ind, class="form-control", value=session.get('mobile_ind_register')) }}
+                    </fieldset>
+                    
+                    {{ render_field(form.otp_verify, class="form-control", placeholder="Enter 6 digit OTP ", maxlength="6") }}
+                    {{ render_field(form.password, class="form-control", placeholder="Use Alpha-numeric password") }}
+                    <div class="checkbox">
+                        <span class="character-checkbox" onclick="showPassword()"></span>
+                        <span class="label">Show password</span>
+                        <span class="label pull-right"><a href="{{ url_for('resend_OTP') }}">Resend OTP</a></span>
+                    </div>
+                    <!--recaptcha js from google-->
+                    <!--<script src='https://www.google.com/recaptcha/api.js'></script>-->
+                    <!--form.recaptcha to be inserted here when Live-->
+                    <!--{{ recaptcha }}-->
+                    <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Register">
+                </form>
+                
+                {% elif action == "update-mobile" %}
+                <form method="POST" action="{{ url_for('update_mobile') }}" role="form">
+                    {% from "temp-n-macro/_formhelpers.html" import render_field %}
+                    <!----CSRF Tag for hack prevention-->
+                    {{ form.hidden_tag() }}
+                    {{ render_field(form.mobile_ind, class="form-control", placeholder="Use Indian Mobile only", maxlength="10") }}
+                    <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Continue">
+                </form>
+                
+                {% elif action == "enter_otp" %}
+        		<form method="POST" action="{{ url_for('update_mobile_verify') }}" role="form">
+                    {% from "temp-n-macro/_formhelpers.html" import render_field %}
+                    <!----CSRF Tag for hack prevention-->
+                    {{ form.hidden_tag() }}
+                    <fieldset disabled>
+                    {{ render_field(form.mobile_ind, class="form-control", value= session.get('mobile_ind_update')) }}
+                    </fieldset>
+                    {{ render_field(form.otp_verify, class="form-control", placeholder="Enter 6 digit OTP ", maxlength="6") }}
+                    <div class="checkbox">
+                        <span class="label pull-right"><a href="{{ url_for('resend_OTP') }}">Resend OTP</a></span>
+                    </div>
+                    <br>
+    				<input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Verify">
+        		</form>
+        		
+                
+                {% endif %}
+                
+              <hr>
+              
+    	    </div>
+		</div> <!--col-md-6 col-md-offset-3 -->
+	</div> <!-- /.row -->
+</div> <!-- /.container -->
+</section>
+
+
+{% endblock %}
+
+        
+        

@@ -1,0 +1,72 @@
+<!----this is for rendering a base template in flask using jinja templating-->
+{% extends "temp-n-macro/_user-footer_.html" %}
+
+
+{% block meta_og_tags_title %}
+
+<title>{{ session.fullname }} - My Dashboard</title>
+
+{% endblock %}
+    
+    
+{% block custom_css_files %}
+
+<!-- Custom styles for fixed top navbar  -->
+<!--<link href="css/navbar_fixed_top.css" rel="stylesheet">-->
+<link href="{{ url_for('static', filename='css/navbar-fixed-top.css') }}" rel="stylesheet">
+
+
+<link href="{{ url_for('static', filename='css/custom-my-dashboard.css') }}" rel="stylesheet">
+
+<!-- Custom footer for this template -->
+<!--<link href="css/footer.css" rel="stylesheet">-->
+<link href="{{ url_for('static', filename='css/user-footer.css') }}" rel="stylesheet">
+
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="container dash">
+
+  <div class="container" id="learn">
+                      
+    <div class="row">
+        <div class="col-md-6">
+            
+              <h3 class="head text-center">secret jugaad
+              </h3>
+              
+              <p class="narrow text-center">
+                  learn to identify multibagger stocks by secret jugaad in NSE & BSE
+              </p>
+              
+              <p class="text-center">
+                  
+                <a href="{{ url_for('intro_fresher') }}" class="btn btn-custom"> start learning now </a>
+              </p>
+        </div>
+            
+        <div class="col-md-6">
+        
+          <h3 class="head text-center">secret jugaad (advanced)
+          </h3>
+          
+          <p class="narrow text-center">
+              learn to identify multibagger stocks by secret jugaad in NSE & BSE - Complete Course
+          </p>
+          
+          <p class="text-center">
+              
+            <a href="{{ url_for('advanced_value') }}" class="btn btn-custom btn-premium"> Start Learning Now</a>
+          </p>
+        </div>
+    </div>
+    
+  </div>   
+        
+</div>
+
+
+{% endblock %}

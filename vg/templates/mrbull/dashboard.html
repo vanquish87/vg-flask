@@ -1,0 +1,253 @@
+<!----this is for rendering a base template in flask using jinja templating-->
+{% extends "temp-n-macro/_user-footer_.html" %}
+
+{% block meta_og_tags_title %}
+
+<title>Dashboard - Mr Bull</title>
+
+{% endblock %}
+
+
+{% block custom_css_files %}
+
+<!-- Custom styles for fixed top navbar  -->
+<!--<link href="css/navbar_fixed_top.css" rel="stylesheet">-->
+<link href="{{ url_for('static', filename='css/navbar-fixed-top.css') }}" rel="stylesheet">
+
+
+<!-- Custom footer for this template -->
+<!--<link href="css/footer.css" rel="stylesheet">-->
+<link href="{{ url_for('static', filename='css/user-footer.css') }}" rel="stylesheet">
+
+<link href="{{ url_for('static', filename='css/mrbull-dashboard.css') }}" rel="stylesheet">
+
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="container" id="dash">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            
+            <h2>Hi, Tyrion Lannister</h2>
+            <hr>
+            
+            <!--for rank status -->
+            <div class="panel panel-default" id="rank">
+                <div class="panel-body">
+                    <div class="row">
+
+
+                        <div class="col-md-12">
+                            <h4><i class="fa fa-trophy" aria-hidden="true" style="color:#999"></i> Current Rank</h4>
+                        </div>
+                        <div class="col-md-12">
+                            <a data-toggle="tooltip" data-placement="bottom" title="You are performing better than 97% peers.">
+                                <h1>52<sup>th</sup></h1>
+                            </a>
+                        </div>
+
+                        <div class="col-md-12 change">
+                            <a data-toggle="tooltip" data-placement="bottom" title="Change from last week">
+                                +15 <i class="fa fa-arrow-up" aria-hidden="true" style="color:#4285F4"></i>
+                            </a>
+                        </div>
+                        <div class="col-md-12">
+                            <a href="#">
+                                <button type="submit" class="btn btn-default">
+                                    Rankings
+                                </button>
+                            </a>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            
+            
+            <!--funds in debt n equity-->
+            <div class="panel panel-default" id="rank">
+                <div class="panel-body">
+                    <div class="row">
+
+
+                        <div class="col-md-12">
+                            <h4><i class="fa fa-money" aria-hidden="true" style="color:#999"></i> Funds Available</h4>
+                        </div>
+                        <div class="col-md-12">
+                            <a data-toggle="tooltip" data-placement="bottom" title="Use this to invest further in Stocks or FDs.">
+                                <h2><i class="fa fa-inr" aria-hidden="true" style="color:#555"></i> 52,68,431</h2>  
+                            </a>
+                        </div>
+                        
+                        <div class="equity-debt">
+                            <div class="col-md-6">
+                                <a data-toggle="tooltip" data-placement="bottom" title="Invested amount in Stocks.">
+                                    <h4><i class="fa fa-inr" aria-hidden="true" style="color:#555"></i> 66,18,021</h4>
+                                    <p><i class="fa fa-briefcase" aria-hidden="true" style="color:#999"></i> Equity</p>
+                                </a>
+                            </div>
+                            <div class="col-md-6">
+                                <a data-toggle="tooltip" data-placement="bottom" title="Invested amount in FDs.">
+                                    <h4><i class="fa fa-inr" aria-hidden="true" style="color:#555"></i> 2,68,431</h4>
+                                    <p><i class="fa fa-plug" aria-hidden="true" style="color:#999"></i> Debt</p>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            
+            <!--profit loss n valuations-->
+            <div class="panel panel-default" id="rank">
+                <div class="panel-body">
+                    <div class="row">
+                        
+                        <div class="col-md-12">
+                            <h4><i class="fa fa-line-chart" aria-hidden="true" style="color:#999"></i> Profit/Loss</h4>
+                        </div>
+                        <div class="col-md-12">
+                            <a data-toggle="tooltip" data-placement="bottom" title="Current Profit/Loss in %">
+                                <h2>35%</h2>
+                            </a>
+                        </div>
+                        
+                        <div class="equity-debt">
+                            <div class="col-md-6">
+                                <a data-toggle="tooltip" data-placement="bottom" title="Initial investments in Stocks + FDs.">
+                                    <h4><i class="fa fa-inr" aria-hidden="true" style="color:#555"></i> 82,23,481</h4>
+                                    <p><i class="fa fa-thumb-tack" aria-hidden="true" style="color:#999"></i> Total Investments</p>
+                                </a>
+                            </div>
+                            <div class="col-md-6">
+                                <a data-toggle="tooltip" data-placement="bottom" title="Use this to invest further in Stocks or FDs.">
+                                    <h4><i class="fa fa-inr" aria-hidden="true" style="color:#555"></i> 52,68,431</h4>
+                                    <p><i class="fa fa-money" aria-hidden="true" style="color:#999"></i> Funds Available</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="equity-debt ranky">
+                            <div class="col-md-6">
+                                <a data-toggle="tooltip" data-placement="bottom" title="Portfolio value in real-time.">
+                                    <h4><i class="fa fa-inr" aria-hidden="true" style="color:#555"></i> 1,34,91,912</h4>
+                                    <p><i class="fa fa-map-marker" aria-hidden="true" style="color:#999"></i> Current Value</p>
+                                </a>
+                            </div>
+                            <div class="col-md-6">
+                                <a data-toggle="tooltip" data-placement="bottom" title="Current Profit/Loss status.">
+                                    <h4><i class="fa fa-inr" aria-hidden="true" style="color:#555"></i> 34,91,912</h4>
+                                    <p><i class="fa fa-pie-chart" aria-hidden="true" style="color:#999"></i> P&L</p>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+            <!--holdings in 1 place-->
+            <div class="panel panel-default" id="rank">
+                <div class="panel-body">
+                    <div class="row">
+
+
+                        <div class="col-md-12">
+                            <a data-toggle="tooltip" data-placement="bottom" title="Your Stock holdings. Selling allowed only after min. 1 yr holding of that stock position. ">
+                                <h4><i class="fa fa-briefcase" aria-hidden="true" style="color:#999"></i> Holdings</h4>
+                            </a>
+                        </div>
+                        
+                        <div class="col-md-12 holding">
+                            <p>Qty. 30456 <span class="inline1">Inv. Date: 14 Jan17</span></p>
+                            <a href="#viewdetails" data-toggle="collapse" data-target="#viewdetails"  aria-expanded="false">
+                                <h4>INFOSYS <span class="inline1"><span class="inline2">+10.5% </span><span style="color:blue">1,26,345</span></span></h4>
+                            </a>
+                            <div class ="collapse" id="viewdetails">
+                                <p>Avg. Cost : 39.43 <span class="inline1">LTP: 43.50</span></p>
+                                <p>Invested Amt: 110234 <span class="inline1">Current Value: 140234</span></p>
+                                <div class ="sell-button">
+                                    <a class="btn btn-red btn-xs" data-toggle="tooltip" data-placement="bottom" title="Sell INFOSYS right away.">S</a>
+                                    <a class="btn btn-default btn-xs" data-toggle="tooltip" data-placement="bottom" title="EOD Chart of INFOSYS" href="http://chartink.com/stocks/INFY.html" target="_blank"><i class="fa fa-area-chart" aria-hidden="true" style="color:#66C7FF"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        
+                        <div class="col-md-12 holding">
+                            <p>Qty. 50456 <span class="inline1">Inv. Date: 24 Apr17</span></p>
+                            <a href="#viewdetails1" data-toggle="collapse" data-target="#viewdetails1"  aria-expanded="false">
+                                <h4>TATASPONGE <span class="inline1"><span class="inline2">+10.5% </span><span style="color:blue">2,11,26,345</span></span></h4>
+                            </a>
+                            <div class ="collapse" id="viewdetails1">
+                                <p>Avg. Cost : 199 <span class="inline1">LTP: 435</span></p>
+                                <p>Invested Amt: 110234 <span class="inline1">Current Value: 140234</span></p>
+                                <div class ="sell-button">
+                                    <a class="btn btn-red btn-xs" data-toggle="tooltip" data-placement="bottom" title="Sell TATASPONGE right away.">S</a>
+                                    <a class="btn btn-default btn-xs" data-toggle="tooltip" data-placement="bottom" title="EOD Chart of TATASPONGE" href="http://chartink.com/stocks/TATASPONGE.html" target="_blank"><i class="fa fa-area-chart" aria-hidden="true" style="color:#66C7FF"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                    </div>
+                </div>
+            </div>
+            
+            
+            <!--FDs in 1 place-->
+            <div class="panel panel-default" id="rank">
+                <div class="panel-body">
+                    <div class="row">
+
+
+                        <div class="col-md-12">
+                            <a data-toggle="tooltip" data-placement="bottom" title="You can exit any FD at any time to gain cash.">
+                                <h4><i class="fa fa-plug" aria-hidden="true" style="color:#999"></i> Fixed Deposits</h4>
+                            </a>
+                        </div>
+                        
+                        <div class="col-md-12 holding">
+                            <a href="#details" data-toggle="collapse" data-target="#details"  aria-expanded="false">
+                                <h4>FD @ 7.5% <span class="inline1"><span class="inline2">+10.5% </span><span style="color:blue">1,26,345</span></span></h4>
+                            </a>
+                            <div class ="collapse" id="details">
+                                <p>Qty. 1 <span class="inline1">Inv. Date: 27 Jan17</span></p>
+                                <p>Invested Amt: 110234 <span class="inline1">Current Value: 140234</span></p>
+                                <div class ="sell-button">
+                                    <a class="btn btn-red btn-xs" data-toggle="tooltip" data-placement="bottom" title="Exit FD right away.">S</a>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        
+                        <div class="col-md-12 holding">
+                            <a href="#details1" data-toggle="collapse" data-target="#details1"  aria-expanded="false">
+                                <h4>FD @ 9.5% <span class="inline1"><span class="inline2">+10.5% </span><span style="color:blue">1,26,345</span></span></h4>
+                            </a>
+                            <div class ="collapse" id="details1">
+                                <p>Qty. 1 <span class="inline1">Inv. Date: 27 Nov16</span></p>
+                                <p>Invested Amt: 110234 <span class="inline1">Current Value: 140234</span></p>
+                                <div class ="sell-button">
+                                    <a class="btn btn-red btn-xs" data-toggle="tooltip" data-placement="bottom" title="Exit FD right away.">S</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+{% endblock %}

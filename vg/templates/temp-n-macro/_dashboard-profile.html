@@ -1,0 +1,225 @@
+                  <div class="row">
+                      <div class="col-md-offset-3 col-md-6">
+                          
+                         {% if session.get('mobile_ind') %} 
+                         
+                         <div class="panel panel-info">
+                              <div class="panel-heading">
+                                <h3 class="panel-title">Review</h3>
+                              </div>
+                              <div class="panel-body review">
+                              {% if review_exist %}
+                             
+                              <h4>{{ review_exist.title | safe }}</h4>
+                              <p>{{ review_exist.review | safe }}</p>
+                              
+                                {% if editing_karni == True %}
+                                <a href="#edit-review" class="btn btn-default" data-toggle="modal" data-target=".review-modal">
+                                  Edit
+                                </a>
+                                {% endif %}
+                             
+                              {% else %}
+                              <a href="#edit-review" class="btn btn-default" data-toggle="modal" data-target=".review-modal">
+                                Add a Review
+                              </a>
+                              
+                              {% endif %}
+                              </div>
+                          </div>
+                         
+                         {% endif %}
+                      
+                         <div class="panel panel-info">
+                              <div class="panel-heading">
+                                <h3 class="panel-title">Profile</h3>
+                              </div>
+                              <div class="panel-body">
+          
+                                <table class="table table-user-information">
+                                  <tbody>
+                                    <tr>
+                                      <td>Full Name</td>
+                                      <td style="text-transform: capitalize">{{ user.fullname }} 
+                                      
+                                          <a href="#edit-form" class="forget" data-toggle="modal" data-target=".forget-modal">
+                                              <i class="fa fa-pencil" style="color:green; float:right"  title="Edit"></i>
+                                          </a>
+                                      </td>
+                                    </tr>
+                                    {% if user.mobile_ind %}
+                                    <tr>
+                                      <td>Mobile</td>
+                                    <td>{{ user.mobile_ind }}
+                                    </td>    
+                                    </tr>
+                                    {% endif %}
+                                    {% if user.email %}
+                                    <tr>
+                                      <td>Email</td>
+                                      <td>{{ user.email }}</td>    
+                                    </tr>
+                                    {% endif %}
+                                    <tr>
+                                      <td>Joined On</td>
+                                      <td>{{ user.registered_on.strftime('%d %b %Y') }}</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Premium Member</td>
+                                      {% if session.get('is_premium') %}
+                                          <td><b>Yes</b></td>
+                                      {% else %}
+                                          <td>No</td>
+                                      {% endif %}
+                                    </tr>
+                                    <tr>
+                                      <td>Premium Registered On</td>
+                                      {% if session.get('is_premium') and user.premium_registered_on != None %}
+                                          <td>{{ user.premium_registered_on.strftime('%d %b %Y') }}</td>
+                                      {% else %}
+                                          <td>-NA-</td>
+                                      {% endif %}
+                                    </tr>
+                                    <tr>
+                                      <td>Premium Valid till</td>
+                                      {% if session.get('is_premium') and user.premium_expiry_on != None %}
+                                          <td>{{ user.premium_expiry_on.strftime('%d %b %Y') }}</td>
+                                      {% else %}
+                                          <td>-NA-</td>
+                                      {% endif %}
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                
+                                <a href="#edit-pass" class="btn btn-danger" data-toggle="modal" data-target=".pass-modal">
+                                    Reset Password
+                                </a>
+                                
+                              </div>
+                            </div>
+                      </div>
+                      </div>
+                  
+                  
+                   <!--this is for editing name of the user-->
+                  <div class="modal fade forget-modal" id="edit-forms" tabindex="-1" role="dialog" aria-labelledby="myForgetModalLabel" aria-hidden="true">
+                  	<div class="modal-dialog modal-sm">
+                  		<div class="modal-content">
+                  			<div class="modal-header">
+                  				<button type="button" class="close" data-dismiss="modal">
+                  					<span aria-hidden="true">×</span>
+                  					<span class="sr-only">Close</span>
+                  				</button>
+                  				<h4 class="modal-title">Edit Name</h4>
+                  			</div>
+                  			<div class="modal-body">
+                  			    
+                  				<form method="POST" action="{{ url_for('my_dashboard_profile') }}" role="form">
+                                      
+                                      {% from "temp-n-macro/_formhelpers.html" import render_field %}
+                                      
+                                      <!----CSRF Tag for hack prevention-->
+                                      {{ form.hidden_tag() }}
+                                      
+                                       <!--Tags coming from form.py file(model) in user-->
+                                      {{ render_field(form.fullname, class="form-control", placeholder="Edit your Name") }}
+            			
+                          			<div class="modal-footer">
+                          				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                          				<input type="submit" id="btn-login" class="btn btn-custom" value="Submit">
+                          				
+                          			</div>
+                          		</form>
+                  			
+                      		</div> <!-- /.modal-content -->
+                      	</div> <!-- /.modal-dialog -->
+                      </div> <!-- /.modal -->
+                  </div>
+                  
+                  
+                  
+                  <!--this is for editing password of the user-->
+                  <div class="modal fade pass-modal" id="edit-pass" tabindex="-1" role="dialog" aria-labelledby="myForgetModalLabel" aria-hidden="true">
+                  	<div class="modal-dialog modal-sm">
+                  		<div class="modal-content">
+                  			<div class="modal-header">
+                  				<button type="button" class="close" data-dismiss="modal">
+                  					<span aria-hidden="true">×</span>
+                  					<span class="sr-only">Close</span>
+                  				</button>
+                  				<h4 class="modal-title">Password Change</h4>
+                  			</div>
+                  			<div class="modal-body">
+                  			    
+                  				<form method="POST" action="{{ url_for('my_dashboard_profile') }}" role="form_pass">
+                                      
+                                      {% from "temp-n-macro/_formhelpers.html" import render_field %}
+                                      
+                                      <!----CSRF Tag for hack prevention-->
+                                      {{ form_pass.hidden_tag() }}
+                                      
+                                      <!--Tags coming from form.py file(model) in user-->
+                                      {{ render_field(form_pass.current_password, class="form-control", placeholder="Type-in your Current Password") }}
+                                      {{ render_field(form_pass.new_password, class="form-control", placeholder="Use Strong Password") }}
+                                      {{ render_field(form_pass.confirm_password, class="form-control", placeholder="It should Match") }}
+            			
+                          			<div class="modal-footer">
+                          				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                          				<input type="submit" id="btn-login" class="btn btn-custom" value="Submit">
+                          				
+                          			</div>
+                          		</form>
+                  			
+                      		</div> <!-- /.modal-content -->
+                      	</div> <!-- /.modal-dialog -->
+                      </div> <!-- /.modal -->
+                  </div>
+                  
+                  
+                  
+                  
+                  <!--this is for adding review of the premium user-->
+                  <div class="modal fade review-modal" id="edit-review" tabindex="-1" role="dialog" aria-labelledby="myForgetModalLabel" aria-hidden="true">
+                  	<div class="modal-dialog modal-sm">
+                  		<div class="modal-content">
+                  			<div class="modal-header">
+                  				<button type="button" class="close" data-dismiss="modal">
+                  					<span aria-hidden="true" title="Close">×</span>
+                  					<span class="sr-only">Close</span>
+                  				</button>
+                  				<h4 class="modal-title">Your Review</h4>
+                  			</div>
+                  			<div class="modal-body">
+                  			    
+                  				<form method="POST" action="{{ url_for('my_dashboard_profile') }}" role="form_review">
+                                      
+                                      {% from "temp-n-macro/_formhelpers.html" import render_field %}
+                                      
+                                      <!----CSRF Tag for hack prevention-->
+                                      {{ form_review.hidden_tag() }}
+                                      
+                                      <!--Tags coming from form.py file(model) in user-->
+                                      
+                                      {{ render_field(form_review.rating, class="form-control", min ="1", max="5", step ="1") }}
+                                      
+                                      <h6 class="pull-left" id="rating-numbers">1</h6>
+                                      <h6 class="pull-right" id="rating-numbers">5</h6>
+                                      
+                                      
+                                      {{ render_field(form_review.title, class="form-control", placeholder="Uniqueness of Valueguyz.com") }}
+                                      {{ render_field(form_review.review, class="form-control", id="text", rows=12, placeholder="Help others to know why you found Valueguyz so awesome !!!") }}
+                                      <h6 class="pull-left" id="count_message"></h6>
+            			
+            			
+            			
+                          			<div class="modal-footer review-submit">
+                          				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                          				<input type="submit" id="btn-login" class="btn btn-custom" value="Submit">
+                          				
+                          			</div>
+                          		</form>
+                  			
+                      		</div> <!-- /.modal-content -->
+                      	</div> <!-- /.modal-dialog -->
+                      </div> <!-- /.modal -->
+                  </div>

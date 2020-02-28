@@ -1,0 +1,486 @@
+body {
+  font-family: 'Roboto',"Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+}
+
+/*for attention notice*/
+#notice {
+    margin-top: 81px;
+    text-align: center;
+    color: red;
+    background-color: #f3f3f3;
+    padding: 10px 0px 30px;
+    margin-bottom: -79px;
+}
+
+#notice a:hover{
+  text-decoration: none;
+}
+
+#notice h2 {
+    margin: 20px 0px;
+    font-size: 22px;
+    text-transform: capitalize;
+}
+
+#notice .table-responsive {
+    width: 70%;
+    text-align: center;
+    margin: 0px auto;
+    color: black;
+    margin-bottom: 32px;
+}
+
+#notice .summary-heading {
+    text-align: center;
+}
+
+#notice .btn {
+    margin: 0px auto;
+    width: 30%;
+}
+
+#notice .pay {
+    font-size: 18px;
+}
+
+/*intro box with 3 circles*/
+#intro {
+    text-align: center;
+    margin-bottom: 80px;
+    padding: 82px 0px;
+}
+
+#intro .membership {
+    margin: 40px 0px;
+}
+
+#intro .circle {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin: 1px auto;
+}
+
+#intro .one {
+    border: 6px solid #4285F4;
+}
+
+#intro .two {
+    border: 6px solid #FBBC05;
+}
+
+#intro .three {
+    border: 6px solid #34A853;
+}
+
+#intro .heading h1 {
+    font-size: 45px;
+    margin: 68px 0px;
+    font-weight: 200;
+}
+
+#intro h1 {
+    font-size: 45px;
+    margin: 68px 0px;
+    font-weight: 200;
+}
+
+#intro h3 {
+    padding: 32px 0px;
+}
+
+/*video section*/
+#video {
+    text-align: center;
+    padding: 120px 0px;
+    background-color: #66C7FF;
+    color: #ffffff;
+    margin-top: 78px;
+}
+
+#video h2 {
+    font-size: 35px;
+    margin: 20px 0px;
+    font-weight: 200;
+}
+
+
+
+
+/*pricing chart section*/
+
+#pricing {
+    padding: 90px 0px;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+#pricing .row {
+    padding: 50px 0px;
+}
+
+#pricing h1 {
+    text-align: center;
+}
+
+#pricing .heading {
+    font-size: 25px;
+    text-align: center;
+    background-color: white;
+    line-height: 4;
+}
+
+#pricing .starting {
+    font-size: 19px;
+    background-color: white;
+    line-height: 3;
+    
+}
+
+#pricing .describe {
+    text-align: center;
+    font-size: 19px;
+    background-color: white;
+    line-height: 3;
+}
+
+#pricing .color {
+    background-color: #FBBC05;
+    opacity: 0.8;
+    color: #fff;
+}
+
+#pricing .color1 {
+    background-color: #FBBC05;
+    color: #fff;
+}
+
+#pricing .btn {
+    font-size: 21px;
+}
+
+#pricing strike {
+    color: red;
+}
+
+#pricing sup {
+    font-size: 65%;
+}
+
+/*first section of details*/
+
+#premium {
+    padding: 90px 0px;
+    background-color: #66C7FF;
+    color: #ffffff;
+}
+
+#premium .container {
+    margin-top: 65px;
+    margin-bottom: 65px;
+    text-align: center;
+}
+
+#premium h1 {
+    font-size: 45px;
+    font-weight: 200;
+}
+
+#premium p {
+    font-size: 20px;
+    margin: 20px 0px;
+}
+
+#premium .col-sm-8 .btn-warning {
+    margin-left: 32px;
+}
+
+/*review section*/
+#review {
+    padding: 90px 0px;
+    color: #555;
+}
+
+#review h1 {
+    text-align: center;
+}
+
+#review .star-ratings {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+#review .user-info {
+    text-transform: capitalize;
+    margin-bottom: 0px;
+}
+
+#review .review-body {
+    margin-top: 20px;
+}
+
+#review .more-button {
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+/*pager in review page*/
+/* Pagination */
+.pager {
+  margin-bottom: 60px;
+  text-align: center;
+}
+.pager > li > a {
+  width: 140px;
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 30px;
+}
+
+
+/*premium picks section*/
+
+#course {
+    padding: 90px 0px;
+    background-color: white;
+    color: #333;
+}
+
+#course .container {
+    margin-top: 65px;
+    margin-bottom: 65px;
+    text-align: center;
+}
+
+#course h1 {
+    font-size: 45px;
+    font-weight: 200;
+}
+
+#course p {
+    font-size: 20px;
+    margin: 20px 0px;
+}
+
+#course img {
+    width: 75%;
+}
+
+/*learn section*/
+
+
+#learn {
+    padding: 120px 0px;
+    background-color: #8F2DB3;
+    color: #ffffff;
+}
+
+#learn .container {
+    margin-top: 65px;
+    margin-bottom: 65px;
+    text-align: center;
+}
+
+#learn .video {
+    margin-top: 25px;
+}
+
+#learn h1 {
+    font-size: 45px;
+    font-weight: 200;
+}
+
+#learn p {
+    font-size: 20px;
+    margin: 20px 0px;
+}
+
+#learn .col-sm-8 .btn-success {
+    margin-left: 32px;
+}
+
+
+/*how to register working*/
+
+#how-works {
+    padding: 90px 0px;
+    background-color: #ff944d;
+    color: #ffffff;
+}
+
+#how-works .container {
+    margin-top: 65px;
+    margin-bottom: 65px;
+}
+
+#how-works h1 {
+    font-size: 45px;
+    font-weight: 200;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#how-works ol>li {
+    font-size: 18px;
+    margin: 10px 0px;
+}
+
+
+
+/*money back section*/
+#money-back {
+    padding: 120px 0px;
+    background-color: white;
+}
+
+#money-back .container {
+    margin-top: 65px;
+    margin-bottom: 65px;
+    text-align: center;
+}
+
+#money-back p {
+    font-size: 16px;
+}
+
+/*responsive stylings*/
+
+@media (max-width: 991px) {
+	#premium p {
+	    font-size: 16px;
+	}
+	#course p {
+	    font-size: 16px;
+	}
+	#learn p {
+	    font-size: 16px;
+	}
+	#how-works h1 {
+        font-size: 36px;
+	}
+	#how-works ol>li {
+        font-size: 16px;
+	}
+}
+
+@media (max-width: 767px) {
+    #notice h2 {
+        font-size: 18px;
+    }
+    #intro .col-sm-4 {
+        padding-top: 20px;
+        padding-bottom: 100px;
+    }
+    #premium .col-sm-8 {
+        padding-top: 20px;
+    }
+    #course img {
+        width: 43%;
+        padding-top: 45px;
+    }
+    #learn .col-sm-8 {
+        padding-top: 40px;
+    }
+    #course p {
+        margin: 20px 40px;
+    }
+    #course .col-sm-4 {
+        padding-top: 50px;
+    }
+    #money-back p {
+        padding: 0px 75px;
+    }
+    #money-back .col-sm-4 {
+        margin: 50px 0px;
+    }
+}
+
+@media (max-width: 602px) {
+    #notice h2 {
+        margin: 20px 25px;
+    }
+    #pricing .heading {
+        font-size: 19px;
+    }
+    #pricing .starting {
+    font-size: 16px;
+    }
+
+    #pricing .describe {
+    font-size: 16px;
+    }    
+    #pricing .btn {
+        font-size: 19px;
+    }
+}
+
+@media (max-width: 415px) {
+    #notice .btn {
+        font-size: 12px;
+        width: 50%;
+    }
+    #notice h2 {
+        font-size: 16px;
+    }
+    
+    #intro .heading h1 {
+        font-size: 32px;
+    }
+    #premium h1 {
+        font-size: 35px;
+    }
+    #premium p {
+        font-size: 14px;
+    }
+    .btn-lg {
+        font-size: 15px;
+    }
+    #pricing .heading {
+        font-size: 16px;
+    }
+    #pricing .starting {
+    font-size: 13px;
+    }
+
+    #pricing .describe {
+    font-size: 13px;
+    }    
+    #pricing .btn {
+        font-size: 15px;
+    }
+    #learn h1 {
+        font-size: 35px;
+    }
+    #learn p {
+        font-size: 14px;
+    }
+    #course h1 {
+        font-size: 35px;
+    }
+    #course p {
+        font-size: 14px;
+        margin: 20px 0px;
+    }
+    #how-works h1 {
+        font-size: 28px;
+    }
+    #how-works ol>li {
+        font-size: 14px;
+    }
+    #money-back p {
+        padding: 0px;
+    }
+}
+
+@media (max-width: 329px) {
+    #notice h2 {
+        font-size: 14px;
+    }
+    #intro .heading h1 {
+        font-size: 28px;
+    }
+    .btn-lg {
+        font-size: 13px;
+    }
+}

@@ -1,0 +1,20 @@
+User-agent: *
+
+Disallow: /pages/classic/
+
+Disallow: /mydashboard/
+
+Disallow: /mydashboard
+
+
+Disallow: /static/css/
+
+Disallow: /static/js/
+
+Disallow: /static/padai
+
+Disallow: /static/zohoverify/
+
+
+
+Sitemap: http://www.valueguyz.com/sitemap.xml

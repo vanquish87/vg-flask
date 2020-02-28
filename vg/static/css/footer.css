@@ -1,0 +1,74 @@
+/* footer styling */
+
+footer {
+	background-color: #66C7FF;
+	padding-top: 100px;
+	padding-bottom: 40px;
+	font-family: 'Roboto',"Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+footer .heart {
+	text-align: right;
+    font-size: 25px;
+    color: white;
+}
+
+footer .heart p {
+	margin-top: 8%;
+}
+
+footer .branding {
+	text-align: left;
+    font-size: 14px;
+    color: white;
+    line-height: 10px;
+}
+
+
+/*for flashing messages from server*/
+
+footer h4 {
+	font-size: 21px;
+}
+
+footer #myModal .modal-content {
+	text-align: center;
+	font-size: 16px;
+}
+
+footer #myModal .modal-footer {
+	text-align: center;
+}
+
+/**/
+
+
+
+/* ------Responsive Bootstrap Part-------- */
+
+@media (max-width: 991px) {
+	footer {
+		margin-top: 24px;
+		padding-top: 80px;
+		padding-bottom: 30px;
+	}
+	footer .col-md-6 {
+		text-align: center;
+	}
+}
+
+
+@media (max-width: 767px) {
+	footer {
+		padding-top: 80px;
+		padding-bottom: 30px;
+	}
+	footer .col-md-6 {
+		text-align: center;
+	 
+	}
+	footer .branding {
+		text-align: center;
+	    font-size: 12px;
+	}
+}

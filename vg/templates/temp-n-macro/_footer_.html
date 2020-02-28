@@ -1,0 +1,67 @@
+<!----this is for rendering a base template in flask using jinja templating-->
+{% extends "temp-n-macro/_header_navbar_.html" %}
+        
+<!----Declaration for block of html code to be rendered later -->    
+
+{% block meta_og_tags_title %}{% endblock %}
+
+{% block custom_css_files %}{% endblock %}
+
+{% block content %}{% endblock %}
+
+{% block sidebar %} {% endblock %}
+
+{% block footer %}
+
+  <footer>
+      
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 branding">
+                
+             <p>Contact :</p>
+             <p><i class="fa fa-whatsapp"></i> : 9871012220</p>
+             <p><i class="fa fa-share"></i> : jasmeet@valueguyz.com</p>
+             <p><i class="fa fa-building-o"></i> : 227, Raja Garden, New Delhi - 110015</p>
+             
+            </div>
+            
+            <div class="col-md-6 heart">
+             <p>Made with <i class="fa fa-heart" style="color:red"></i> for Investors</p>
+            </div>
+        </div>
+    </div>
+    
+  
+  
+  {% include "temp-n-macro/_flashed-message.html" %}
+    
+      
+   </footer>
+
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
+<!--automatic dropdown of Header navbar menu items if any-->
+<script type="text/javascript" src="{{ url_for('static', filename='js/hover-menu-dropdown.js') }}"></script>
+
+<!--to show flash messages in modal when user is logged in-->
+<script type="text/javascript" src="{{ url_for('static', filename='js/modal-automatic-in.js') }}"></script>
+
+<!-- chart html5 -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/chart_tfn.js') }}"></script>
+  
+</body>
+  
+</html>
+
+{% endblock %}

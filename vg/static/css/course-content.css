@@ -1,0 +1,46 @@
+/** Globals */
+
+body {
+    font-family: 'Roboto',"Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #555;
+    font-weight: 300;
+}
+
+/*------------*/
+
+
+.course {
+    margin-top: 80px;
+    margin-bottom: 90px;
+}
+
+
+/*table styling*/
+
+#what-learn .summary-heading {
+  text-align: center;
+  padding: 14px;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+#what-learn td{
+    padding: 8px 42px;
+    font-size: 18px;
+}
+
+#what-learn a {
+    color: #555;
+}
+
+#what-learn a:hover {
+    text-decoration: none;
+}
+
+#what-learn .play{
+    display: inline;
+    margin-left: 19px;
+    font-size: 15px;
+}
+
+/*-----*/

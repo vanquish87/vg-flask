@@ -1,0 +1,86 @@
+<!----this is for rendering a base template in flask using jinja templating-->
+{% extends "temp-n-macro/_user-footer_.html" %}
+
+    
+        {% block content %}
+        
+        <div class="container">
+            
+            <hr>
+            <hr>
+            
+            <div class="row">
+                <div class="col-md-offset-3 col-md-6">
+                    
+                    {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                    <div id="messages">
+                        <ul class="flashes text-info">
+                            {% for message in messages %}
+                            <li>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+                    {% endwith %}
+                    
+                    <h2>This is {{ blog.blog_name }} <a href="{{ url_for('index') }}">Index Main Page</a> </h2>
+                    
+                    {% if session.get('mobile_ind') %}
+                    <p>Welcome,  {{ session.fullname }}</p>
+                    
+                    {% else %}
+                    <p>Welcome....</p>
+                    
+                    {% endif %}
+                
+                    <div class="post-list">
+                        
+                        <!--posts.items is used after inserting pagination in view.py why???-->
+                        {% for post in posts.items %}
+                        
+                        <div class="post-item">
+                            
+                            <div class="col-md-9">
+                                <h4><a href="{{ url_for('article', slug=post.slug, year=post.publish_date_utc.year) }}">{{ post.title }}</a></h4>
+                                
+                                <div class="text-muted">Posted by <a href="#">{{ post.user.fullname }}</a>
+                                on {{ post.publish_date_utc.strftime('%d-%m-%Y') }}
+                                in <a href="#">{{ post.category.name }}</a>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                {% if post.image %}
+                                <img src="{{ post.imgsrc }}" height="60px" class="img-rounded"> 
+                                {% endif %}
+                            </div>
+                            
+                        </div>
+                        
+                        {% endfor %}
+                        
+                    </div>
+                    <nav>
+                        <!--these codes have to do with db operations in paginate-->
+                        <ul class="pager">
+                            
+                          {% if posts.has_prev %}
+                          <li><a href="{{ url_for('index', page=posts.prev_num) }}">Previous</a></li>
+                          {% else %}
+                          <li>Previous</li>
+                          {% endif %}
+                          
+                          {% if posts.has_next %}
+                          <li><a href="{{ url_for('index', page=posts.next_num) }}">Next</a></li>
+                          {% else %}
+                          <li>Next</li>
+                          {% endif %}
+                          
+                        </ul>
+                     </nav>
+                    
+                </div>
+            </div>
+        </div>           
+        {% endblock %}
+        

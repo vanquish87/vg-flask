@@ -1,0 +1,242 @@
+<!----this is for rendering a base template in flask using jinja templating-->
+{% extends "temp-n-macro/_user-footer_.html" %}
+
+    {% block meta_og_tags_title %}
+    
+    <!-- SEO robots Meta -->
+    <meta name="description" content="Invites to Valueguyz's Pune Meetup 2017! Come & learn to retire in just 8 yrs.">
+    <meta name="keywords" content="value picks, valuepicks, value pick, multibagger, multibagger stocks india, multibagger indian stocks">
+    <meta name="author" content="Jasmeet Singh, Founder & Investor">
+
+
+    <title>You're invited to Valueguyz's Pune Meetup 2017!</title>
+
+
+    <!-- OG for Social Networks -->
+    <meta property="og:title" content="You're invited to Valueguyz's Pune Meetup 2017!" />
+    <meta property="og:description" content="Invites to Valueguyz's Pune Meetup 2017! Come & learn to retire in just 8 yrs." />
+    <meta property="og:type" content="Website" />
+    <meta property="og:url" content="http://www.valueguyz.com/posts/2017/value-investing-nse-bse-valueguyz-pune-sep-meetup" />
+    <meta property="og:image" content="http://www.valueguyz.com/static/images/posts/conference-intro.jpg" />
+
+
+
+    <!-- Twitter Card OG -->
+    <meta name=”twitter:card” content=” Youre invited to Valueguyz Pune Meetup 2017!” />
+    <meta name=”twitter:title” content=” Youre invited to Valueguyz Pune Meetup 2017!” />
+    <meta name=”twitter:description” content=”Invites to Valueguyz Pune Meetup 2017! Come & learn to retire in just 8 yrs.” />
+    <meta name=”twitter:url” content=”http://www.valueguyz.com/posts/2017/value-investing-nse-bse-valueguyz-pune-sep-meetup” />
+    <meta name=”twitter:image” content=”http://www.valueguyz.com/static/images/posts/conference-intro.jpg” />
+    
+    {% endblock %}
+    
+    
+    {% block custom_css_files %}
+    
+    <!-- Custom styles for fixed top navbar  -->
+    <!--<link href="css/navbar_fixed_top.css" rel="stylesheet">-->
+    <link href="{{ url_for('static', filename='css/navbar-fixed-top.css') }}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <!--<link href="css/custom-index.css" rel="stylesheet">-->
+    <link href="{{ url_for('static', filename='css/custom-blog-post.css') }}" rel="stylesheet">
+    
+    <!-- Custom footer for this template -->
+    <!--<link href="css/footer.css" rel="stylesheet">-->
+    <link href="{{ url_for('static', filename='css/user-footer.css') }}" rel="stylesheet">
+    
+    {% endblock %}
+    
+    
+    
+    
+    {% block content %}
+    
+    <div class="container multi">
+
+      <div class="row">
+        
+        <div class="col-sm-8 col-sm-offset-2 blog-main">
+          <div class="blog-post">
+            
+            <h1 class="blog-post-title">
+              <a href="#">Glimpse of Valueguyz's Bengaluru Conference 2017
+              </a>
+            </h1>
+            
+            <p class="blog-post-meta">
+              <a type="button" class="btn btn-info"> 5 minute read
+              </a>
+              July 15, 2016 by 
+              <a href="{{ url_for('valueguyz_home') }}#about" target="_blank">Jasmeet
+              </a>
+            </p>
+
+            <!-- 16:9 aspect ratio for Youtube Video-->
+            <!--<div class="embed-responsive embed-responsive-16by9">-->
+            <!--  <iframe class="embed-responsive-item" width="750" height="422" src="https://www.youtube.com/embed/yz43468sEL8SU?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen>-->
+            <!--  </iframe>-->
+            <!--</div>-->
+            
+            <img src="../../static/images/posts/bengaluru-meetup-jul17.jpg" alt="Bengaluru" title="Bengaluru Conference">
+
+
+
+            
+            <!--macro for social buttons with filling values from this post-->
+            
+            {% from "temp-n-macro/_social-buttons.html" import render_social %}
+            
+            {{ render_social('http://www.valueguyz.com/posts/2016/multibagger-value-picks-mar16-eros-international-media', '5X Multibagger Stocks as Value Pick &middot; Eros International Media &middot; Mar16') }}
+            
+            <div id="intro">
+              
+              <p>Dost,</p>
+              
+              <p>It was honour meeting all of guys. Together we saw it is more than possible to retire early than one can think of more so creating legacy as you go forward.
+              </p>
+              <p>One need to be patient and don't do stupid <i class="fa fa-smile-o" aria-hidden="true" style="color:red"></i>. Well we covered those things well in conference.
+              </p>
+              <p>It was a learning experience for me too with such a wonderful QnA session.
+              </p>
+              <p>I will continue our Valuguyz journey of retiring as early as possible.
+              </p>
+              <blockquote>
+                <h4>Next Stop is Hyderabad on 27<sup>th</sup> August.</h4>
+              </blockquote>
+              <p>Registration for hyderabad conference will open soon. If anyone wants volunteer in fixing location can contact me via whatsapp or email.</p>
+              
+              
+              
+              
+              
+              
+              
+              <p>Watch the video <i class="fa fa-youtube-play" aria-hidden="true" style="color:red"></i> above before reading further.</p>
+              
+              <p>You are not put on Earth to do a lousy job everyday to keep up with the bills.
+              </p>
+              <blockquote>
+                <h4>You are here to experience life and live the way you like.</h4>
+              </blockquote>
+
+              <p>This can be achieved if you can isolate your financial success from life choices ie, you keep aside money matters n start doing things irrespective of if it pays or loses money. <i>apne dil ko follow karo</i> n do passionate things in your life.
+              </p>
+              <p>Well dost I will help you to decode n uncomplecate life as I am coming to your city.
+              </p>
+              
+              <br>
+              <div class="panel panel-warning">
+                  
+                <div class="panel-heading">
+                  <h3 class="panel-title">Experience it</h3>
+                </div>
+                
+                <div class="panel-body">
+                  <p>
+                    <ul>
+                      <li>Learn to retire in just 8 yrs.
+                      </li>
+                      <li>How Investing in the Stock Market can create passive income.
+                      </li>
+                      <li>How small investments with the help of compounding can create substantial wealth.
+                      </li>
+                      <li>How to create your own Systematic Investment Plan (SIP) for future liabilities / requirements.
+                      </li>
+                      <li>Have questions on finance or investing ? Get answers right away, build confidence.
+                      </li>
+                      <li>Meet like-minded Valueguyz leading same path as you.
+                      </li>
+                      <li>Build your immunity against sattebaaji.
+                      </li>
+                      <li>Success stories of valueguyz. Hear yourself n get inspired.
+                      </li>
+                      <li>Also eat yummy snacks <i class="fa fa-smile-o" style="color:blue"></i>
+                      </li>
+                    </ul>
+                  </p>
+                </div>
+                
+              </div>
+              <br>
+              
+            
+            </div> 
+             
+            <div id="quality">
+             <table class="table table-striped table-bordered table-hover table-responsive table-tips">
+              <tr>
+                <th class="summary-heading" colspan="2">Save a Seat</th>
+              </tr>
+              <tr>
+                <td>City</td>
+                <td>Hyderabad</td>    
+              </tr>
+              <tr>
+                <td>Location</td>
+                <td>91Springboard, Plot no. 44, Kavuri Hills Phase 1, Hyderabad</td>    
+              </tr>
+              <tr>
+                <td>Map</td>
+                <td><a href="https://www.google.com/maps/place/91springboard+Kavuri+Hills/@17.4407097,78.3961363,17z/data=!3m1!4b1!4m5!3m4!1s0x3bcb914378a3f607:0xa481e64ea7ddc1d5!8m2!3d17.4407097!4d78.398325?hl=en-GB" target="_blank">Click here</a></td>    
+              </tr>
+              <tr>
+                <td>Date</td>
+                <td>Sunday, 27<sup>rd</sup> August 2017</td> 
+              </tr>
+              <tr>
+                <td>Time</td>
+                <td>2 - 5 PM</td>
+              </tr>
+             </table>
+            </div>
+            
+             
+            <div class="user-entry">
+              <!--<fieldset disabled>-->
+                <a href="http://www.valueguyz.com/mydashboard/meetup">
+                <button type="submit" class="btn btn-custom bun-premium btn-lg btn-block">
+                      Book for <i class="fa fa-inr" aria-hidden="true"></i> 200
+                      <!--Registration Closed-->
+                </button>
+              </a>
+              <!--</fieldset>-->
+            </div>
+            
+            
+              
+              
+              
+    
+            
+            <!--what r value picks n tax free-->
+            {% include "temp-n-macro/_what-r-valuepicks.html" %}
+            
+            
+            <!--for signing : do remember to insert a date & styling if needed-->
+            {% from "temp-n-macro/_signature.html" import render_signature %}
+            {{ render_signature('8 Mar 2016') }}
+
+            
+            <!--for legends below value picks-->
+            {% include "temp-n-macro/_legends.html" %}
+
+            <!--for disclaimer below post-->
+            {% include "temp-n-macro/_disclaimer.html" %}
+
+            
+
+            <!--macro for social buttons with filling values from this post-->
+            {% from "temp-n-macro/_social-buttons.html" import render_social %}
+            
+            {{ render_social('http://www.valueguyz.com/posts/2016/multibagger-value-picks-mar16-eros-international-media', '5X Multibagger Stocks as Value Pick &middot; Eros International Media &middot; Mar16') }}
+
+           
+          </div><!-- /.blog-post -->
+
+        </div><!-- /.blog-main -->
+    
+    
+    
+    
+    {% endblock %}

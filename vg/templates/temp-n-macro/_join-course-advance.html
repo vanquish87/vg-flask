@@ -1,0 +1,41 @@
+{% if session.get('mobile_ind') and session.get('is_premium') == 0   %}
+
+<div class="join-button">
+  
+    <!--link on top of button so that all of button become responsive rather than just the text-->
+    <a href="{{ url_for('premium_sell_pay', pay_for='silver') }}">
+      <button type="submit" class="btn btn-custom btn-premium btn-lg">
+        Buy Now
+      </button>
+    </a>      
+    
+</div>
+
+{% elif session.get('mobile_ind') and session.get('is_premium')  %}
+
+<div class="join-button">
+  
+    <!--link on top of button so that all of button become responsive rather than just the text-->
+    <a href="{{ url_for('content_premium') }}">
+      <button type="submit" class="btn btn-custom btn-premium btn-lg">
+        Start Online
+      </button>
+    </a>      
+    
+</div>
+
+{% else %}
+
+
+<div class="join-button">
+  
+    <!--link on top of button so that all of button become responsive rather than just the text-->
+    <a href="{{ url_for('premium_sell_pay') }}">
+      <button type="submit" class="btn btn-custom btn-premium btn-lg">                      
+        Start Online
+      </button>
+    </a>
+    
+</div>
+
+{% endif %}

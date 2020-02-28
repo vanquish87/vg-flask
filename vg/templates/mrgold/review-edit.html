@@ -1,0 +1,64 @@
+<!----this is for rendering a base template in flask using jinja templating-->
+{% extends "temp-n-macro/_user-footer_.html" %}
+        
+{% block custom_css_files %}
+
+<!-- Custom styles for fixed top navbar  -->
+<!--<link href="css/navbar_fixed_top.css" rel="stylesheet">-->
+<link href="{{ url_for('static', filename='css/navbar-fixed-top.css') }}" rel="stylesheet">
+
+
+<!-- Custom footer for this template -->
+<!--<link href="css/footer.css" rel="stylesheet">-->
+<link href="{{ url_for('static', filename='css/user-footer.css') }}" rel="stylesheet">
+
+<link href="{{ url_for('static', filename='css/user-management.css') }}" rel="stylesheet">
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="jumbotron" id="admin">
+    <div class="row">
+        <div class="col-md-1">
+	        <ul class="nav nav-pills nav-stacked left-nav">
+              <li role="presentation"><a href="{{ url_for('user_management') }}">Users</a></li>
+              <li role="presentation"><a href="{{ url_for('premium_management') }}">Premium</a></li>
+              <li role="presentation"><a href="{{ url_for('review_manage') }}">Reviews</a></li>
+              <li class="active" ><a href="#">Edit</a></li>
+              <li role="presentation"><a href="{{ url_for('admin') }}">Posts</a></li>
+              <li role="presentation"><a href="{{ url_for('invite_management') }}">Invites</a></li>
+              <li role="presentation"><a href="{{ url_for('meetup_management') }}">Meetups</a></li>
+              <li role="presentation"><a href="{{ url_for('cron_management') }}">Crons</a></li>
+            </ul>
+        </div>
+        <div class="col-md-11">
+            <div class="col-md-8 col-sm-offset-2">
+                <h3>Edit Review</h3>
+                <form method="POST" action="{{ url_for('review_edit', review_id=review.id) }}"  role="form_review">
+                
+                
+                    {% from "temp-n-macro/_formhelpers.html" import render_field %}
+                    
+                    <!----CSRF Tag for hack prevention-->
+                    {{ form_review.hidden_tag() }}
+                  
+                    {{ render_field(form_review.rating, class="form-control", min ="1", max="5", step ="1") }}
+                    
+                    {{ render_field(form_review.title, class="form-control") }}
+                    
+                    {{ render_field(form_review.review, class="form-control", rows=8) }}
+                    
+                    
+                    <button type="submit" class="btn btn-info">Update</button>
+                    
+                </form>
+                
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

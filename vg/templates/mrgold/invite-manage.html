@@ -1,0 +1,96 @@
+<!----this is for rendering a base template in flask using jinja templating-->
+{% extends "temp-n-macro/_user-footer_.html" %}
+
+
+{% block meta_og_tags_title %}
+
+
+<title>Invite Management - ValueGuyz</title>
+
+{% endblock %}
+    
+    
+{% block custom_css_files %}
+
+<!-- Custom styles for fixed top navbar  -->
+<!--<link href="css/navbar_fixed_top.css" rel="stylesheet">-->
+<link href="{{ url_for('static', filename='css/navbar-fixed-top.css') }}" rel="stylesheet">
+
+<!-- Custom footer for this template -->
+<!--<link href="css/footer.css" rel="stylesheet">-->
+<link href="{{ url_for('static', filename='css/user-footer.css') }}" rel="stylesheet">
+
+
+<link href="{{ url_for('static', filename='css/user-management.css') }}" rel="stylesheet">
+
+
+{% endblock %}
+    
+    
+{% block content %}
+
+<div class="jumbotron" id="admin">
+    <div class="row">
+        <div class="col-md-1">
+	        <ul class="nav nav-pills nav-stacked left-nav">
+              <li role="presentation"><a href="{{ url_for('user_management') }}">Users</a></li>
+              <li role="presentation"><a href="{{ url_for('premium_management') }}">Premium</a></li>
+              <li role="presentation"><a href="{{ url_for('review_manage') }}">Reviews</a></li>
+              <li role="presentation"><a href="{{ url_for('admin') }}">Posts</a></li>
+              <li role="presentation" class="active"><a href="{{ url_for('invite_management') }}">Invites</a></li>
+              <li role="presentation"><a href="{{ url_for('meetup_management') }}">Meetups</a></li>
+              <li role="presentation"><a href="{{ url_for('cron_management') }}">Crons</a></li>
+            </ul>
+        </div>
+        <div class="col-md-11">
+            <div class="col-sm-8 col-sm-offset-2">
+                <div class=" user-manage">
+                    <br>
+                    <div id="users-list" class="table-responsive table-bordered">
+                      <table class="table table-striped table-hover table-tips sortable">
+                        <th class="heading" colspan="6">Invite History</th>     
+                        <tr>
+                          <th>S.No.</th>
+                          <th>Invitee Mobile</th>
+                          <th>Invitee</th>
+                          <th>Mobile Invited</th>
+                          <th>Sent On</th>
+                          <th>Used</th>
+                        </tr>
+                        
+                        {% for invite in invites_net %}
+                        <tr>
+                           <td>{{ loop.index }}</td>
+                           <td>{{ invite.user.mobile_ind }}</td>
+                           <td>{{ invite.user.fullname }}</td>
+                           <td>{{ invite.mobile_invited }}</td>
+                           <td>{{ invite.invite_on_utc.strftime('%d %b %Y') }}</td>
+                           
+                           {% if invite.used == True %}
+                           <td style="color:green"><b>Yes</b></td>
+                           
+                           {% elif (time_now - invite.invite_on_utc).days < 2 and invite.used == False %}
+                           <td>Pending</td>
+                           
+                           {% elif (time_now - invite.invite_on_utc).days > 2 and invite.used == False %}
+                           <td style="color:red">Expired</td>
+                           
+                           {% endif %}
+                        </tr>
+                        {% endfor %}
+                      </table>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+<!--for sorting tables right in the page itself using class "sortable"-->
+<script src="{{ url_for('static', filename='js/sorttable.js') }}"></script>
+            
+            
+{% endblock %}
+    

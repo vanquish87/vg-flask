@@ -1,0 +1,127 @@
+<!----this is for rendering a base template in flask using jinja templating-->
+{% extends "temp-n-macro/_user-footer_.html" %}
+        
+        {% block custom_css_files %}
+    
+        <!-- Custom styles for fixed top navbar  -->
+        <!--<link href="css/navbar_fixed_top.css" rel="stylesheet">-->
+        <link href="{{ url_for('static', filename='css/navbar-fixed-top.css') }}" rel="stylesheet">
+        
+        
+        <!-- Custom footer for this template -->
+        <!--<link href="css/footer.css" rel="stylesheet">-->
+        <link href="{{ url_for('static', filename='css/user-footer.css') }}" rel="stylesheet">
+        
+        {% endblock %}
+
+    
+        {% block content %}
+        
+        <div class="container" style="margin-bottom: 100px">
+            
+            <hr>
+            <hr>
+            
+            <div class="row">
+                <div class="col-md-12">
+                    
+                    {% if action == "new" %}
+                        <h3>New Post (Blog Post)</h3>
+                    {% else %}
+                        <h3>Edit Post (Blog Post)</h3>
+                    {% endif %}
+                    
+                    
+                    {% if action == "new" %}
+                    <!--enctype is needed for processing uploading image--> 
+                    <form method="POST" action="{{ url_for('post') }}" enctype="multipart/form-data" role="form">
+                    {% else %}
+                    <form method="POST" action="{{ url_for('edit_post', post_id=post.id) }}" enctype="multipart/form-data" role="form">
+                    {% endif %}
+                    
+                    
+                        {% from "temp-n-macro/_formhelpers.html" import render_field %}
+                        
+                        <!----CSRF Tag for hack prevention-->
+                        {{ form.hidden_tag() }}
+                        
+                        <!--strange code why not directly check post.image-->
+                        {% if post and post.image %}
+                        <img src="{{ post.imgsrc }}" height="80px" class="img-rounded">
+                        {% endif %}
+                        
+                        <!--Tags coming from form.py(model file in user-->
+                        
+                        {{ render_field(form.image, class="form-control", placeholder="Upload Post main Image") }}
+                        
+                        <!--for publish_date_utc-->
+                        <div class="form-group">
+                             {% if action == "edit" %}
+                             
+                             <p>Posted On : {{ post.publish_date_utc.strftime('%d %b %Y') }}</p>
+                             {% endif %}
+                             
+                             {{ form.publish_date_utc.label}}
+                             {{ form.publish_date_utc(class="form-control") }}
+                             
+                             {% if form.publish_date_utc.errors %}
+                                 <ul class="text-danger">
+                                     {% for error in form.publish_date_utc.errors %}
+                                     <li>
+                                         {{ error }}
+                                     </li>
+                                     {% endfor %}
+                                 </ul>
+                             {% endif %}
+                        </div>
+                      
+                        {{ render_field(form.title, class="form-control", placeholder="Enter Full Title") }}
+                        
+                        {{ render_field(form.slug, class="form-control", placeholder="Ex: value-pick-multibagger-nse-bse") }}
+                        
+                        {{ render_field(form.description, class="form-control", rows=5, placeholder="Snippets of post shown on category pages ie, value pick") }}
+                        
+                        {{ render_field(form.category, class="form-control", placeholder="New Password") }}
+                        
+                        {{ render_field(form.new_category, class="form-control", placeholder="Create a New one..") }}
+                        
+                        
+                        
+                        {{ render_field(form.meta_og_tags_title, class="form-control", rows=10, placeholder="all the meta og tags and title for the post") }}
+                        
+                        {{ render_field(form.image_n_video, class="form-control", rows=3, placeholder="html image or video tag") }}
+                        
+                        {{ render_field(form.full_link, class="form-control", placeholder="put full link for social buttons") }}
+                        
+                        {{ render_field(form.body_intro, class="form-control", rows=10, placeholder="post starting with intro") }}
+                        
+                        {{ render_field(form.table_summary, class="form-control", rows=10, placeholder="Table summary for ie, value pick (locked content)") }}
+                        
+                        {{ render_field(form.body_details_website_box, class="form-control", rows=20, placeholder="post full ie, about business & SWOT & verdict etc & website box if needed") }}
+                        
+                        {{ render_field(form.quality_value_boxes, class="form-control", rows=10, placeholder="quality analysis and value matrix only if user is logged in & confirmed") }}
+                        
+                        {{ render_field(form.annual_report_table, class="form-control", rows=7, placeholder="annual reports at least 2 for the value pick") }}
+                        
+                        {{ render_field(form.read_time, class="form-control", placeholder="Between 1 to 20") }}
+                        
+                        {{ render_field(form.premium_content, class="form-control", placeholder="Write True or False") }}
+                        
+                        {{ render_field(form.simple_content, class="form-control", placeholder="Write True or False") }}
+                        
+
+                        {% if action == "new" %}
+                        <button type="submit" class="btn btn-info">Create Post</button>
+                        {% else %}
+                        <button type="submit" class="btn btn-info">Update</button>
+                        {% endif %}
+                        
+                        
+                    </form>
+                    
+                    <br>
+                    
+                 </div>
+            </div>
+        </div>           
+        {% endblock %}

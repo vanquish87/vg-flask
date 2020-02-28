@@ -1,0 +1,187 @@
+/** Globals */
+
+body {
+    font-family: 'Roboto',"Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #555;
+    font-weight: 300;
+}
+
+.btn-custom {
+  color: #fff;
+  background-color: #66C7FF;
+}
+
+.btn-custom:hover,
+.btn-custom:focus {
+    opacity : 0.9;
+    color: #fff;
+}
+
+.btn-premium {
+  	background-color: #FBBC05;
+}
+/*----------------------*/
+/*Nav pills styling*/
+
+.dash {
+    margin-top: 50px;
+    margin-bottom: 80px;
+}
+
+.dash .nav-pills {
+    border: 1px solid #66C7FF;
+}
+
+.dash .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+    
+    background-color: #66C7FF;
+}
+
+.dash .nav-pills>li.active>a:hover {
+    background-color: #31b0d5;
+    border-color: #269abc;
+}
+
+.nav-justified>li>a {
+    font-size: 15px;
+}
+
+.course {
+    margin-top: 50px;
+    margin-bottom: 90px;
+}
+
+
+#home {
+    margin-top: 50px;
+    margin-bottom: 130px;
+}
+
+#home ul {
+    font-size: 16px;
+}
+
+#home p {
+    text-align: center;
+    font-size: 17px;
+}
+
+#home .dash-buttons {
+    padding-top: 25%;
+}
+
+#home .dash-buttons .btn-custom {
+    color: #fff;
+	background-color: #66C7FF;
+}
+#home .dash-buttons .btn-custom:hover,
+#home .dash-buttons .btn-custom:focus {
+    opacity : 0.9;
+}
+
+#home .dash-buttons a {
+    margin-bottom: 25px;
+}
+
+
+
+/*table styling*/
+
+#what-learn .summary-heading {
+  text-align: center;
+  padding: 14px;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+#what-learn td{
+    padding: 8px 42px;
+    font-size: 18px;
+}
+
+#what-learn a {
+    color: #555;
+}
+
+#what-learn a:hover {
+    text-decoration: none;
+}
+
+#what-learn .play{
+    display: inline;
+    margin-left: 19px;
+    font-size: 15px;
+}
+
+/*-----*/
+
+
+/*learn segment styling*/
+
+#learn .row {
+    text-transform: capitalize;
+
+}
+
+#learn {
+    padding-top: 100px;
+}
+
+#profile {
+    margin-top: 60px;
+    margin-bottom: 140px;
+}
+
+#profile .review {
+    text-align: center;
+}
+
+#profile .review .btn {
+    padding: 6px 70px;
+}
+
+#rating-numbers {
+    margin-top: -25px;
+}
+
+#count_message {
+    margin-top: -5px;
+}
+
+.review-submit {
+    margin-top: 34px;
+}
+
+/* ------Responsive Bootstrap Part-------- */
+@media (max-width: 991px) {
+    #learn {
+        padding-top: 30px;
+    }
+    
+    #learn .col-md-6 {
+        padding-bottom: 30px;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .nav-justified>li>a {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 415px) {
+    #learn {
+        margin: 5%;
+    }
+    #profile {
+        margin-top: 30px;
+        margin-bottom: 40px;
+    }
+    #profile .btn {
+        font-size: 11px;
+    }
+    #profile .table {
+        font-size: 11px;
+    }
+}

@@ -1,0 +1,27 @@
+{% macro render_social(social, title) %}
+<!-- For Social buttons -->
+<div class="share-buttons">
+  <h2>
+    Share : 
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{ social }}">
+      <i class="fa fa-facebook-square">
+      </i>
+    </a>
+    <a href="http://twitter.com/share?url={{ social }}&text={{ title | safe }}&via=valueguyz">
+      <i class="fa fa-twitter">
+      </i>
+    </a>
+    <a href="http://www.linkedin.com/shareArticle?url={{ social }}">
+      <i class="fa fa-linkedin-square">
+      </i>
+    </a>
+    <a href="https://plus.google.com/share?url={{ social }}">
+      <i class="fa fa-google-plus">
+      </i>
+    </a>
+
+  </h2>
+
+</div>
+            
+{% endmacro %}

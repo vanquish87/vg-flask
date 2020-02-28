@@ -1,0 +1,83 @@
+/** Globals */
+
+body {
+  font-family: 'Roboto',"Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #555;
+  font-weight: 300;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  margin-top: 0;
+  font-family: 'Roboto',"Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  color: #333;
+}
+
+/*buy-sell styling*/
+#transact {
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+#transact .panel {
+    border-radius: 0px;
+}
+
+#transact .panel-heading {
+    border-top-right-radius: 0px; 
+    border-top-left-radius: 0px; 
+}
+
+#transact .panel-footer .btn {
+    width: 40%
+}
+
+#transact .panel-footer {
+    background-color: #fff; 
+    border-top: 0px; 
+    border-bottom-right-radius: 3px; 
+    border-bottom-left-radius: 3px; 
+}
+
+/*buy color*/
+#transact .panel-buy {
+    border-color: #0000e6;
+}
+#transact .panel-buy .panel-heading {
+    color: #fff;
+    background-color: #0000e6;
+    border-color: #0000e6;
+}
+#transact .panel-footer .btn-buy {
+    color: #fff;
+    background-color: #0000e6;
+    float: right;
+}
+#transact .panel-footer .btn-buy:hover,
+#transact .panel-footer .btn-buy:focus {
+    opacity : 0.8;
+}
+
+/*sell color*/
+#transact .panel-sell {
+    border-color: #ff1a1a;
+}
+#transact .panel-sell .panel-heading {
+    color: #fff;
+    background-color: #ff1a1a;
+    border-color: #ff1a1a;
+}
+#transact .panel-footer .btn-sell {
+    color: #fff;
+    background-color: #ff1a1a;
+    float: right;
+}
+#transact .panel-footer .btn-sell:hover,
+#transact .panel-footer .btn-sell:focus {
+    opacity : 0.8;
+}

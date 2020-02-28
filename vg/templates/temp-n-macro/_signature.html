@@ -1,0 +1,55 @@
+{% macro render_signature(date, styling) %}
+
+
+
+<div class="user-entry query-box" style="text-align: center">
+  <h2>Got question ?</h2>
+    <a href="{{ url_for('valueguyz_home') }}#ask-query">
+        <button type="submit" class="btn btn-custom bun-premium btn-lg">
+              Ask a Query
+        </button>
+    </a>
+</div> 
+
+
+<div id="signature" {{ styling | safe }}>
+    
+    <div class="row">
+      <div class="col-md-8">
+        <p>regards,</p>
+        <p>
+          <strong>
+            <a href="{{ url_for('valueguyz_home') }}#about" target="_blank">jasmeet singh
+            </a>
+          </strong>
+          <i class="fa fa-paper-plane-o" style="color:#34A853"></i>
+        </p>
+        <p>Founder & Investor</p>
+        <p>SEBI Regd.(<a href="http://www.sebi.gov.in/sebiweb/other/OtherAction.do?doRecognisedFpi=yes&intmId=14" target="_blank">INH100004951</a>)</p>
+      </div>
+      
+      <div class="col-md-4">
+        <img src="{{ url_for('static', filename='images/pages/jasmeet-about.jpg') }}" alt="Jasmeet Singh" title="Investor">
+      </div>
+    </div>
+    
+</div>
+
+<div id="about-me">
+    <h3>About me :</h3>
+    <p>Currently managing assets of <i class="fa fa-inr" aria-hidden="true"></i> 5 Crore+ & still sleep like a baby every night because Valueguyz makes life simpler.
+    </p>
+    <p>I am passionate about 3 things in my life Financial System, Fitness & 
+      <a href="https://www.facebook.com/nikonsikh" target="_blank">Photography
+      </a><i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+    </p>
+    <p>I got introduced to Financial system through Forex Trading back in 2007 during my 3rd Year of Engineering & It was too complex yet magnificent. Officially I entered Indian Stock Market in early 2008 at the very beginning of Global Financial Crisis, but what the hell did I know <i class="fa fa-smile-o"></i> for me it was the last semester & time to get serious about my passion ie, 
+      <a href="https://www.facebook.com/media/set/?set=a.10150835609826711.393079.707201710&type=1&l=74dce50b3c" target="_blank">Counter Strike
+      </a> <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+    </p>
+    
+    <div class="about-button">
+        <a  class="btn btn-success" href="{{ url_for('valueguyz_home') }}#about" target="_blank" data-toggle="tooltip" data-placement="left" title="Know more">Keep Digging  <i class="fa fa-paper-plane-o" aria-hidden="true"></i></a>
+    </div>
+</div>
+{% endmacro %}

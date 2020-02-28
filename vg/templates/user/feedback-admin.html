@@ -1,0 +1,52 @@
+<html>
+    
+    <body>
+    
+    
+    <h4>Message:</h4>
+    
+    <div class="table-center" style="width:100%; background-color: #f5f5f5; text-align:center">
+    <h3>{{ subject | safe }}</h3>
+    <p>{{ body | safe }}</p>
+    </div>
+    
+        
+    <p>Hi! this was a query/feedback by:</p>
+    
+    {% if session.get('mobile_ind') %}
+    
+    <p style="text-transform:capitalize">Full Name : {{ (user.fullname) | safe }}</p>
+    
+    <p>Email : {{ (user.email) | safe }}</p>
+    {% if user.mobile_ind %}
+    <p>Mobile : {{ (user.mobile_ind) | safe }}</p>
+    {% endif %}
+    
+    {% if user.is_premium == 1 %}
+    <p>Premium Member : Yes</p>
+    <p>Premium Expiry : {{ user.premium_expiry_on.strftime('%d %b %Y') }}</p>
+    
+    {% endif %}
+    
+    <br>
+    
+    {% else %}
+    <p>This guy is not registered with valueguyz.com
+    (this shouldn't ever come since I have set views.py to only for confirmed users to give feedback.</p>
+    
+    {% endif %}
+    
+    
+    <p>-------</p>
+    <p style="color:#999">Jasmeet Singh</p>
+    <p style="color:#999">Founder & Investor</p>
+    <p style="color:#999">SEBI Regd. (INH100004951)</p>
+    
+    <br>
+    <br>
+    <br>
+    <p>This is a system generated mail, please don't reply back.</p>
+
+    </body>
+  
+</html>

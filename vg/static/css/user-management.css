@@ -1,0 +1,88 @@
+/** Globals */
+
+body {
+    font-family: 'Roboto',"Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #555;
+    font-weight: 300;
+}
+
+/*------------*/
+
+#admin {
+    background-color: white;
+    margin-top: 12px;
+    
+}
+#admin .row {
+    margin-left: 0px;
+    margin-right: 0px;
+    /*position: relative;*/
+}
+
+/*nav pills side styling*/
+#admin .col-md-1{
+    background-color: #ffff99;
+    height: 87vh;
+    /*overflow: hidden;*/
+    padding-left: 0px;
+    padding-right: 0px;
+    position: fixed;
+}
+
+#admin .col-md-11 {
+    float: right;
+}
+
+#admin .left-nav{
+    /*top: 80px;*/
+}
+#admin .nav-pills>li>a {
+    padding-left: 21%
+}
+
+/*custom footer n header for admin panel*/
+.navbar-fixed-top,
+.user-entry,
+.navbar-fixed-bottom{
+    /*background-color: #e6e6e6;*/
+}
+
+
+
+/*table styling*/
+.heading {
+  text-align: center;
+  padding: 14px;
+  font-size: 20px;
+}
+
+
+#users-list th {
+  text-align: center;
+  padding: 10px;
+  font-size: 15px;
+  text-transform: capitalize;
+}
+
+#users-list td{
+    padding: 8px 10px;
+    font-size: 14px;
+    text-align: center;
+}
+
+#users-list .review-title{
+    text-align: left;
+}
+
+#users-list .table-hover>tbody>tr:hover {
+    background-color: #66C7FF;
+}
+
+
+
+/*to use it on ipad temp styling*/
+@media (min-width: 760px) {
+    .col-md-11 {
+    width: 91.66666667%;
+    }
+}

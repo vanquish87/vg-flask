@@ -1,0 +1,113 @@
+<!--this is and excellent use of macros with tweaking for loop to use in index, premium n standalone review page-->
+{% macro render_reviews(page, reviews) %}
+<div id="review">
+  <div class="container">
+      <div class="row">
+          <div class="col-sm-8 col-sm-offset-2">
+              
+              <h1>Member Reviews</h1>
+              
+              {% for review in reviews.items %}
+              <div class="star-ratings">
+                {% if review.rating == 1 %}
+                <h3>
+                  <i class="fa fa-star" aria-hidden="true" style="color:#f6b800"></i>
+                  <i class="fa fa-star" aria-hidden="true" style="color:#ececec"></i>
+                  <i class="fa fa-star" aria-hidden="true" style="color:#ececec"></i>
+                  <i class="fa fa-star" aria-hidden="true" style="color:#ececec"></i>
+                  <i class="fa fa-star" aria-hidden="true" style="color:#ececec"></i>
+                </h3>
+                
+                {% elif review.rating == 2 %}
+                <h3>
+                  <i class="fa fa-star" aria-hidden="true" style="color:#f6b800"></i>
+                  <i class="fa fa-star" aria-hidden="true" style="color:#f6b800"></i>
+                  <i class="fa fa-star" aria-hidden="true" style="color:#ececec"></i>
+                  <i class="fa fa-star" aria-hidden="true" style="color:#ececec"></i>
+                  <i class="fa fa-star" aria-hidden="true" style="color:#ececec"></i>
+                </h3>
+                
+                {% elif review.rating == 3 %}
+                <h3>
+                  <i class="fa fa-star" aria-hidden="true" style="color:#f6b800"></i>
+                  <i class="fa fa-star" aria-hidden="true" style="color:#f6b800"></i>
+                  <i class="fa fa-star" aria-hidden="true" style="color:#f6b800"></i>
+                  <i class="fa fa-star" aria-hidden="true" style="color:#ececec"></i>
+                  <i class="fa fa-star" aria-hidden="true" style="color:#ececec"></i>
+                </h3>
+                
+                {% elif review.rating == 4 %}
+                <h3>
+                  <i class="fa fa-star" aria-hidden="true" style="color:#f6b800"></i>
+                  <i class="fa fa-star" aria-hidden="true" style="color:#f6b800"></i>
+                  <i class="fa fa-star" aria-hidden="true" style="color:#f6b800"></i>
+                  <i class="fa fa-star" aria-hidden="true" style="color:#f6b800"></i>
+                  <i class="fa fa-star" aria-hidden="true" style="color:#ececec"></i>
+                </h3>
+                
+                {% elif review.rating == 5 %}
+                <h3>
+                  <i class="fa fa-star" aria-hidden="true" style="color:#f6b800"></i>
+                  <i class="fa fa-star" aria-hidden="true" style="color:#f6b800"></i>
+                  <i class="fa fa-star" aria-hidden="true" style="color:#f6b800"></i>
+                  <i class="fa fa-star" aria-hidden="true" style="color:#f6b800"></i>
+                  <i class="fa fa-star" aria-hidden="true" style="color:#f6b800"></i>
+                </h3>
+                
+                {% endif %}
+                
+                <h4>
+                  {{ review.title | safe}}
+                </h4>
+                <p class="user-info">by <b>{{ review.user.fullname }}</b> on {{ review.review_on_utc.strftime('%d %b, %Y') }}
+                </p>
+                <p>
+                    {% if review.user.is_premium == 1 %}
+                    <i class="fa fa-graduation-cap" aria-hidden="true" style="color:#31b0d5"></i> Premium Member
+                    {% else %}
+                    Member
+                    {% endif %}
+                </p>
+                <div class="review-body">
+                  <p>
+                    {{ review.review | safe}}
+                  </p>
+                </div>
+              </div>
+              {% endfor %}
+              
+              
+              {% if page == 'sneak-peak' %}
+              <div class="more-button">
+                <a  class="btn btn-info" href="{{ url_for('review_member') }}" target="_blank" aria-expanded="false"> View more recent reviews &raquo;</a>
+              </div>
+              {% endif %}
+              
+          </div>
+      </div>
+      
+      {% if page == 'all-reviews' %}
+      <nav>
+          <!--these codes have to do with db operations in paginate-->
+          <ul class="pager">
+          
+              {% if reviews.has_prev %}
+              <li><a href="{{ url_for('review_member', page=reviews.prev_num) }}">Previous</a></li>
+              {% else %}
+              <li><a href="#">Previous</a></li>
+              {% endif %}
+              
+              {% if reviews.has_next %}
+              <li><a href="{{ url_for('review_member', page=reviews.next_num) }}">Next</a></li>
+              {% else %}
+              <li><a href="#">Next</a></li>
+              {% endif %}
+          
+          </ul>
+      </nav>  
+      {% endif %}
+      
+  </div>
+</div>
+
+{% endmacro %}

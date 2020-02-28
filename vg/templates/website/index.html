@@ -1,0 +1,294 @@
+<!----this is for rendering a base template in flask using jinja templating-->
+{% extends "temp-n-macro/_user-footer_.html" %}
+
+{% block meta_og_tags_title %}
+
+<!-- SEO robots Meta -->
+<meta name="description" content="A community of Investors against the Loot Lo mentality of Stock-Brokers & investing in Value Picks as Multibagger stocks of India.">
+<meta name="keywords" content="value pick, value picks, valuepicks, multibagger, multibagger stocks india, ">
+<meta name="author" content="Jasmeet Singh, Founder & Investor">
+<link rel="icon" href="{{ url_for('static', filename='images/pages/vg-favicon.png') }}">
+
+
+<title>ValueGuyz &middot; India against Sattebaaji &middot; Investing in Value Picks, Multibagger Stocks</title>
+
+
+<!-- OG for Social Networks -->
+<meta property="og:title" content="ValueGuyz &middot; Community of Investors in Value Picks, Multibagger Stocks" />
+<meta property="og:description" content="A community of Investors against the Loot Lo mentality of Stock-Brokers & investing in Value Picks as Multibagger stocks of India." />
+<meta property="og:type" content="Website" />
+<meta property="og:url" content="http://www.valueguyz.com/index.html" />
+<meta property="og:image" content="http://www.valueguyz.com/images/pages/vg_home_og_share.jpg" />
+
+
+<!-- Twitter Card OG -->
+<meta name=”twitter:card” content=”ValueGuyz &middot; Community of Investors in Value Picks, Multibagger Stocks” />
+<meta name=”twitter:title” content=”ValueGuyz &middot; Community of Investors in Value Picks, Multibagger Stocks” />
+<meta name=”twitter:description” content=”A community of Investors against the Loot Lo mentality of Stock-Brokers & investing in Value Picks as Multibagger stocks of India.” />
+<meta name=”twitter:url” content=”http://www.valueguyz.com/index.html” />
+<meta name=”twitter:image” content=”http://www.valueguyz.com/images/pages/vg_home_og_share.jpg” />
+
+
+{% endblock %}
+
+
+{% block custom_css_files %}
+
+<!-- Custom styles for fixed top navbar  -->
+<!--<link href="css/navbar_fixed_top.css" rel="stylesheet">-->
+<link href="{{ url_for('static', filename='css/navbar-fixed-top.css') }}" rel="stylesheet">
+
+
+<!-- Custom footer for this template -->
+<!--<link href="css/footer.css" rel="stylesheet">-->
+<link href="{{ url_for('static', filename='css/user-footer.css') }}" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<!--<link href="css/custom-index.css" rel="stylesheet">-->
+<link href="{{ url_for('static', filename='css/custom-index.css') }}" rel="stylesheet">
+
+
+<!--Trumbowyg A lightweight WYSIWYG editor styling-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.5.1/ui/trumbowyg.css">
+
+{% endblock %}
+
+
+{% block content %}
+
+<!--Start mailchimp form mc_embed_signup-->
+<div id="subscribe">
+  <div class="container-mailid">
+    
+      <div class="row">
+        <div class="col-sm-6 lifestyle">
+          <h1>Intelligent Investor Lifestyle</h1>
+          <h2>Start Yours in less than 2 Minutes</h2>
+          <a class="btn btn-custom btn-lg" href="{{ url_for('register') }}" role="button">Register</a>
+          <h2>
+            or go <a href="{{ url_for('value_picks_multibagger_stocks_india') }}">Value Picking <i class="fa fa-paper-plane-o" style="color: #E91E63"></i></a>
+          </h2>
+        </div>
+        <div class="col-sm-6 blog-main">
+          <!-- 16:9 aspect ratio for Youtube Video-->
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" width="300" height="169" src="https://www.youtube.com/embed/i3CVQuhDIH4?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen>
+            </iframe>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+
+  </div>
+</div>
+
+
+<!-- VG performace chart using JS script -->
+<div id="perfo-chart">
+  <div class="container chartist">
+    <h1>VGEX = multi-bagger performance</h1>
+      <div class="row">
+        <div class="col-md-8">
+          <div id="chartContainer" style="height: 330px; width: 80%;"></div>
+        </div>
+        <div class="col-md-4">
+          <h1>
+            <a href="{{ url_for('vgex_performance') }}">Dec17 update : <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+            </a>
+          <h1>
+          <h2>VGEX :<span style="color:#4FBEFF">+ 187%</span></h2>
+          <h2>Sattebaaj/Trader : <span style="color:red">- 100%</span></h2>
+          <h2>S&P Nifty :<span style="color:#FFA500"> 33%</span> </h2> 
+        </div>
+      </div>
+  </div>
+</div>
+
+
+<!--vg courses links-->
+<div id='vg-courses'>
+  <div class="Container">
+    <h1>online courses</h1>
+    
+    <div class="row">
+      <div class="col-md-6">
+        <a href="{{ url_for('intro_fresher') }}">
+          <span class="fa-stack fa-5x">                
+            <i class="fa fa-square-o fa-stack-2x"></i>
+            <i class="fa fa-cog fa-stack-1x" aria-hidden="true"></i>
+          </span>
+          <h3>Secret Jugaad</h3>
+          <p>Learn To Identify Multibagger Stocks By Secret Jugaad In NSE & BSE</p>
+        </a>
+      </div>
+      <div class="col-md-6 advanced">
+        <a href="{{ url_for('advanced_value') }}">
+          <span class="fa-stack fa-5x">                
+            <i class="fa fa-square-o fa-stack-2x" style="color:#FBBC05"></i>
+            <i class="fa fa-cogs fa-stack-1x" aria-hidden="true" style="color:#FBBC05"></i>
+          </span>
+          <h3>Advanced Course</h3>
+          <p>Complete Step By Step Guide To Identify Multibagger Stocks By Secret Jugaad In NSE & BSE</p>
+        </a>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+
+
+
+
+
+<!--reviews section in macro with sending reviews to it-->
+{% from "temp-n-macro/_reviews.html" import render_reviews %}
+{{ render_reviews(page='sneak-peak', reviews=reviews) }}
+
+
+<!--about section-->
+<div id="about">
+  <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1" id="jasmeet">
+          <div class="row">
+            <div class="col-sm-4">
+              <img src="{{ url_for('static', filename='images/pages/jasmeet-about.jpg') }}" alt="Jasmeet Singh" title="Investor">
+            </div>
+            <div class="col-sm-8">
+              <h1>Jasmeet Singh</h1>
+              <h2>Founder & Investor</h2>
+              <h2>SEBI Regd.(<a href="http://www.sebi.gov.in/sebiweb/other/OtherAction.do?doRecognisedFpi=yes&intmId=14" target="_blank">INH100004951</a>)</h2>
+              
+            </div>            
+          </div>
+          <p>Currently managing assets of <i class="fa fa-inr" aria-hidden="true"></i> 5 Crore+ & still sleep like a baby every night because Valueguyz makes life simpler.
+          </p>
+          <p>I am passionate about 3 things in my life Financial System, Fitness & 
+            <a href="https://www.facebook.com/nikonsikh" target="_blank">Photography
+            </a><i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+          </p>
+          <p>I got introduced to Financial system through Forex Trading back in 2007 during my 3rd Year of Engineering & It was too complex yet magnificent. Officially I entered Indian Stock Market in early 2008 at the very beginning of Global Financial Crisis, but what the hell did I know <i class="fa fa-smile-o"></i> for me it was the last semester & time to get serious about my passion ie, 
+            <a href="https://www.facebook.com/media/set/?set=a.10150835609826711.393079.707201710&type=1&l=74dce50b3c" target="_blank">Counter Strike
+            </a> <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+          </p>
+
+          <div class ="collapse" id="viewdetails">
+            <p>From then I had win & lose in countless situations using all tricks by book or outside the book. I have vast experience of trading more than <i class="fa fa-inr"></i> 500 Crore + Turnover in Derivatives of NSE, MCX, Currency, NCDEX also in OTC (Over the counter) Markets, Bond Markets over last 8 Years.
+            </p>
+            <p>I was stupid enough to waste my time to be master in Technical analysis, Behavioural finance, Algorithm Development, Guerilla ATS (Automatic Trading System), Risk Management, Treasury & Liquidity management upto extreme level till I got my first Value Pick <i class="fa fa-bolt"></i>.
+            </p>
+            <p>I have been an extremely successful derivative trader in early days & moved on to Set up My Own Agri-Commodity based Hedge fund <a href="{{ url_for('static', filename='download/pdf/AR-iMoney-Avalanche-14.pdf') }}" target="_blank">iMoney LLP</a> <i class="fa fa-paper-plane-o" style="color: #E91E63"></i> with my college-mate from engineering right after my Master's in Finance.
+            </p>
+            <p>iMoney was successful in making risk-free money as I wanted for 4 years but failed to scale, thanks to the tight regulations from RBI & my lousy partner. I shut down iMoney in mid-2015 & kicked out my lousy partner with the lesson that never work with passion-less people again.
+            </p> 
+            <p>Meanwhile my investing experimentation was on-going effort since 2009 but eventually stabilized a Value pick model in 2013. Turned out to be the best performance <i class="fa fa-lightbulb-o"></i> I ever had in all these multiple field of Finance.
+            </p>
+            <p>Not to brag but I made decent record & now Manage <i class="fa fa-inr"></i> 5 Crore + in a hedge fund using the same value picks technique on which Valueguyz.com runs.I started Valueguyz.com in 2014 as my effort to create a community of like minded investor who can see beyond the "Loot Lo Mentality" of Stock Brokers & live n Invest like a pro <i class="fa fa-beer"></i>
+            </p>
+            <p>I dig fitness specially endurance & running. I am regular at gymming since 2010. Gymming is all about persistent & consistent fight against yourself which I will carry on for lifetime as I love it so much to challenge myself. Gym has taught me that desciplined & consistent efforts takes you to levels that others only can dream of. </p>
+            <p>I recently got bitten by 
+              <a href="https://www.facebook.com/nikonsikh" target="_blank">Candid Photography
+              </a><i class="fa fa-paper-plane-o" style="color: #E91E63"></i> 
+            Bug & I keep upping my game of professional photography but just for fun. I love the complexity & sophistication in DSLR <i class="fa fa-camera"></i> game which need consistent learning while clicking as well as developing the RAW files.</p>
+            <p>Valueguyz.com, Animated Value Pick courses, Videos are developed end to end solely by me for which I had to go through tough learning curve of HTML, JavaScript, CSS, BootStrap, Python, Flask Framework, SQL Databases, SEO, Open Graphs, Analytics, Server End Technologies, Video development, Audio development, Animated drawings, Acting, Camera work among many other things..... which again I liked because "Never Stop Learning" is my life's motto.</p>
+            <p>I am a laid back <i>Sust</i> person who loves to sleep & be alone when thinking. I love binge watching series & movies. Inspired a lot by Jason Bourne, James Bond, Ari Gold, Johnny Drama, Harvey Spector,Kramer, Frank Underwood & Jon Snow <i class="fa fa-beer"></i></p>
+          </div>
+
+          <div class="about-button">
+            <a  class="btn btn-custom btn-lg" data-toggle="collapse" data-target="#viewdetails"  aria-expanded="false"><i class="fa fa-arrow-down" aria-hidden="true"></i> Expand <i class="fa fa-arrow-down" aria-hidden="true"></i></a>
+          </div>
+
+         <br>
+
+        </div> <!-- /container -->
+      </div>
+  </div>
+</div>
+
+<div id="contact">
+  <div class="container">
+    <h1>You can fight Sattebaaji</h1>
+    
+    <div class="home-contact">
+      <div class="row">
+        
+        <div class="col-md-6 address">
+          <p style="margin-bottom:25px">Contact :</p>
+          <p><i class="fa fa-whatsapp" style="color:#50CA5D"></i> : 9871012220</p>
+          <p><i class="fa fa-share" style="color:#EA4335"></i> : jasmeet@valueguyz.com</p>
+          <p><i class="fa fa-building-o" style="color:#66C7FF"></i> : 227, Raja Garden, New Delhi - 15</p>
+        </div>
+       
+        <div class="col-md-6 feedback">
+          
+          <div class="form-wrap" id="ask-query">
+            <p>ask a query / give feedback</p>
+            
+                <!--if there is error in any field it will be displayed here-->
+                {% if error %}
+                    <div class="error text-danger">{{ error }}</div>
+                {% endif %}
+                
+                <form method="POST" action="{{ url_for('valueguyz_home') }}" role="form">
+                    
+                    {% from "temp-n-macro/_formhelpers.html" import render_field %}
+                    
+                    <!----CSRF Tag for hack prevention-->
+                    {{ contactform.hidden_tag() }}
+                    
+                    
+                    <!--Tags coming from form.py file(model) in user-->
+                    <!--check if its a mobile number or what-->
+                    {% if session.get('mobile_ind') %}
+                    <fieldset disabled>
+                    {{ render_field(contactform.fullname, class="form-control", value=(user.fullname) | safe) }}
+                    {{ render_field(contactform.mobile_ind, class="form-control", value=(user.mobile_ind) | safe) }}
+                    </fieldset>
+                    
+                    
+                    {% else %}
+                    <br>
+                    <p style="color:red">You need to login first</p>
+                    
+                    {% endif %}
+                    
+                    {% if session.get('mobile_ind') %}
+
+                    
+                    {{ render_field(contactform.subject, class="form-control", placeholder="What's on your Mind?") }}
+                    {{ render_field(contactform.body, class="form-control", rows=8, placeholder="Ask me anything on Finance & Investing or Give feedback on website's working & feature request. Keep it to max. 800 words dost :). Also mention your email id for prompt response." ) }}
+                    
+                    
+            				<input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Submit">
+            		</form>
+            		
+                		{% else %}
+                		
+                		<fieldset disabled>
+                    {{ render_field(contactform.subject, class="form-control", placeholder="What's on your Mind?") }}
+                    {{ render_field(contactform.body, class="form-control", rows=8, placeholder="Ask me anything on Finance & Investing or Give feedback on website's working & feature request. Keep it to max. 800 words dost :). Also mention your email id for prompt response.") }}
+                    </fieldset>
+                    
+                    <div class="login-here">
+                  		<input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" disabled="disabled" value="Submit">
+                  	</div>
+                  	
+                		{% endif %}
+                		
+    	    </div>
+          
+        </div>
+        
+      </div>  
+    </div>
+    
+  </div>
+</div>
+
+
+{% endblock %}
+        

@@ -1,0 +1,39 @@
+<!--for error messages-->
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+
+<!-- Modal -->
+<!--to show flash messages in modal when user is logged in-->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        
+      <div class="modal-content">
+        <div class="modal-header">
+            
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Message</h4>
+        </div>
+        
+            <div class="modal-body">
+              <div id="messages">
+                  <ul class="flashes text-info">
+                      {% for message in messages %}
+                      <li>{{ message }}</li>
+                      {% endfor %}
+                  </ul>
+              </div>
+            </div>
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  {% endif %}
+  {% endwith %}
+          
+          
+          

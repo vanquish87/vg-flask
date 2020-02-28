@@ -1,0 +1,69 @@
+<div class="blog-post">
+            
+    <h1 class="blog-post-title">
+    {% if post.category.name != "premium picks" %}
+    <a href="{{ url_for('article', slug=post.slug, year=post.publish_date_utc.year) }}">{{ post.title | safe}}
+    </a>
+    {% else %}
+    <a href="{{ url_for('premium_article', slug=post.slug, year=post.publish_date_utc.year) }}">{{ post.title | safe}}
+    </a>
+    {% endif %}
+    </h1>
+    
+    <p class="blog-post-meta">
+    <a type="button" class="btn btn-custom btn-vg"> {{ post.read_time }} Minute read
+    </a>
+    <span class="label pull-right">
+        {% if post.category.name != "premium picks" %}
+        <a type="button" class="btn btn-default"> {{ post.category.name }}
+        {% else %}
+        <a type="button" class="btn btn-custom"> {{ post.category.name }}
+        {% endif %}
+    </a>
+    </span>
+    </p>
+    
+    <p class="blog-post-meta">
+    {{ post.publish_date_utc.strftime('%b %d, %Y') }}
+     by 
+    <a href="{{ url_for('valueguyz_home') }}#about" target="_blank">{{ post.user.fullname }}
+    </a>
+    
+
+    {% if session.get('is_author') %}
+        {% if post.live == False %}
+        <a type="button" class="btn btn-danger" style="float:right"> Draft Mode
+        </a>
+        {% else %}
+        <a type="button" class="btn btn-success" style="float:right"> Live Post
+        </a>
+        {% endif %}
+    {% endif %}
+    </p>
+    
+    
+    {% if post.category.name != "premium picks" %}
+    <a href="{{ url_for('article', slug=post.slug, year=post.publish_date_utc.year) }}">
+    {% else %}
+    <a href="{{ url_for('premium_article', slug=post.slug, year=post.publish_date_utc.year) }}">
+    {% endif %}
+    <img src="{{ url_for('static', filename='images/posts/') }}{{ post.image |safe }}" alt="Value pick" title="{{ post.title | safe}}">
+    </a>
+    
+    <h2>What's it about ?</h2>
+    
+    <p>{{ post.description | safe }}
+        <strong>
+        {% if post.category.name != "premium picks" %}
+        <a href="{{ url_for('article', slug=post.slug, year=post.publish_date_utc.year) }}">
+        {% else %}
+        <a href="{{ url_for('premium_article', slug=post.slug, year=post.publish_date_utc.year) }}">
+        {% endif %}Read More
+        </a>
+        </strong>
+    </p>
+</div>
+
+<hr>
+            
+            

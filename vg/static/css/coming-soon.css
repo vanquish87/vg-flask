@@ -1,0 +1,76 @@
+body {
+  font-family: 'Roboto',"Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+}
+
+.coming-soon {
+	margin-top: 130px;
+	text-align: center;
+}
+
+.coming-soon h1 {
+	font-size: 70px;
+}
+
+.coming-soon h2 {
+	color: #449d44;
+}
+
+
+/*invite css*/
+
+#invite .embed-responsive {
+	margin-top: 48px;
+}
+
+#invite {
+	padding-top: 40px;
+	padding-bottom: 130px;
+}
+
+#invite .invite-intro {
+	padding-top: 35px;
+	padding-bottom: 50px;
+}
+
+#invite h4 {
+	text-align: center;
+}
+
+#invite h2 {
+	text-align: center;
+}
+
+#invite form {
+	padding-top: 30px;
+	padding-bottom: 100px;
+}
+
+.invite-heading {
+  text-align: center;
+  padding: 14px;
+  font-size: 20px;
+}
+
+#quality{
+	margin: 50px 0px;
+}
+
+#invite-history{
+	margin: 80px 0px;
+}
+/* ------Responsive Bootstrap Part-------- */
+
+@media (max-width: 605px) {
+	.coming-soon {
+		margin-top: 60px;
+	}
+	.coming-soon h1 {
+    	font-size: 42px;
+	}
+
+	.coming-soon h2 {
+	 	font-size: 20px;
+	}
+
+}

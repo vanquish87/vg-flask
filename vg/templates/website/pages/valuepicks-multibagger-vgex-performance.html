@@ -1,0 +1,630 @@
+<!----this is for rendering a base template in flask using jinja templating-->
+{% extends "temp-n-macro/_user-footer_.html" %}
+
+{% block meta_og_tags_title %}
+
+<!-- SEO robots Meta -->
+<meta name="description" content="VGEX is calculated monthly on basis of those Value Picks & Its performance is beating every benchmark of Investing in India on MoM basis.">
+<meta name="keywords" content="value pick, value picks, valuepicks, multibagger, multibagger stocks india, ">
+<meta name="author" content="Jasmeet Singh, Founder & Investor">
+<link rel="icon" href="{{ url_for('static', filename='images/pages/vg-favicon.png') }}">
+
+
+
+<title>Value Picks l Multibagger &middot; VGEX Performance Calculations</title>
+
+
+
+<!-- OG for Social Networks -->
+<meta property="og:title" content="Value Picks l Multibagger l Super Stock &middot; Performance Calculations" />
+<meta property="og:description" content="VGEX is calculated monthly on basis of those Value Picks & Its performance is beating every benchmark of Investing in India on MoM basis." />
+<meta property="og:type" content="Website" />
+<meta property="og:url" content="http://www.valueguyz.com/pages/valuepicks-multibagger-vgex-performance.html" />
+<meta property="og:image" content="http://www.valueguyz.com/static/images/pages/vg_home_og_share.jpg" />
+
+
+
+<!-- Twitter Card OG -->
+<meta name=”twitter:card” content=”Value Picks l Multibagger l Super Stock &middot; Performance Calculations” />
+
+<meta name=”twitter:title” content=”Value Picks l Multibagger l Super Stock &middot; Performance Calculations” />
+
+<meta name=”twitter:description” content=”VGEX is calculated monthly on basis of those Value Picks & Its performance is beating every benchmark of Investing in India on MoM basis.” />
+
+<meta name=”twitter:url” content=”http://www.valueguyz.com/pages/valuepicks-multibagger-vgex-performance.html” />
+
+<meta name=”twitter:image” content=”http://www.valueguyz.com/images/static/pages/vg_home_og_share.jpg” />
+
+
+{% endblock %}
+
+
+{% block custom_css_files %}
+
+<!-- Custom styles for fixed top navbar  -->
+<!--<link href="css/navbar_fixed_top.css" rel="stylesheet">-->
+<link href="{{ url_for('static', filename='css/navbar-fixed-top.css') }}" rel="stylesheet">
+
+
+<!-- Custom footer for this template -->
+<!--<link href="css/footer.css" rel="stylesheet">-->
+<link href="{{ url_for('static', filename='css/user-footer.css') }}" rel="stylesheet">
+
+
+<!-- Custom styles for this template styling-->
+<!--<link href="../css/tfn-performance.css" rel="stylesheet">-->
+<link href="{{ url_for('static', filename='css/tfn-performance.css') }}" rel="stylesheet">
+
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<!-- VG performace chart using JS script -->
+<div id="perfo-chart">
+  <div class="container chartist">
+    <h1>VGEX : ValueGuyz Index</h1>
+    <div id="chartContainer" style="height: 330px; width: 80%;"></div>  
+  </div>
+</div>
+
+
+<!-- Top 5 picks Table -->
+<div id="top-picks">
+  <div class="container">
+    <h1>VGEX Holdings</h1>
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1 table-responsive table-bordered">
+        <table class="table  table-hover table-tips">
+          <tr>
+            <th class="picks-heading">Stock</th>
+            <th class="picks-heading">Price</th>
+            <th class="picks-heading">Entry Date</th>
+            <th class="picks-heading">CMP</th>
+            <th class="picks-heading">Return</th>
+            <th class="picks-heading">Status</th>
+          </tr>
+          <tr>
+            <td>
+              <a href="http://www.valueguyz.com/posts/2014/multibagger-value-picks-mar14-ador-fontech" target="_blank">Ador Fontech <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+            <td><i class="fa fa-inr"></i> 58</td>
+            <td>10 Mar 2014</td>
+            <td><i class="fa fa-inr"></i> 100</td>
+            <td>31%</td>
+            <td>
+              <a href="http://www.valueguyz.com/posts/2016/multibagger-value-picks-exit-apr16-ador-fontech" target="_blank">Exit <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td> 
+          </tr>  
+          <tr>
+            <td>
+              <a href="http://www.valueguyz.com/posts/2014/multibagger-value-picks-apr14-il-fs-investment-managers" target="_blank">IL&FS Invest <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+            <td><i class="fa fa-inr"></i> 14</td>
+            <td>10 Apr 2014</td>
+            <td><i class="fa fa-inr"></i> 19.6</td>
+            <td>31%</td>
+            <td>
+              <a href="http://www.valueguyz.com/posts/2016/multibagger-value-picks-exit-may16-il-fs-invest-manager" target="_blank">Exit <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td> 
+          </tr>  
+          <tr>
+            <td>
+              <a href="http://www.valueguyz.com/posts/2014/multibagger-value-picks-may14-kbil-ltd" target="_blank">KBIL <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+            <td><i class="fa fa-inr"></i> 910</td>
+            <td>27 May 2014</td>
+            <td><i class="fa fa-inr"></i> 4529</td>
+            <td>398%</td>
+            <td>
+              <a href="http://www.valueguyz.com/posts/2016/multibagger-value-picks-exit-jun16-kirloskar-brothers-investments" target="_blank">Exit <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td> 
+          </tr>  
+          <tr>
+            <td>
+              <a href="http://www.valueguyz.com/posts/2014/multibagger-value-picks-jun14-ist-ltd" target="_blank">IST <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+            <td><i class="fa fa-inr"></i> 310</td>
+            <td>14 Jun 2014</td>
+            <td><i class="fa fa-inr"></i> 673</td>
+            <td>118%</td>
+            <td>
+              <a href="http://www.valueguyz.com/posts/2016/multibagger-value-picks-exit-july16-ist-ltd" target="_blank">Exit <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td> 
+          </tr>    
+          <tr>
+            <td>
+              <a href="{{ url_for('article', slug='multibagger-value-picks-jul14-sandesh-ltd', year='2014') }}" target="_blank">Sandesh <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+            <td><i class="fa fa-inr"></i> 330</td>
+            <td>22 Jul 2014</td>
+            <td><i class="fa fa-inr"></i> 883</td>
+            <td>167%</td>
+            <td>
+              <a href="http://www.valueguyz.com/posts/2016/multibagger-value-picks-exit-aug16-sandesh-ltd" target="_blank">Exit <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td> 
+          </tr>
+          <tr>
+            <td>
+              <a href="http://www.valueguyz.com/posts/2014/multibagger-value-picks-aug14-store-one-retail-india" target="_blank">Store One <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a> 
+            </td>
+            <td><i class="fa fa-inr"></i> 59</td>
+            <td>4 Aug 2015</td>
+            <td><i class="fa fa-inr"></i> 165</td>
+            <td>180%</td>
+            <td>
+              <a href="http://www.valueguyz.com/posts/2016/multibagger-value-picks-exit-sep16-store-one-retail-ltd" target="_blank">Exit <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="http://www.valueguyz.com/posts/2014/multibagger-value-picks-sep14-vardhman-acrylics" target="_blank">Vardhman Acrylics <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+            <td><i class="fa fa-inr"></i> 22</td>
+            <td>9 Sep 2014</td>
+            <td><i class="fa fa-inr"></i> 54</td>
+            <td>145%</td>
+            <td>
+              <a href="http://www.valueguyz.com/posts/2016/multibagger-value-picks-exit-oct16-vardhman-acrylics-ltd" target="_blank">Exit <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+          </tr>    
+          <tr>
+            <td>
+              <a href="http://www.valueguyz.com/posts/2014/multibagger-value-picks-oct14-haldyn-glass" target="_blank">Haldyn Glass <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+            <td><i class="fa fa-inr"></i> 22</td>
+            <td>8 Oct 2014</td>
+            <td><i class="fa fa-inr"></i> 35</td>
+            <td>57%</td>
+            <td>
+              <a href="http://www.valueguyz.com/posts/2016/multibagger-value-pick-exit-dec16-haldyn-glass-ltd" target="_blank">Exit <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+          </tr>    
+          <tr>
+            <td>
+              <a href="http://www.valueguyz.com/posts/2014/multibagger-value-picks-nov14-gm-breweries" target="_blank"> GM Breweries <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+            <td><i class="fa fa-inr"></i> 78 (Bonus Adjusted)</td>
+            <td>3 Nov 2014</td>
+            <td><i class="fa fa-inr"></i> 495</td>
+            <td>538%</td>
+            <td>
+              <a href="http://www.valueguyz.com/posts/2017/multibagger-value-pick-exit-jan17-gm-breweries" target="_blank">Exit <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td> 
+          </tr>
+          <tr>
+            <td>
+              <a href="http://www.valueguyz.com/posts/2014/multibagger-value-picks-dec14-ashok-alco-chem" target="_blank">Ashok Alco-Chem <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+            <td><i class="fa fa-inr"></i> 62</td>
+            <td>3 Dec 2014</td>
+            <td><i class="fa fa-inr"></i> 117</td>
+            <td>79%</td>
+            <td>Exit</td> 
+          </tr>  
+          <tr>
+            <td>
+              <a href="http://www.valueguyz.com/posts/2015/multibagger-value-picks-jan15-trigyn-technology" target="_blank">Trigyn Tech<i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+            <td><i class="fa fa-inr"></i> 38</td>
+            <td>30 Dec 2014</td>
+            <td><i class="fa fa-inr"></i> 117</td>
+            <td>208%</td>
+            <td>Exit</td> 
+          </tr>
+          <tr>
+            <td>
+              <a href="http://www.valueguyz.com/posts/2015/multibagger-value-picks-feb15-infinite-computer" target="_blank">Infinite Computer <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+            <td><i class="fa fa-inr"></i> 148</td>
+            <td>1 Feb 2015</td>
+            <td><i class="fa fa-inr"></i> 225</td>
+            <td>52%</td>
+            <td>Exit</td> 
+          </tr>    
+          <tr>
+            <td>
+              <a href="http://www.valueguyz.com/posts/2015/multibagger-value-picks-mar15-piccadily-agro" target="_blank">Piccadily Agro <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+            <td><i class="fa fa-inr"></i> 9.5</td>
+            <td>4 Mar 2015</td>
+            <td><i class="fa fa-inr"></i> 10.3</td>
+            <td>8%</td>
+            <td>Exit</td> 
+          </tr>  
+          <tr>
+            <td>
+              <a href="http://www.valueguyz.com/posts/2015/multibagger-value-picks-apr15-apm-industries" target="_blank">APM Industries <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+            <td><i class="fa fa-inr"></i> 49</td>
+            <td>18 Apr 2015</td>
+            <td><i class="fa fa-inr"></i> 63</td>
+            <td>28%</td>
+            <td>Exit</td> 
+          </tr>   
+          <tr>
+            <td>
+              <a href="http://www.valueguyz.com/posts/2015/multibagger-value-picks-may15-store-one" target="_blank">Store One <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a> 
+            </td>
+            <td><i class="fa fa-inr"></i> 28</td>
+            <td>20 May 2015</td>
+            <td><i class="fa fa-inr"></i> 130</td>
+            <td>364%</td>
+            <td>Exit</td> 
+          </tr>
+          <tr>
+            <td>
+              <a href="http://www.valueguyz.com/posts/2015/multibagger-value-picks-jul15-narmada-gelatine" target="_blank">Narmada Gelatine <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+            <td><i class="fa fa-inr"></i> 160</td>
+            <td>6 Jul 2015</td>
+            <td><i class="fa fa-inr"></i> 170</td>
+            <td>7%</td>
+            <td>Exit</td> 
+          </tr>  
+          <tr>
+            <td>
+              <a href="http://www.valueguyz.com/posts/2015/multibagger-value-picks-aug15-nmdc-ltd" target="_blank">NMDC <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+            <td><i class="fa fa-inr"></i> 94</td>
+            <td>20 Aug 2015</td>
+            <td><i class="fa fa-inr"></i> 134 (+17)</td>
+            <td>61%</td>
+            <td>Exit</td> 
+          </tr>  
+          <tr>
+            <td>
+              <a href="http://www.valueguyz.com/posts/2015/multibagger-value-picks-sep15-noida-toll-bridge" target="_blank">Noida Toll <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+            <td><i class="fa fa-inr"></i> 24</td>
+            <td>24 Sep 2015</td>
+            <td><i class="fa fa-inr"></i> 17</td>
+            <td>- 30%</td>
+            <td>Exit</td> 
+          </tr>  
+          <tr>
+            <td>
+              <a href="http://www.valueguyz.com/posts/2015/multibagger-value-picks-oct15-rs-software" target="_blank">RS Software <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+            <td><i class="fa fa-inr"></i> 124</td>
+            <td>27 Oct 2015</td>
+            <td><i class="fa fa-inr"></i> 77</td>
+            <td>- 38%</td>
+            <td>Exit</td> 
+          </tr>  
+          <tr>
+            <td>
+              <a href="http://www.valueguyz.com/posts/2015/multibagger-value-picks-nov15-lycos-internet" target="_blank">Lycos Internet <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+            <td><i class="fa fa-inr"></i> 30</td>
+            <td>16 Nov 2015</td>
+            <td><i class="fa fa-inr"></i> 6</td>
+            <td>- 80%</td>
+            <td>Exit</td> 
+          </tr>  
+          <tr>
+            <td>
+              <a href="http://www.valueguyz.com/posts/2015/multibagger-value-picks-dec15-gmdc" target="_blank">GMDC <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+            <td><i class="fa fa-inr"></i> 90</td>
+            <td>1 Dec 2015</td>
+            <td><i class="fa fa-inr"></i> 162</td>
+            <td>81%</td>
+            <td>Hold</td> 
+          </tr>  
+          <tr>
+            <td>
+              <a href="http://www.valueguyz.com/posts/2016/multibagger-value-picks-jan16-bhageria-dye-chem" target="_blank">Bhageria Dye-Chem <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+            <td><i class="fa fa-inr"></i> 65</td>
+            <td>4 Jan 2016</td>
+            <td><i class="fa fa-inr"></i> 290</td>
+            <td>349%</td>
+            <td>Hold</td> 
+          </tr>  
+          <tr>
+            <td>
+              <a href="http://www.valueguyz.com/posts/2016/multibagger-value-picks-mar16-eros-international-media" target="_blank">Eros Media <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+            <td><i class="fa fa-inr"></i> 151</td>
+            <td>8 Mar 2016</td>
+            <td><i class="fa fa-inr"></i> 212</td>
+            <td>41%</td>
+            <td>Hold</td> 
+          </tr>  
+          <tr>
+            <td>
+              <a href="http://www.valueguyz.com/posts/2017/multibagger-value-picks-apr16-oil-india-premium-pick-exposed" target="_blank">Oil India (Premium) <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+            <td><i class="fa fa-inr"></i> 240</td>
+            <td>30 Apr 2016</td>
+            <td><i class="fa fa-inr"></i> 360</td>
+            <td>51%</td>
+            <td>Hold</td> 
+          </tr>   
+          <tr>
+            <td>
+              <a href="http://www.valueguyz.com/posts/2016/multibagger-value-picks-may16-pheonix-lamps-premium-pick-exposed" target="_blank">Pheonix Lamp (Premium) <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+            <td><i class="fa fa-inr"></i> 113</td>
+            <td>19 May 2016</td>
+            <td><i class="fa fa-inr"></i> 220</td>
+            <td>132%</td>
+            <td>Hold</td> 
+          </tr>   
+          <tr>
+            <td>
+              <a href="http://www.valueguyz.com/posts/2017/multibagger-value-picks-jun16-apollo-tyres-premium-pick-unlocked" target="_blank">Apollo Tyres (Premium) <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+            <td><i class="fa fa-inr"></i> 150</td>
+            <td>20 Jun 2016</td>
+            <td><i class="fa fa-inr"></i> 240</td>
+            <td>63%</td>
+            <td>Hold</td> 
+          </tr>   
+          <tr>
+            <td>
+              <a href="http://www.valueguyz.com/posts/2017/multibagger-value-picks-jul16-hinduja-global-solutions-premium-pick-unlocked" target="_blank">Hinduja Global Sol (Premium) <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+            <td><i class="fa fa-inr"></i> 398</td>
+            <td>25 Jul 2016</td>
+            <td><i class="fa fa-inr"></i> 710</td>
+            <td>79%</td>
+            <td>Hold</td> 
+          </tr>   
+          
+          
+          <tr>
+            <td>
+              <a href="http://www.valueguyz.com/premium-pick/2016/new-governor-in-the-house-credit-to-bjp" target="_blank">Premium pick 5 <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+            <td><i class="fa fa-inr"></i> 53</td>
+            <td>29 Aug 2016</td>
+            <td><i class="fa fa-inr"></i> 47</td>
+            <td>-11%</td>
+            <td>Hold</td> 
+          </tr>  
+          <tr>
+            <td>
+              <a href="http://www.valueguyz.com/premium-pick/2016/monsoon-ends-on-happy-note-premium-pick-sep16" target="_blank">Premium pick 6 <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+            <td><i class="fa fa-inr"></i> 125</td>
+            <td>27 Sep 2016</td>
+            <td><i class="fa fa-inr"></i> 99</td>
+            <td>-21%</td>
+            <td>Hold</td> 
+          </tr>
+          <tr>
+            <td>
+              <a href="http://www.valueguyz.com/premium-pick/2016/diwali-dussehra-balley-balley" target="_blank">Premium pick 7 <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+            <td><i class="fa fa-inr"></i> 45</td>
+            <td>7 Oct 2016</td>
+            <td><i class="fa fa-inr"></i> 37</td>
+            <td>-21%</td>
+            <td>Hold</td> 
+          </tr>
+          <tr>
+            <td>
+              <a href="http://www.valueguyz.com/posts/2017/multibagger-value-picks-nov16-chaman-lal-setia-exports-premium-pick-unlocked" target="_blank">Chaman Lal Setia (Premium) <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+            <td><i class="fa fa-inr"></i> 57</td>
+            <td>22 Nov 2016</td>
+            <td><i class="fa fa-inr"></i> 109</td>
+            <td>91%</td>
+            <td>Hold</td> 
+          </tr>
+          <tr>
+            <td>
+              <a href="http://www.valueguyz.com/premium-pick/2016/modi-dangal-tax-exempt-premium" target="_blank">Premium pick 9 <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+            <td><i class="fa fa-inr"></i> 197</td>
+            <td>27 Dec 2016</td>
+            <td><i class="fa fa-inr"></i> 566</td>
+            <td>187%</td>
+            <td>Hold</td> 
+          </tr>
+          <tr>
+            <td>
+              <a href="http://www.valueguyz.com/premium-pick/2017/happy-new-demonetized-year" target="_blank">Premium pick 10 <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+            <td><i class="fa fa-inr"></i> 870</td>
+            <td>29 Jan 2017</td>
+            <td><i class="fa fa-inr"></i> 960</td>
+            <td>11%</td>
+            <td>Hold</td> 
+          </tr>
+          <tr>
+            <td>
+              <a href="http://www.valueguyz.com/premium-pick/2017/govt-is-pro-business-pro-investor-hurray" target="_blank">Premium pick 11 <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+            <td><i class="fa fa-inr"></i> 198</td>
+            <td>23 Feb 2017</td>
+            <td><i class="fa fa-inr"></i> 266</td>
+            <td>33%</td>
+            <td>Hold</td> 
+          </tr>
+          <tr>
+            <td>
+              <a href="http://www.valueguyz.com/premium-pick/2017/value-multibagger-ipo-must-be-avoided" target="_blank">Premium pick 12 <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+            <td><i class="fa fa-inr"></i> 89</td>
+            <td>22 Mar 2017</td>
+            <td><i class="fa fa-inr"></i> 80</td>
+            <td>-9%</td>
+            <td>Hold</td> 
+          </tr>
+          <tr>
+            <td>
+              <a href="http://www.valueguyz.com/premium-pick/2017/summers-advanced-too-fast" target="_blank">Premium pick 13 <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+            <td><i class="fa fa-inr"></i> 291</td>
+            <td>24 Apr 2017</td>
+            <td><i class="fa fa-inr"></i> 246</td>
+            <td>-16%</td>
+            <td>Hold</td> 
+          </tr>
+          <tr>
+            <td>
+              <a href="http://www.valueguyz.com/premium-pick/2017/healthfast-mango-fest" target="_blank">Premium pick 14 <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+            <td><i class="fa fa-inr"></i> 321</td>
+            <td>25 May 2017</td>
+            <td><i class="fa fa-inr"></i> 395</td>
+            <td>23%</td>
+            <td>Hold</td> 
+          </tr>
+          <tr>
+            <td>
+              <a href="http://www.valueguyz.com/premium-pick/2017/valueguyz-coming-to-mumbai" target="_blank">Premium pick 15 <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+            <td><i class="fa fa-inr"></i> 81</td>
+            <td>26 Jun 2017</td>
+            <td><i class="fa fa-inr"></i> 69</td>
+            <td>-15%</td>
+            <td>Hold</td> 
+          </tr>
+          <tr>
+            <td>
+              <a href="http://www.valueguyz.com/premium-pick/2017/nifty-hits-10k-gst-is-in-the-air" target="_blank">Premium pick 16 <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+            <td><i class="fa fa-inr"></i> 240</td>
+            <td>26 Jul 2017</td>
+            <td><i class="fa fa-inr"></i> 214</td>
+            <td>-14%</td>
+            <td>Hold</td> 
+          </tr>
+          <tr>
+            <td>
+              <a href="http://www.valueguyz.com/premium-pick/2017/kim-jong-un-tries-icbm-baba-ram-rahim-love-charges-mr-market" target="_blank">Premium pick 17 <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+            <td><i class="fa fa-inr"></i> 56</td>
+            <td>29 Aug 2017</td>
+            <td><i class="fa fa-inr"></i> 41</td>
+            <td>-27%</td>
+            <td>Exit</td> 
+          </tr>
+          <tr>
+            <td>
+              <a href="http://www.valueguyz.com/premium-pick/2017/happy-dussehra-mr-market-best-days-ahead" target="_blank">Premium pick 18 <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+            <td><i class="fa fa-inr"></i> 99</td>
+            <td>30 Sep 2017</td>
+            <td><i class="fa fa-inr"></i> 114</td>
+            <td>15%</td>
+            <td>Hold</td> 
+          </tr>
+          <tr>
+            <td>
+              <a href="http://www.valueguyz.com/premium-pick/2017/2lc-crore-steroid-for-indian-stock-market-hurray" target="_blank">Premium pick 19 <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+            <td><i class="fa fa-inr"></i> 210</td>
+            <td>27 Oct 2017</td>
+            <td><i class="fa fa-inr"></i> 229</td>
+            <td>1%</td>
+            <td>Hold</td> 
+          </tr>
+          <tr>
+            <td>
+              <a href="http://www.valueguyz.com/premium-pick/2017/winter-is-coming" target="_blank">Premium pick 20 <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+              </a>
+            </td>
+            <td><i class="fa fa-inr"></i> 26</td>
+            <td>27 Nov 2017</td>
+            <td><i class="fa fa-inr"></i> 27</td>
+            <td>4%</td>
+            <td>Hold</td> 
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="what-tfn">
+  <div class="container">
+    <h1>VGEX Calculation</h1>
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1 udemy-tfn">
+        <p>ValueGuyz.com is a community investing in contrary to Loot Lo Mentality of Stock Brokers in India. In the spirit of this awakening movement I give out a
+          <a href="{{ url_for('value_picks_multibagger_stocks_india') }}" target="_blank">Value Pick 
+          </a>
+          every month to research here at ValueGuyz.com which is probable multibagger.</p>
+        <p>VGEX is calculated 'monthly' on basis of those Value Picks & Its performance is beating every benchmark of Investing in India on MoM basis.</p>
+        <p>Want to learn more? Then check it out <a href="{{ url_for('intro_fresher') }}">Here</a>
+          <i class="fa fa-paper-plane-o" style="color:#34A853">
+          </i> & Its Free !
+        </p>
+        <div class="signature">
+          <p>Regards,</p>
+          <p>
+            <a href="{{ url_for('valueguyz_home') }}#about" target="_blank">Jasmeet Singh
+            </a>
+            <i class="fa fa-paper-plane-o" style="color: #E91E63"></i>
+          </p>
+          <P>Founder & Investor</P>
+        </div>
+      </div>
+    </div>
+
+         
+  </div>
+</div>
+
+
+{% endblock %}

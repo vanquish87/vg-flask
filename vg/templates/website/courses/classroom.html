@@ -1,0 +1,88 @@
+<!----this is for rendering a base template in flask using jinja templating-->
+{% extends "temp-n-macro/_head_.html" %}
+
+{% block meta_og_tags_title %}
+
+<link rel="icon" href="{{ url_for('static', filename='images/pages/vg-favicon.png') }}">
+
+<title>{{ session.fullname }} - My Classroom</title>
+
+{% endblock %}
+
+
+{% block custom_css_files %}
+
+<!-- Custom styling for this template -->
+<link href="{{ url_for('static', filename='css/classroom-videos.css') }}" rel="stylesheet">
+
+{% endblock %}
+
+{% block header_navbar %}
+
+<body>
+  
+  <nav class="navbar navbar navbar-fixed-top" id="upar">
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-xs-2 col-xs-offset-5">
+                <p class="text-center">
+                   <a href="{{ url_for('content_fresher') }}" class="btn btn-warning btn-content">Back to Content</a>
+                </p>
+            </div>
+        </div>
+
+    </div>
+  </nav>      
+  
+  
+{% endblock %}
+
+<!----Declarations for blocks of html code to be rendered later -->
+{% block content %}
+
+<div class="container" id="classroom">
+  <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+          
+          <h4>{{ lecture.lecture_no }} . {{ lecture.title }}</h4>
+          
+          <div class="video embed-responsive embed-responsive-16by9">
+              
+              <iframe src="https://player.vimeo.com/video/{{ lecture.vimeo_no | safe }}?autoplay=1&title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+              
+          </div>
+          
+      </div>
+  </div>
+</div>
+
+
+
+{% endblock %}   
+{% block sidebar %} {% endblock %}
+
+{% block footer %}
+
+<footer>
+<div class="container">
+    <div class="row">
+        
+        <div class="col-xs-6">
+            <p class="text-center">
+               <a href="{{ url_for('classroom', slug=lecture_peechla.slug) }}" class="btn btn-success btn-outline-rounded green">Previous Lecture</a>
+            </p>
+        </div>
+        
+        <div class="col-xs-6">
+             <p class="text-center">
+               <a href="{{ url_for('classroom', slug=lecture_agla.slug) }}" class="btn btn-info btn-outline-rounded green">Next Lecture <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span></a>
+             </p>
+        </div>
+        
+    </div>
+   
+</div>
+</footer>
+
+{% endblock %}
